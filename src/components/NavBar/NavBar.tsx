@@ -9,12 +9,12 @@ const NavBar = () => {
   return (
     <>
       <div className={styles.container}>
-      <ul>
-        <li>program</li>
-        <li>1rm calculator</li>
-        <li>plate math</li>
-        <li>program editor</li>
-      </ul>
+        <ul>
+          <li>program</li>
+          <li>1rm calculator</li>
+          <li>plate math</li>
+          <li>program editor</li>
+        </ul>
       </div>
     </>
   );
