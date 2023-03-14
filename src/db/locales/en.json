@@ -1,0 +1,100 @@
+{
+  "programPage": {
+    "defaultTitle": "Program Page",
+    "title": "Program",
+    "week": "Week",
+    "day": "Day",
+    "rmReviewTitle": "1RM Review",
+    "rmReviewWeightLable": "Weight",
+    "weekSelectorTitle": "Week Selector",
+    "noActiveProgramTextTitle": "No program loaded.",
+    "noActiveProgramTextSubtitle": "Go to Program Editor Page to create or import one and set it as active.",
+    "exerciseInfo" : {
+      "title": "Exercise Info",
+      "sets": "Sets",
+      "reps": "Reps",
+      "weightLabel": "Weight",
+      "percentage": "Percentage",
+      "rest": "Rest",
+      "altExercise1": "Alternative Exercise 1",
+      "altExercise2": "Alternative Exercise 2",
+      "description": "Description"
+    }
+  },
+  "calculatorPage": {
+    "title": "1RM Calculator",
+    "weightLifted": "Weight Lifted",
+    "repsPerformed": "Reps Performed",
+    "rmTitle": "One Rep Max",
+    "rmPercentageTitle": "Percetage of 1RM",
+    "textWarning": "WARNING. Calculation accuracy drops drastically when calculating above 12 reps."
+  },
+  "plateMathPage": {
+    "title": "Plate Math",
+    "weightLabel": "Weight",
+    "currentBarWeightLabel": "Current Bar Weight",
+    "bumperToggleLabel": "Bumper Plates",
+    "weightRackPage": {
+      "title": "weightRackPageTitle",
+      "priorityRackTitle": "priorityRackTitle",
+      "rackTitle": "rackTitle",
+      "barsTitle": "barsTitle"
+    }
+  },
+  "programEditorPage": {
+    "title": "Program Editor",
+    "noProgramListTextTitle": "No programs found.",
+    "noProgramListTextSubtitle": "Create or import one.",
+    "importErrorMessage": "Invalid file type.",
+    "modal": {
+      "setActive": "Set Active",
+      "edit": "Edit",
+      "share": "Share",
+      "makeCopy": "Make Copy",
+      "delete": "Delete"
+    },
+    "programEditorStep1": {
+      "title": "Create Program",
+      "tabTitle": "Info",
+      "programName": "Program Name",
+      "add1RMexerciseButton": "ADD 1RM EXERCISE",
+      "RMexercise": "1RM Exercise",
+      "weightLabel": "Weight"
+    },
+    "programEditorStep2": {
+      "title": "Create Program",
+      "tabTitle": "Weeks",
+      "addWeekButton": "ADD WEEK",
+      "week": "Week"
+    },
+    "programEditorStep3": {
+      "title": "Create Program",
+      "tabTitle": "Days",
+      "emptyDayInfo": "Leave day empty to mark it as a rest day",
+      "addExerciseButton": "ADD EXERCISE",
+      "simpleExerciseModalLabel": "Simple Exercise (no RM)"
+    },
+    "exerciseEditorPage": {
+      "title": "Exercise Editor",
+      "exerciseNameInfo": "Exercise name displayed on day list",
+      "exerciseVariation": "Exercise/Variation name (optional)",
+      "sets": "Sets",
+      "reps": "Reps",
+      "percentage": "Percentage",
+      "weightLabel": "Weight",
+      "rest": "Rest",
+      "altExercise1": "Alternative Exercise 1",
+      "altExercise2": "Alternative Exercise 2",
+      "description": "Description",
+      "addExerciseButton": "ADD EXERCISE"
+    }
+  },
+  "settingsPage": {
+    "title": "Settings",
+    "themeSelectorTitle": "Theme",
+    "languageSelectorTitle": "Language"
+  },
+  "numberInputModal": {
+    "cancelButtonLabel": "CANCEL"
+  }
+}

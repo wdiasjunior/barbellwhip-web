@@ -1,6 +1,8 @@
 import React from "react";
 
-import NavBar from "./components/NavBar/NavBar";
+import { Provider } from 'jotai';
+
+import NavBar from "./sharedComponents/NavBar/NavBar";
 
 import "./App.css";
 
@@ -8,9 +10,11 @@ function App() {
 
   return (
     <>
-      <div className="App">
-        <NavBar />
-      </div>
+      <Provider>
+        <div className="App">
+          <NavBar />
+        </div>
+      </Provider>
     </>
   );
 }

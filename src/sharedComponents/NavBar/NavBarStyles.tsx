@@ -1,12 +1,13 @@
-export const styles = (theme) => {
-// export const styles = {
+const styles = (theme) => {
   return ({
     container: {
       display: "flex",
       flexDirection: "column",
     },
-    text: {
+    navItem: {
       color: theme.text,
     }
   });
 }
+
+export default styles;
