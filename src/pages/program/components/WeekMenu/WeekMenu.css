@@ -1,0 +1,26 @@
+/*
+
+  zed menu shifting content
+  main
+    aside - menu week list
+    div - "main body container" - add classes to this
+
+*/
+
+/* aside
+
+  add opacity change 0 to 1 function?
+  width: 75%;
+  min-height: 100vh;
+  height: 100%;
+
+*/
+
+
+/* div */
+.ease-out {
+  transition-timing-function: cubic-bezier(0,0,.2,1);
+}
+.duration-200 {
+  transition-duration: .2s;
+}

@@ -82,7 +82,7 @@ const ProgramPage = ({ navigation }) => {
       <View style={styles(activeTheme).rmInputContainer}>
         <TouchableOpacity
           style={styles(activeTheme).item}
-          onPress={() => {
+          onClick={() => {
             setIsMenuOpen(!isMenuOpen);
             navigation.push('RMReviewPage', {onermOBJ: data?.oneRMs, weightUnit: data?.weightUnit});
           }}
@@ -98,7 +98,7 @@ const ProgramPage = ({ navigation }) => {
             return (
               <TouchableOpacity key={index}
                 style={(index == selectedWeek) ? styles(activeTheme).drawerItemSelected : styles(activeTheme).drawerItem}
-                onPress={() => selectWeek({index})}
+                onClick={() => selectWeek({index})}
               >
                 <Text style={(index == selectedWeek) ? styles(activeTheme).drawerTextSelected : styles(activeTheme).drawerText}>
                   {selectedLocale.programPage.week} {JSON.stringify(index + 1)}

@@ -133,17 +133,17 @@ const PlateMathPage = ({ navigation }) => {
           <View style={styles(activeTheme).rowWrapper}>
             <Text style={styles(activeTheme).title}>{selectedLocale.plateMathPage.weightLabel}</Text>
             <View style={styles(activeTheme).row}>
-              <TouchableOpacity onPress={decrementWeight}>
+              <TouchableOpacity onClick={decrementWeight}>
                 <View style={styles(activeTheme).incrementWrapper}>
                   <Text style={styles(activeTheme).incrementText}>-</Text>
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={toggleModal}>
+              <TouchableOpacity onClick={toggleModal}>
                 <Text style={styles(activeTheme).weight}>{currentWeight}</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={incrementWeight}>
+              <TouchableOpacity onClick={incrementWeight}>
                 <View style={styles(activeTheme).incrementWrapper}>
                   <Text style={styles(activeTheme).incrementText}>+</Text>
                 </View>
@@ -188,7 +188,7 @@ const PlateMathPage = ({ navigation }) => {
 
       <Modal
         isVisible={isModalWeightInputVisible}
-        onBackButtonPress={() => setModalWeightInputVisible(false)}
+        onBackButtonClick={() => setModalWeightInputVisible(false)}
         onBackdropPress={() => setModalWeightInputVisible(false)}
         useNativeDriver={true}
         hideModalContentWhileAnimating={true}
@@ -222,7 +222,7 @@ const PlateMathPage = ({ navigation }) => {
 // //         onSwipeComplete={this.close}
 // //         swipeDirection={['up', 'left', 'right', 'down']}
 // //         style={styles(activeTheme).view}>
-// //         <DefaultModalContent onPress={this.close} />
+// //         <DefaultModalContent onClick={this.close} />
 // //       </Modal>
 // //     );
 // //   }

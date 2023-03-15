@@ -76,14 +76,14 @@ export default Header = (props: Props) => {
             name="arrow-back-sharp"
             size={24}
             style={styles(activeTheme).iconLeft}
-            onPress={backButton}
+            onClick={backButton}
           />
           :
           <Ionicons
             name="menu-sharp"
             size={24}
             style={styles(activeTheme).iconLeft}
-            onPress={() => navigation.openDrawer()}
+            onClick={() => navigation.openDrawer()}
           />
         }
       </View>
@@ -96,7 +96,7 @@ export default Header = (props: Props) => {
             name="ellipsis-vertical"
             size={24}
             style={styles(activeTheme).iconRight}
-            onPress={setMenuOpenFromHeader}
+            onClick={setMenuOpenFromHeader}
           />
         }
         {props.weightRack &&
@@ -104,7 +104,7 @@ export default Header = (props: Props) => {
             name="settings-sharp"
             size={24}
             style={styles(activeTheme).iconRight}
-            onPress={() => navigation.push('WeightRackPage')}
+            onClick={() => navigation.push('WeightRackPage')}
           />
         }
         {props.import &&
@@ -112,7 +112,7 @@ export default Header = (props: Props) => {
             name="download-outline"
             size={24}
             style={styles(activeTheme).iconRight}
-            onPress={importProgram}
+            onClick={importProgram}
           />
         }
         {props.saveButton &&
@@ -120,7 +120,7 @@ export default Header = (props: Props) => {
             name="save"
             size={24}
             style={styles(activeTheme).iconRight}
-            onPress={saveButton}
+            onClick={saveButton}
           />
         }
       </View>

@@ -78,7 +78,7 @@ const NumberInput = (props: Props) => {
           name="backspace"
           size={30}
           style={styles(activeTheme).icon}
-          onPress={() => handleInput("backspace")}
+          onClick={() => handleInput("backspace")}
         />
       </View>
 
@@ -88,7 +88,7 @@ const NumberInput = (props: Props) => {
             <TouchableOpacity
               key={index}
               style={styles(activeTheme).numpadButton}
-              onPress={() => handleInput(value)}
+              onClick={() => handleInput(value)}
             >
               <Text style={styles(activeTheme).numpadButtonText}>{value}</Text>
             </TouchableOpacity>
@@ -97,8 +97,8 @@ const NumberInput = (props: Props) => {
       </View>
 
       <View style={styles(activeTheme).bottomButtonsRow}>
-        <Text style={styles(activeTheme).bottomButtonsText} onPress={props.toggleModal}>{selectedLocale.numberInputModal.cancelButtonLabel}</Text>
-        <Text style={styles(activeTheme).bottomButtonsText} onPress={() => props.toggleModal(weightString, props.inputLabel)}>OK</Text>
+        <Text style={styles(activeTheme).bottomButtonsText} onClick={props.toggleModal}>{selectedLocale.numberInputModal.cancelButtonLabel}</Text>
+        <Text style={styles(activeTheme).bottomButtonsText} onClick={() => props.toggleModal(weightString, props.inputLabel)}>OK</Text>
       </View>
 
     </View>

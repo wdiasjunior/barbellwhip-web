@@ -137,7 +137,7 @@ const StepOne = ({ navigation }) => {
                   onChangeText={(input) => editRMweight(input, index)}
                   returnKeyType={"done"}
                 />
-                <TouchableOpacity style={styles(activeTheme).onermItemIconContainer} onPress={() => remove1rm(index)}>
+                <TouchableOpacity style={styles(activeTheme).onermItemIconContainer} onClick={() => remove1rm(index)}>
                   <Ionicons name="trash-outline" size={30} style={styles(activeTheme).onermItemIcon} />
                 </TouchableOpacity>
               </View>
@@ -145,7 +145,7 @@ const StepOne = ({ navigation }) => {
           )
         })}
 
-        <TouchableOpacity onPress={add1rm} style={[styles(activeTheme).AddOneRMButton, styles(activeTheme).shadowProp]}>
+        <TouchableOpacity onClick={add1rm} style={[styles(activeTheme).AddOneRMButton, styles(activeTheme).shadowProp]}>
           <Text style={styles(activeTheme).AddOneRMButtonText}>{selectedLocale.programEditorPage.programEditorStep1.add1RMexerciseButton}</Text>
         </TouchableOpacity>
 

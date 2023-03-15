@@ -37,7 +37,7 @@ const SettingsPage = ({ navigation }) => {
               <TouchableOpacity
                 style={styles(activeTheme).themeSelectorItem}
                 key={index + "" + theme.id}
-                onPress={() => setActiveThemeId(theme.id)}
+                onClick={() => setActiveThemeId(theme.id)}
               >
                 <View style={styles(activeTheme).themeSelectorIconContainer}>
                   {theme.id === activeThemeId &&
@@ -66,7 +66,7 @@ const SettingsPage = ({ navigation }) => {
               <TouchableOpacity
                 style={styles(activeTheme).themeSelectorItem}
                 key={index + "" + locale.id}
-                onPress={() => setSelectedLocaleId(locale.id)}
+                onClick={() => setSelectedLocaleId(locale.id)}
               >
                 <View style={styles(activeTheme).themeSelectorIconContainer}>
                   {locale.id === selectedLocaleId &&

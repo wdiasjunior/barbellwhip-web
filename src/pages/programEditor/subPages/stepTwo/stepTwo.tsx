@@ -88,7 +88,7 @@ const StepTwo = ({ navigation }) => {
       <ScaleDecorator>
         <TouchableOpacity
           style={selectedWeek == index ? styles(activeTheme).weekItemSelected : styles(activeTheme).weekItem}
-          onPress={() => selectWeek(index)}
+          onClick={() => selectWeek(index)}
         >
           <TouchableOpacity style={{width: 40, height: 30}} onLongPress={drag} delayLongPress={50}>
             <Ionicons name="reorder-three-outline" size={30} style={styles(activeTheme).weekItemIcon} />
@@ -96,10 +96,10 @@ const StepTwo = ({ navigation }) => {
           <Text style={(selectedWeek == index) ? styles(activeTheme).weekSelectedItemText : styles(activeTheme).weekItemText}>{selectedLocale.programEditorPage.programEditorStep2.week} {index + 1}</Text>
 
           <TouchableOpacity style={styles(activeTheme).weekItemIconContainer} >
-            <Ionicons onPress={() => duplicateWeek(index)} name="copy-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+            <Ionicons onClick={() => duplicateWeek(index)} name="copy-outline" size={20} style={styles(activeTheme).weekItemIcon} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles(activeTheme).weekItemIconContainer}  onPress={() => deleteWeek(index)} >
+          <TouchableOpacity style={styles(activeTheme).weekItemIconContainer}  onClick={() => deleteWeek(index)} >
             <Ionicons name="trash-outline" size={20} style={styles(activeTheme).weekItemIcon} />
           </TouchableOpacity>
         </TouchableOpacity>
@@ -119,7 +119,7 @@ const StepTwo = ({ navigation }) => {
             renderItem={renderWeekItem}
             ListFooterComponent={() => {
               return (
-                <TouchableOpacity onPress={addWeek} style={styles(activeTheme).AddWeekButton}>
+                <TouchableOpacity onClick={addWeek} style={styles(activeTheme).AddWeekButton}>
                   <Text style={styles(activeTheme).AddWeekButtonText}>{selectedLocale.programEditorPage.programEditorStep2.addWeekButton}</Text>
                 </TouchableOpacity>
               )

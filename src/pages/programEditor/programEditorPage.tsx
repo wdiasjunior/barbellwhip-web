@@ -159,7 +159,7 @@ const ProgramEditorPage = ({ navigation }) => {
   return (
       <View style={styles(activeTheme).container}>
 
-        <TouchableOpacity onPress={fabButtonFunction} style={[styles(activeTheme).FabButton, styles(activeTheme).shadowProp]}>
+        <TouchableOpacity onClick={fabButtonFunction} style={[styles(activeTheme).FabButton, styles(activeTheme).shadowProp]}>
           <Text style={styles(activeTheme).FabButtonText}>+</Text>
         </TouchableOpacity>
 
@@ -179,7 +179,7 @@ const ProgramEditorPage = ({ navigation }) => {
                         name="ellipsis-vertical"
                         size={24}
                         style={styles(activeTheme).iconRight}
-                        onPress={() => { setModalOpen(true); setProgramNameForAction(item.name); }}
+                        onClick={() => { setModalOpen(true); setProgramNameForAction(item.name); }}
                       />
                     </View>
                   )
@@ -200,7 +200,7 @@ const ProgramEditorPage = ({ navigation }) => {
 
         <Modal
           isVisible={modalOpen}
-          onBackButtonPress={() => setModalOpen(false)}
+          onBackButtonClick={() => setModalOpen(false)}
           onBackdropPress={() => setModalOpen(false)}
           useNativeDriver={true}
           hideModalContentWhileAnimating={true}
@@ -210,23 +210,23 @@ const ProgramEditorPage = ({ navigation }) => {
           backdropTransitionOutTiming={1}
         >
           <View style={styles(activeTheme).modalContent}>
-            <TouchableOpacity style={styles(activeTheme).modalItem} onPress={() => programOptionModal("setActive")}>
+            <TouchableOpacity style={styles(activeTheme).modalItem} onClick={() => programOptionModal("setActive")}>
               <Text style={styles(activeTheme).modalItemText}>{selectedLocale.programEditorPage.modal.setActive}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles(activeTheme).modalItem} onPress={() => programOptionModal("edit")}>
+            <TouchableOpacity style={styles(activeTheme).modalItem} onClick={() => programOptionModal("edit")}>
               <Text style={styles(activeTheme).modalItemText}>{selectedLocale.programEditorPage.modal.edit}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles(activeTheme).modalItem} onPress={() => programOptionModal("share")}>
+            <TouchableOpacity style={styles(activeTheme).modalItem} onClick={() => programOptionModal("share")}>
               <Text style={styles(activeTheme).modalItemText}>{selectedLocale.programEditorPage.modal.share}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles(activeTheme).modalItem} onPress={() => programOptionModal("copy")}>
+            <TouchableOpacity style={styles(activeTheme).modalItem} onClick={() => programOptionModal("copy")}>
               <Text style={styles(activeTheme).modalItemText}>{selectedLocale.programEditorPage.modal.makeCopy}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles(activeTheme).modalItem} onPress={() => programOptionModal("delete")}>
+            <TouchableOpacity style={styles(activeTheme).modalItem} onClick={() => programOptionModal("delete")}>
               <Text style={styles(activeTheme).modalItemText}>{selectedLocale.programEditorPage.modal.delete}</Text>
             </TouchableOpacity>
           </View>

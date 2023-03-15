@@ -12,12 +12,12 @@ const NavBar = () => {
 
   return (
     <>
-      <nav style={styles(activeTheme).container}>
-        <ul>
-          <li style={styles(activeTheme).navItem}>program</li>
-          <li style={styles(activeTheme).navItem}>1rm calculator</li>
-          <li style={styles(activeTheme).navItem}>plate math</li>
-          <li style={styles(activeTheme).navItem}>program editor</li>
+      <nav style={styles(activeTheme).container} className={"NavBar"}>
+        <ul style={styles(activeTheme).list} className={"NavBar_ItemList"}>
+          <li style={styles(activeTheme).item} className={"NavBar_Item"}>program</li>
+          <li style={styles(activeTheme).item} className={"NavBar_Item"}>1rm calculator</li>
+          <li style={styles(activeTheme).item} className={"NavBar_Item"}>plate math</li>
+          <li style={styles(activeTheme).item} className={"NavBar_Item"}>program editor</li>
         </ul>
       </nav>
     </>

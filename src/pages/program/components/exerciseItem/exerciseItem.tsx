@@ -29,7 +29,7 @@ const ExerciseItem = (props: Props) => {
   return (
       <TouchableOpacity
         style={styles(activeTheme).item}
-        onPress={() => {
+        onClick={() => {
           navigation.push('ExerciseItemPage', {
             exerciseName: props.exerciseName,
             onermOBJ: props.onermOBJ,

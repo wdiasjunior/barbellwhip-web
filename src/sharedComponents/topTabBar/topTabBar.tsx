@@ -78,7 +78,7 @@ const TopTabBar = (props: Props) => {
             <TouchableOpacity
               key={index}
               style={(index == selected) ? styles(activeTheme).tabItemSelected : styles(activeTheme).tabItem}
-              onPress={() => selectTab(index)}
+              onClick={() => selectTab(index)}
               onLayout={(event) => {
                 const layout = event.nativeEvent.layout;
                 dataSourceCords[index] = layout.x;

@@ -99,17 +99,17 @@ const CalculatorPage = ({ navigation }) => {
           <View style={styles(activeTheme).rowWrapper}>
             <Text style={styles(activeTheme).title}>{selectedLocale.calculatorPage.weightLifted}</Text>
             <View style={styles(activeTheme).row}>
-              <TouchableOpacity onPress={decrementWeight}>
+              <TouchableOpacity onClick={decrementWeight}>
                 <View style={styles(activeTheme).incrementWrapper}>
                   <Text style={styles(activeTheme).incrementText}>-</Text>
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => toggleModal("0", weightUnit)}>
+              <TouchableOpacity onClick={() => toggleModal("0", weightUnit)}>
                 <Text style={styles(activeTheme).repsSets}>{weightLifted}</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={incrementWeight}>
+              <TouchableOpacity onClick={incrementWeight}>
                 <View style={styles(activeTheme).incrementWrapper}>
                   <Text style={styles(activeTheme).incrementText}>+</Text>
                 </View>
@@ -120,17 +120,17 @@ const CalculatorPage = ({ navigation }) => {
           <View style={styles(activeTheme).rowWrapper}>
             <Text style={styles(activeTheme).title}>{selectedLocale.calculatorPage.repsPerformed}</Text>
             <View style={styles(activeTheme).row}>
-              <TouchableOpacity onPress={decrementReps}>
+              <TouchableOpacity onClick={decrementReps}>
                 <View style={styles(activeTheme).incrementWrapper}>
                   <Text style={styles(activeTheme).incrementText}>-</Text>
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => toggleModal("0", "REPS")}>
+              <TouchableOpacity onClick={() => toggleModal("0", "REPS")}>
                 <Text style={styles(activeTheme).repsSets}>{repsPerformed}</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={incrementReps}>
+              <TouchableOpacity onClick={incrementReps}>
                 <View style={styles(activeTheme).incrementWrapper}>
                   <Text style={styles(activeTheme).incrementText}>+</Text>
                 </View>
@@ -223,7 +223,7 @@ const CalculatorPage = ({ navigation }) => {
 
         <Modal
           isVisible={isModalWeightInputVisible}
-          onBackButtonPress={() => setModalWeightInputVisible(false)}
+          onBackButtonClick={() => setModalWeightInputVisible(false)}
           onBackdropPress={() => setModalWeightInputVisible(false)}
           useNativeDriver={true}
           hideModalContentWhileAnimating={true}

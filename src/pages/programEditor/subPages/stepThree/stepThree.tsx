@@ -114,11 +114,11 @@ const StepThree = ({ navigation }) => {
             {programEditorData.trainingProgram[selectedWeek].week[selectedDay].day[index].exerciseName}
           </Text>
 
-          <TouchableOpacity style={{width: 32, height: 20}} onPress={() => editExercise(index)} >
+          <TouchableOpacity style={{width: 32, height: 20}} onClick={() => editExercise(index)} >
             <MaterialIcons name="edit" size={20} style={styles(activeTheme).exerciseItemIcon} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={{width: 20, height: 20}} onPress={() => deleteExercise(index)} >
+          <TouchableOpacity style={{width: 20, height: 20}} onClick={() => deleteExercise(index)} >
             <Ionicons name="trash-outline" size={20} style={styles(activeTheme).exerciseItemIcon} />
           </TouchableOpacity>
         </View>
@@ -152,7 +152,7 @@ const StepThree = ({ navigation }) => {
                   {programEditorData.trainingProgram[selectedWeek].week[selectedDay].day.length === 0 &&
                     <Text style={styles(activeTheme).RestDayText}>{selectedLocale.programEditorPage.programEditorStep3.emptyDayInfo}</Text>
                   }
-                  <TouchableOpacity onPress={() => setModalOpen(true)} style={styles(activeTheme).AddExerciseButton}>
+                  <TouchableOpacity onClick={() => setModalOpen(true)} style={styles(activeTheme).AddExerciseButton}>
                     <Text style={styles(activeTheme).AddExerciseButtonText}>{selectedLocale.programEditorPage.programEditorStep3.addExerciseButton}</Text>
                   </TouchableOpacity>
                 </>
@@ -164,7 +164,7 @@ const StepThree = ({ navigation }) => {
 
       <Modal
         isVisible={modalOpen}
-        onBackButtonPress={() => setModalOpen(false)}
+        onBackButtonClick={() => setModalOpen(false)}
         onBackdropPress={() => setModalOpen(false)}
         useNativeDriver={true}
         hideModalContentWhileAnimating={true}
@@ -176,12 +176,12 @@ const StepThree = ({ navigation }) => {
         <View style={styles(activeTheme).modalContent}>
           {programEditorData.oneRMs.length > 0 && programEditorData.oneRMs.map((item, index) => {
             return (
-              <TouchableOpacity style={styles(activeTheme).modalItem} key={index} onPress={() => addExercise(item)}>
+              <TouchableOpacity style={styles(activeTheme).modalItem} key={index} onClick={() => addExercise(item)}>
                 <Text style={styles(activeTheme).modalItemText}>{item.name}</Text>
               </TouchableOpacity>
             )
           })}
-          <TouchableOpacity style={styles(activeTheme).modalItem} onPress={() => addExercise("simple")}>
+          <TouchableOpacity style={styles(activeTheme).modalItem} onClick={() => addExercise("simple")}>
             <Text style={styles(activeTheme).modalItemText}>{selectedLocale.programEditorPage.programEditorStep3.simpleExerciseModalLabel}</Text>
           </TouchableOpacity>
         </View>

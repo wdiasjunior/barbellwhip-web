@@ -105,7 +105,7 @@ const ExerciseEditorPage = (props) => {
                   value={item.exerciseName+""}
                   returnKeyType={"done"}
                 />
-                <TouchableOpacity style={styles(activeTheme).exerciseItemRemoveIconContainer}  onPress={() => removeExerciseSubSet(index)}>
+                <TouchableOpacity style={styles(activeTheme).exerciseItemRemoveIconContainer}  onClick={() => removeExerciseSubSet(index)}>
                   <Ionicons name="trash-outline" size={25} style={styles(activeTheme).exerciseItemRemoveIcon} />
                 </TouchableOpacity>
               </View>
@@ -248,7 +248,7 @@ const ExerciseEditorPage = (props) => {
           )
         })}
 
-        <TouchableOpacity onPress={addExerciseSubSet} style={styles(activeTheme).AddExerciseButton}>
+        <TouchableOpacity onClick={addExerciseSubSet} style={styles(activeTheme).AddExerciseButton}>
           <Text style={styles(activeTheme).AddExerciseButtonText}>{selectedLocale.programEditorPage.exerciseEditorPage.addExerciseButton}</Text>
         </TouchableOpacity>
 
