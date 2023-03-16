@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useLayoutEffect, } from "react";
-import { Text, View, TouchableOpacity, SafeAreaView, ScrollView, } from 'react-native';
 
-import styles from './prTrackerPageStyles';
+import styles from "./prTrackerPageStyles";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom } from "../../helpers/jotai/atomsWithStorage";
 
-const PRTrackerPage = ({ navigation }) => {
+const PRTrackerPage = () => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);

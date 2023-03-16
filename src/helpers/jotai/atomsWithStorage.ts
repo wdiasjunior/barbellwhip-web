@@ -1,6 +1,5 @@
-import { atom } from 'jotai';
-import { atomWithStorage, createJSONStorage } from 'jotai/utils';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import { atom } from "jotai";
+import { atomWithStorage, createJSONStorage } from "jotai/utils";
 
 import { themes } from "../../themes/";
 import { locales } from "../../db/locales/";

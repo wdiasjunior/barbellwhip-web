@@ -1,7 +1,5 @@
-import { StyleSheet } from 'react-native';
-
 const styles = (theme) => {
-  return StyleSheet.create({
+  return ({
     container: {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
@@ -15,23 +13,23 @@ const styles = (theme) => {
       marginHorizontal: 20,
       borderRadius: 10,
       height: 80,
-      alignContent: 'center',
-      flexDirection: 'column',
+      alignContent: "center",
+      flexDirection: "column",
     },
     title: {
       color: theme.text,
       fontSize: 26,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
     subTitle: {
       color: theme.text,
       fontSize: 16,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
     weight: {
       color: theme.textHighlight,
       fontSize: 16,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
   });
 }

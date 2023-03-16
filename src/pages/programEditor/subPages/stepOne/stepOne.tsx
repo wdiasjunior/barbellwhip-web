@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react"; // , useRef
-import { Text, View, Switch, TouchableOpacity, SafeAreaView, ScrollView, KeyboardAvoidingView, TextInput, } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from "react-native-vector-icons/Ionicons";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { programEditorDataAtom } from "../../../../helpers/jotai/programEditorAtoms";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/atomsWithStorage";
 
@@ -11,7 +10,7 @@ import { randomUUID } from "../../../../helpers/randomUUID";
 
 import Header from "../../../../sharedComponents/header/header";
 
-import styles from './stepOneStyles';
+import styles from "./stepOneStyles";
 
 /*
   custom header for this stack to control go back button?
@@ -24,7 +23,7 @@ import styles from './stepOneStyles';
   keyboard avoiding view not working properly
 */
 
-const StepOne = ({ navigation }) => {
+const StepOne = () => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);

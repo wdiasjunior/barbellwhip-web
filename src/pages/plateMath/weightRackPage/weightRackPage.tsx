@@ -1,9 +1,8 @@
 import React from "react";
-import { Text, View, FlatList, Button, ScrollView, TouchableOpacity, } from 'react-native';
 
-import styles from './weightRackPageStyles';
+import styles from "./weightRackPageStyles";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../helpers/jotai/atomsWithStorage";
 
 const WeightRackPage = () => {

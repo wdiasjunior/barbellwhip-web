@@ -1,12 +1,10 @@
-import React, { useLayoutEffect, } from 'react';
-import { Text, View, ScrollView, } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React, { useLayoutEffect, } from "react";
 
 import Header from "../../../../sharedComponents/header/header";
 
-import styles from './exerciseItemPageStyles';
+import styles from "./exerciseItemPageStyles";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/atomsWithStorage";
 
 // interface Props {
@@ -18,8 +16,6 @@ import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/a
 // }
 
 const ExerciseItemPage = (props) => {
-
-  const navigation = useNavigation();
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);

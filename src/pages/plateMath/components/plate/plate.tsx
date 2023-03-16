@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React from "react";
 
-import { styles, plateColors } from './plateStyles';
+import { styles, plateColors } from "./plateStyles";
 
 interface Props {
   weight: any;

@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect, } from "react";
-import { Text, View, TouchableOpacity, } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Ionicon from "react-native-vector-icons/Ionicons";
 
-import styles from './numberInputStyles';
+import styles from "./numberInputStyles";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom } from "../../helpers/jotai/atomsWithStorage";
 
 interface Props {
@@ -74,7 +73,7 @@ const NumberInput = (props: Props) => {
     <View style={styles(activeTheme).container}>
       <View style={styles(activeTheme).input}>
         <Text style={styles(activeTheme).inputText}>{weightString} <Text style={styles(activeTheme).inputTextLabel}>{props.inputLabel}</Text></Text>
-        <Icon
+        <Ionicon
           name="backspace"
           size={30}
           style={styles(activeTheme).icon}

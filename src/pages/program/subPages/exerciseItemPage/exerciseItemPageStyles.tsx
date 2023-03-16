@@ -1,7 +1,5 @@
-import { StyleSheet } from 'react-native';
-
 const styles = (theme) => {
-  return StyleSheet.create({
+  return ({
     container: {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
@@ -29,7 +27,7 @@ const styles = (theme) => {
     title: {
       color: theme.textHighlight,
       fontSize: 26,
-      fontWeight: 'bold',
+      fontWeight: "bold",
       paddingBottom: 8,
     },
     label: {
@@ -40,17 +38,17 @@ const styles = (theme) => {
     data: {
       color: theme.text,
       fontSize: 24,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
     weightText: {
       color: theme.textHighlight,
       fontSize: 24,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
     description: {
       color: theme.text,
       fontSize: 16,
-      fontWeight: 'bold',
+      fontWeight: "bold",
       // marginTop: 10,
     },
   });

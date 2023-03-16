@@ -1,14 +1,12 @@
 import React from "react";
-import { Text, View, FlatList, Button, ScrollView, TouchableOpacity, } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Entypo from 'react-native-vector-icons/Entypo';
+// import Ionicons from "react-native-vector-icons/Ionicons";
+// import Entypo from "react-native-vector-icons/Entypo";
 
-import styles from './headerStyles';
+import styles from "./headerStyles";
 
 import { writeToJSON } from "../../db/fileSystem/fsWrite";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { programEditorDataAtom } from "../../helpers/jotai/programEditorAtoms";
 import { activeThemeAtom } from "../../helpers/jotai/atomsWithStorage";
 
@@ -26,8 +24,6 @@ interface Props {
 }
 
 export default Header = (props: Props) => {
-
-  const navigation = useNavigation();
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
@@ -104,7 +100,7 @@ export default Header = (props: Props) => {
             name="settings-sharp"
             size={24}
             style={styles(activeTheme).iconRight}
-            onClick={() => navigation.push('WeightRackPage')}
+            onClick={() => navigation.push("WeightRackPage")}
           />
         }
         {props.import &&

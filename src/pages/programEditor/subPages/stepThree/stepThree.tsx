@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, } from "react";
-import { Text, View, TouchableOpacity, SafeAreaView, ScrollView, } from 'react-native';
-import Modal from "react-native-modal";
-import DraggableFlatList, { ScaleDecorator } from "react-native-draggable-flatlist";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+// import DraggableFlatList, { ScaleDecorator } from "react-native-draggable-flatlist";
+// import Ionicons from "react-native-vector-icons/Ionicons";
+// import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { programEditorDataAtom, selectedWeekAtom, selectedDayAtom } from "../../../../helpers/jotai/programEditorAtoms";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/atomsWithStorage";
 
@@ -15,9 +12,9 @@ import { deepClone } from "../../../../helpers/deepClone";
 import TopTabBar from "../../../../sharedComponents/topTabBar/topTabBar";
 import Header from "../../../../sharedComponents/header/header";
 
-import styles from './stepThreeStyles';
+import styles from "./stepThreeStyles";
 
-const StepThree = ({ navigation }) => {
+const StepThree = () => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
@@ -68,13 +65,13 @@ const StepThree = ({ navigation }) => {
 
     if(data === "simple") {
       setModalOpen(false);
-      navigation.push('ExerciseEditorPage', {
+      navigation.push("ExerciseEditorPage", {
         oneRMweight: 0, // never used? check this
         exerciseIndex: "add",
       });
     } else {
       setModalOpen(false);
-      navigation.push('ExerciseEditorPage', {
+      navigation.push("ExerciseEditorPage", {
         oneRMweight: data.weight, // never used? check this
         oneRMname: data.name,
         exerciseIndex: "add",
@@ -83,7 +80,7 @@ const StepThree = ({ navigation }) => {
   }
 
   const editExercise = (index) => {
-    navigation.push('ExerciseEditorPage', {
+    navigation.push("ExerciseEditorPage", {
       exerciseIndex: index,
     });
   }

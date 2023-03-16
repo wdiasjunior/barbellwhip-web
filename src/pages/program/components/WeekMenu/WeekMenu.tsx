@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom, } from "../../helpers/jotai/atomsWithStorage";
 
 import styles from "./NavBarStyles.tsx";

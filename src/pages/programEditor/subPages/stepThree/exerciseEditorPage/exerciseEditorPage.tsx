@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Text, View, Switch, TouchableOpacity, SafeAreaView, ScrollView, KeyboardAvoidingView, TextInput, } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from "react-native-vector-icons/Ionicons";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { programEditorDataAtom, selectedWeekAtom, selectedDayAtom } from "../../../../../helpers/jotai/programEditorAtoms";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../../helpers/jotai/atomsWithStorage";
 
 import { deepClone } from "../../../../../helpers/deepClone";
 
-import styles from './exerciseEditorPageStyles';
+import styles from "./exerciseEditorPageStyles";
 
 // interface Props {
 //   oneRMweight: any; // never used? check this
@@ -235,7 +234,7 @@ const ExerciseEditorPage = (props) => {
               <View style={styles(activeTheme).col}>
                 <Text style={styles(activeTheme).inputLabel}>{selectedLocale.programEditorPage.exerciseEditorPage.description}</Text>
                 <TextInput
-                  style={[styles(activeTheme).input, { height: 'auto', flex: 0 }]}
+                  style={[styles(activeTheme).input, { height: "auto", flex: 0 }]}
                   placeholderTextColor={activeTheme.placeholderText}
                   cursorColor={activeTheme.active}
                   onChangeText={(input) => editExerciseField("description", input, index)}

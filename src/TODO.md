@@ -8,8 +8,13 @@
 - mobile web app navigation
 - test jotai atomWithStorage
 - test "install web page as app" thingy in ios and android
-- install ionicons
-- 
+- install icons? or just create a generic component to return the SVGs?
+-
+
+#shared components
+- remake react native switch
+- modal?
+-
 
 
 # calculator page

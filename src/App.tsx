@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Provider } from 'jotai';
+import { Provider } from "jotai";
 
 import NavBar from "./sharedComponents/NavBar/NavBar";
 

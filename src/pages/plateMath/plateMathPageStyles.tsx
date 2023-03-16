@@ -1,7 +1,5 @@
-import { StyleSheet } from 'react-native';
-
 const styles = (theme) => {
-  return StyleSheet.create({
+  return ({
     container: {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
@@ -18,8 +16,8 @@ const styles = (theme) => {
       // marginBottom: 10,
       borderRadius: 10,
       height: 260,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
     },
     title: {
       color: theme.text,
@@ -31,17 +29,17 @@ const styles = (theme) => {
       marginTop: 20,
     },
     rowWrapper: {
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
       marginBottom: 20,
     },
     row: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      width: '80%',
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "80%",
     },
     incrementWrapper: {
       width: 60,
@@ -50,8 +48,8 @@ const styles = (theme) => {
       borderColor: theme.active,
       borderWidth: 2,
       borderRadius: 30,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
     },
     incrementText: {
       color: theme.text,
@@ -60,20 +58,20 @@ const styles = (theme) => {
     weight: {
       color: theme.text,
       fontSize: 24,
-      textAlign: 'center',
+      textAlign: "center",
     },
     info: {
       color: theme.text,
       fontSize: 18,
       marginBottom: 10,
-      textAlign: 'center',
+      textAlign: "center",
     },
     infoWeight: {
       color: theme.textHighlight,
       fontSize: 20,
       fontWeight: "bold",
       marginBottom: 10,
-      textAlign: 'center',
+      textAlign: "center",
     },
 
     cardWarning: {
@@ -82,19 +80,19 @@ const styles = (theme) => {
       marginBottom: 20,
       borderRadius: 10,
       height: 100,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
     },
     textWarning: {
       color: theme.text,
       fontSize: 20,
-      fontWeight: 'bold',
-      textAlign: 'center',
+      fontWeight: "bold",
+      textAlign: "center",
     },
 
     modalContent: {
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
     },
   });
 }

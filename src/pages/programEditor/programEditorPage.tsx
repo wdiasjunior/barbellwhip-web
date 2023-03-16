@@ -1,25 +1,20 @@
 import React, { useState, useLayoutEffect, } from "react";
-import { Text, View, TouchableOpacity, SafeAreaView, ScrollView, AsyncStorage, ActivityIndicator, } from 'react-native';
-import Modal from "react-native-modal";
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Share from 'react-native-share';
-import DocumentPicker from 'react-native-document-picker';
-import { useIsFocused } from '@react-navigation/native';
+// import Ionicons from "react-native-vector-icons/Ionicons";
+// import Share from "react-native-share"; // native web share
+// import DocumentPicker from "react-native-document-picker";
 
 import Header from "../../sharedComponents/header/header";
 
 import { writeToJSON, copyJSON, deleteJSON } from "../../db/fileSystem/fsWrite";
 import { readJSON, readImportedJSON, readDirectory, returnFileURL } from "../../db/fileSystem/fsRead";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom, activeProgramAtom, activeProgramNameAtom, programPageSelectedDayAtom, programPageSelectedWeekAtom } from "../../helpers/jotai/atomsWithStorage";
 import { programEditorDataAtom, selectedWeekAtom, selectedDayAtom } from "../../helpers/jotai/programEditorAtoms";
 
-import styles from './programEditorPageStyles';
+import styles from "./programEditorPageStyles";
 
-const ProgramEditorPage = ({ navigation }) => {
-
-  const isFocused = useIsFocused();
+const ProgramEditorPage = () => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);

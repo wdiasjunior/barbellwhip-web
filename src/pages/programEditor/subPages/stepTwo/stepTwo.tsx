@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, useCallback, } from "react";
-import { Text, View, TouchableOpacity, SafeAreaView, ScrollView, } from 'react-native';
-import DraggableFlatList, { ScaleDecorator } from "react-native-draggable-flatlist";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import DraggableFlatList, { ScaleDecorator } from "react-native-draggable-flatlist";
+// import Ionicons from "react-native-vector-icons/Ionicons";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { programEditorDataAtom, selectedWeekAtom } from "../../../../helpers/jotai/programEditorAtoms";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/atomsWithStorage";
 
@@ -12,9 +10,9 @@ import { deepClone } from "../../../../helpers/deepClone";
 
 import Header from "../../../../sharedComponents/header/header";
 
-import styles from './stepTwoStyles';
+import styles from "./stepTwoStyles";
 
-const StepTwo = ({ navigation }) => {
+const StepTwo = () => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);

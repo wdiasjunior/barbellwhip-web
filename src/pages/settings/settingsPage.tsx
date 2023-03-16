@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useLayoutEffect, } from "react";
-import { Text, View, Switch, TouchableOpacity, SafeAreaView, ScrollView, } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from "react-native-vector-icons/Ionicons";
 
-import styles from './settingsPageStyles';
+import styles from "./settingsPageStyles";
 
-import { useAtom } from 'jotai';
+import { useAtom } from "jotai";
 import { activeThemeIdAtom, activeThemeAtom, selectedLocaleIdAtom, selectedLocaleAtom } from "../../helpers/jotai/atomsWithStorage";
 
 import { themes } from "../../themes/";
 import { locales } from "../../db/locales/";
 
-const SettingsPage = ({ navigation }) => {
+const SettingsPage = () => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [activeThemeId, setActiveThemeId] = useAtom(activeThemeIdAtom);
