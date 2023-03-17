@@ -16,7 +16,11 @@ import styles from "./programPageStyles";
 
 import defaultProgramData from "../../db/programs/strengthV4.json";
 
-const ProgramPage = () => {
+interface Props {
+  setNavBarOpen: () => void;
+}
+
+const ProgramPage = (props: Props) => {
 
   const isInitialRender = useInitialRender();
 
@@ -76,42 +80,42 @@ const ProgramPage = () => {
     onScreenLoad();
   }, [activeProgramData])
 
-  const MenuWeekList = () => (
-    <div style={styles(activeTheme).containerDrawer}>
-
-      <div style={styles(activeTheme).rmInputContainer}>
-        <div
-          style={styles(activeTheme).item}
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen);
-            navigation.push("RMReviewPage", {onermOBJ: data?.oneRMs, weightUnit: data?.weightUnit});
-          }}
-        >
-          <span style={styles(activeTheme).RMReview}>{selectedLocale.programPage.rmReviewTitle}</span>
-        </div>
-      </div>
-
-      <div style={styles(activeTheme).weekSelectorContainer}>
-        <span style={styles(activeTheme).titleWeekDrawer}>{selectedLocale.programPage.weekSelectorTitle}</span>
-        <div persistentScrollbar={true} overScrollMode="never">
-          {data?.trainingProgram?.map((item, index) => {
-            return (
-              <div key={index}
-                style={(index == selectedWeek) ? styles(activeTheme).drawerItemSelected : styles(activeTheme).drawerItem}
-                onClick={() => selectWeek({index})}
-              >
-                <span style={(index == selectedWeek) ? styles(activeTheme).drawerTextSelected : styles(activeTheme).drawerText}>
-                  {selectedLocale.programPage.week} {JSON.stringify(index + 1)}
-                </span>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-
-    </div>
-  );
-  const menuWeekList = <MenuWeekList />
+  // const MenuWeekList = () => (
+  //   <div style={styles(activeTheme).containerDrawer}>
+  //
+  //     <div style={styles(activeTheme).rmInputContainer}>
+  //       <div
+  //         style={styles(activeTheme).item}
+  //         onClick={() => {
+  //           setIsMenuOpen(!isMenuOpen);
+  //           navigation.push("RMReviewPage", {onermOBJ: data?.oneRMs, weightUnit: data?.weightUnit});
+  //         }}
+  //       >
+  //         <span style={styles(activeTheme).RMReview}>{selectedLocale.programPage.rmReviewTitle}</span>
+  //       </div>
+  //     </div>
+  //
+  //     <div style={styles(activeTheme).weekSelectorContainer}>
+  //       <span style={styles(activeTheme).titleWeekDrawer}>{selectedLocale.programPage.weekSelectorTitle}</span>
+  //       <div persistentScrollbar={true} overScrollMode="never">
+  //         {data?.trainingProgram?.map((item, index) => {
+  //           return (
+  //             <div key={index}
+  //               style={(index == selectedWeek) ? styles(activeTheme).drawerItemSelected : styles(activeTheme).drawerItem}
+  //               onClick={() => selectWeek({index})}
+  //             >
+  //               <span style={(index == selectedWeek) ? styles(activeTheme).drawerTextSelected : styles(activeTheme).drawerText}>
+  //                 {selectedLocale.programPage.week} {JSON.stringify(index + 1)}
+  //               </span>
+  //             </div>
+  //           )
+  //         })}
+  //       </div>
+  //     </div>
+  //
+  //   </div>
+  // );
+  // const menuWeekList = <MenuWeekList />
 
   const flatListRenderItem = ({ item }) => (
     <ExerciseItem
@@ -131,22 +135,27 @@ const ProgramPage = () => {
   //   // return null;
   // }
 
+
+// Header   menu={data?.programName}
+
+// WeekMenu   menu={menuWeekList}
   return (
     <div className="ProgramPage_Container" style={styles(activeTheme).container}>
       <Header
         title={data?.programName ? data?.programName + " - " + selectedLocale.programPage.week + " " + (selectedWeek + 1) : selectedLocale.programPage.defaultTitle}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
-        menu={data?.programName}
+        menu={true}
         backButton={false}
+        setNavBarOpen={props.setNavBarOpen}
       />
       {data?.programName ? (
+        <>
         <WeekMenu
-          menu={menuWeekList}
           isOpen={isMenuOpen}
           closeMenu={closeMenu}
-        >
-          <div className="ProgramPage_Container2" style={styles(activeTheme).wrapper}>
+        />
+          {/*<div className="ProgramPage_Container2" style={styles(activeTheme).wrapper}>*/}
 
             {/*<TopTabBar
               setFirstTab={selectedWeek}
@@ -161,8 +170,9 @@ const ProgramPage = () => {
               keyExtractor={(item, index) => item.exerciseName + "" + index}
             />*/}
 
-          </div>
-        </WeekMenu>
+          {/*</div>*/}
+        {/*</WeekMenu>*/}
+        </>
       ) : (
         <div className="ProgramPage_NoActiveProgramContainer" style={styles(activeTheme).noActiveProgramTextContainer}>
           <span className="ProgramPage_NoActiveProgramTextTitle" style={styles(activeTheme).noActiveProgramTextTitle}>

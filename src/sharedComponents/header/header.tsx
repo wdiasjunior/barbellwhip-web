@@ -20,6 +20,7 @@ interface Props {
   backButton: boolean;
   import: boolean;
   importProgram(): any;
+  setNavBarOpen: () => void;
 }
 
 const Header = (props: Props) => {
@@ -54,6 +55,8 @@ const Header = (props: Props) => {
   }
 
   const backButton = () => {
+    console.log("backButton");
+
     // TODO
     // if(!navigation?.getState()?.routes[0]?.name === "Info") {
       // ask to save before goBack
@@ -63,16 +66,19 @@ const Header = (props: Props) => {
     // }
   }
 
+  const handleToggleNavBar = () => {
+    props.setNavBarOpen((isOpen) => !isOpen);
+  }
+
   return (
     <div className="Header" style={styles(activeTheme).header}>
-      <div className="Header_ContentLeft" style={styles(activeTheme).contentLeft}>
+      <div className="Header_ContentLeft" style={styles(activeTheme).contentLeft} onClick={props.backButton ? backButton : handleToggleNavBar}>
         {props.backButton ?
           <Icon
             name="arrow-back-sharp"
             size={24}
             style={styles(activeTheme).iconLeft}
             className="Header_IconLeft"
-            onClick={backButton}
           />
           :
           <Icon
@@ -80,14 +86,14 @@ const Header = (props: Props) => {
             size={24}
             style={styles(activeTheme).iconLeft}
             className="Header_IconLeft"
-            onClick={() => navigation.openDrawer()}
           />
         }
       </div>
       <div style={styles(activeTheme).contentCenter}>
         <span style={styles(activeTheme).headerText}>{props.title} </span>
       </div>
-      <div style={styles(activeTheme).contentRight}>
+      {/* add onClick to parent of icon since for some reason it doesn't work using it directly in the icon */}
+      <div style={styles(activeTheme).contentRight} onClick={setMenuOpenFromHeader}>
         {props.menu &&
           <Icon
             name="ellipsis-vertical"

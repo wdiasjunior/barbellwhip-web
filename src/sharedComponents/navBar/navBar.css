@@ -4,18 +4,18 @@
 li {
 
 } */
-.NavBar {
+/* .NavBar {
   width: 40px;
   transition-timing-function: cubic-bezier(0, 0, .2, 1);
   transition-property: all;
-}
-.NavBar:hover {
+} */
+/* .NavBar:hover {
   width: 300px !important;
-}
-.NavBar:not(:hover) .NavBar_Item {
+} */
+/* .NavBar:not(:hover) .NavBar_Item {
   width: 40px !important;
   padding: 0 !important;
-}
-.NavBar:not(:hover) .NavBar_Item .NavBar_ItemText {
+} */
+/* .NavBar:not(:hover) .NavBar_Item .NavBar_ItemText {
   display: none;
-}
+} */

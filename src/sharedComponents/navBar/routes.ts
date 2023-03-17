@@ -54,7 +54,7 @@ const routes = [
   {
     route: "settingsPage",
     icon: "settings-outline",
-    activeIcon: "settings",
+    activeIcon: "settings-sharp",
   },
 ];
 

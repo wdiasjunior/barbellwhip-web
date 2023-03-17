@@ -21,6 +21,7 @@ const styles = (theme) => {
       fill: theme.text,
       marginLeft: 18,
       marginRight: 32,
+      cursor: "pointer",
     },
     contentRight: {
       width: 30,
@@ -30,6 +31,7 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
+      cursor: "pointer",
     },
     contentCenter: {
       flex: 1,

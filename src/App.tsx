@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, } from "react";
 
 import { Provider } from "jotai";
 
@@ -9,12 +9,14 @@ import "./App.css";
 
 function App() {
 
+  const [navBarOpen, setNavBarOpen] = useState(false);
+
   return (
     <>
       <Provider>
         <div className="App">
-          <NavBar />
-          <ProgramPage />
+          <NavBar setNavBarOpen={setNavBarOpen} navBarOpen={navBarOpen} />
+          <ProgramPage setNavBarOpen={setNavBarOpen} />
         </div>
       </Provider>
     </>

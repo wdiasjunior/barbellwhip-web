@@ -5,7 +5,7 @@ const styles = (theme, isHover, index, activeRoute, itemRoute) => {
       return theme.activeTransparent;
     }
     if(isHover && isHover.isHover && isHover.index === index) {
-      return isHover.index === index ? theme.backgroundSecondary : "transparent";
+      return isHover.index === index ? theme.backgroundPrimary : "transparent";
     }
   }
 

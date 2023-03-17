@@ -51,6 +51,7 @@ const Icon = (props: Props) => {
     "download-outline",
     "save",
     "backspace",
+    "arrow-back-sharp",
   ];
 
   switch(props.name) {
@@ -171,6 +172,12 @@ const Icon = (props: Props) => {
     case "calculator-outline":
       return (
         <CalculatorOutline />
+      );
+      break;
+
+    case "arrow-back-sharp":
+      return (
+        <ArrowBackSharp />
       );
       break;
 
