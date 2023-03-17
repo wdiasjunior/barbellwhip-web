@@ -25,7 +25,7 @@ const styles = (theme) => {
       paddingLeft: 22,
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
     oneRMTextInput: {
@@ -41,7 +41,7 @@ const styles = (theme) => {
       paddingLeft: 22,
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
     oneRMNumberInput: {
@@ -58,7 +58,7 @@ const styles = (theme) => {
       paddingLeft: 22,
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
 
@@ -81,7 +81,7 @@ const styles = (theme) => {
     onermItemText: {
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
     onermItemIconContainer: {
@@ -106,7 +106,7 @@ const styles = (theme) => {
     AddOneRMButtonText: {
       color: theme.text,
       fontSize: 16,
-      lineHeight: 35,
+      // lineHeight: 35,
       fontWeight: "bold",
     },
 
@@ -125,7 +125,7 @@ const styles = (theme) => {
     weightUnitText: {
       color: theme.text,
       fontSize: 16,
-      lineHeight: 35,
+      // lineHeight: 35,
       fontWeight: "bold",
     },
   });

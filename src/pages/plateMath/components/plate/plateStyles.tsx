@@ -41,7 +41,7 @@ export const styles = (theme) => {
       // backgroundColor: "white",
       textAlign: "center",
       fontSize: 16,
-      lineHeight: 16,
+      // lineHeight: 16,
       // height: 25,
       width: "100%",
       color: theme.backgroundSecondary,

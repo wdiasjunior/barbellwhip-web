@@ -18,7 +18,7 @@ const styles = (theme) => {
     AddWeekButtonText: {
       color: theme.text,
       fontSize: 16,
-      lineHeight: 35,
+      // lineHeight: 35,
       fontWeight: "bold",
     },
 
@@ -55,13 +55,13 @@ const styles = (theme) => {
     weekItemText: {
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
     weekSelectedItemText: {
       color: theme.backgroundSecondary,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
     weekItemIconContainer: {

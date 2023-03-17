@@ -13,13 +13,15 @@ const styles = (theme) => {
       alignItems: "center",
       flexDirection: "row",
       cursor: "pointer",
+      overflow: "hidden",
     },
     text1: {
       color: theme.text,
       fontSize: 22,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
       textTransform: "capitalize",
+      whiteSpace: "nowrap",
     },
     text2: {
       color: theme.text,

@@ -43,11 +43,11 @@ const styles = (theme, isHover, index, activeRoute, itemRoute) => {
       position: "relative",
     },
     itemText: {
-      color: itemRoute === activeRoute ? theme.active : theme.text,
+      color: itemRoute === activeRoute ? theme.textHighlight : theme.text,
       fontWeight: itemRoute === activeRoute ? "bold" : "normal",
     },
     itemIcon: {
-      fill: itemRoute === activeRoute ? theme.active : theme.text,
+      fill: itemRoute === activeRoute ? theme.textHighlight : theme.text,
       width: 24,
       height: 24,
       // marginRight: 30,

@@ -5,9 +5,10 @@ const styles = (theme) => {
       flexDirection: "column",
       // justifyContent: "center",
       // alignItems: "center",
-      flex: 1,
+      // flex: 1,
       backgroundColor: theme.backgroundPrimary,
       height: "100vh",
+      width: "100vw",
     },
     wrapper: {
       display: "flex",
@@ -23,8 +24,8 @@ const styles = (theme) => {
       overflowX: "auto",
       overflowY: "hidden",
       backgroundColor: theme.backgroundPrimary,
-      // height: "100vh",
-      paddingTop: 113,
+      height: "100vh",
+      paddingTop: 53,
       paddingLeft: 60,
     },
     containerDrawer: {

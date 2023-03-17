@@ -21,7 +21,7 @@ const styles = (theme) => {
       textAlign: "center",
       fontWeight: "bold",
       fontSize: 24,
-      lineHeight: 24,
+      // lineHeight: 24,
       color: theme.text,
       marginLeft: 25,
     },
@@ -40,7 +40,7 @@ const styles = (theme) => {
     numpadButtonText: {
       textAlign: "center",
       fontSize: 30,
-      lineHeight: 30,
+      // lineHeight: 30,
       color: theme.text,
     },
     bottomButtonsRow: {

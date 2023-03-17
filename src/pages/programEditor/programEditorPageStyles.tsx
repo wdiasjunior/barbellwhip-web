@@ -41,7 +41,7 @@ const styles = (theme) => {
     FabButtonText: {
       color: theme.text,
       fontSize: 20,
-      lineHeight: 25,
+      // lineHeight: 25,
     },
 
     programList: {
@@ -78,7 +78,7 @@ const styles = (theme) => {
     programItemText: {
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
     iconRight: {

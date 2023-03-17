@@ -17,7 +17,7 @@ const styles = (theme) => {
     weightText: {
       color: theme.textHighlight,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
 
@@ -35,7 +35,7 @@ const styles = (theme) => {
       paddingLeft: 22,
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
     inputExerciseVariationName: {
@@ -51,7 +51,7 @@ const styles = (theme) => {
       paddingLeft: 22,
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
     },
 
@@ -97,7 +97,7 @@ const styles = (theme) => {
     AddExerciseButtonText: {
       color: theme.text,
       fontSize: 16,
-      lineHeight: 35,
+      // lineHeight: 35,
       fontWeight: "bold",
     },
   });

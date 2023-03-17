@@ -26,7 +26,7 @@ const styles = (theme) => {
     exerciseItemText: {
       color: theme.text,
       fontSize: 20,
-      lineHeight: 30,
+      // lineHeight: 30,
       fontWeight: "bold",
       flex:1
     },
@@ -47,14 +47,14 @@ const styles = (theme) => {
     AddExerciseButtonText: {
       color: theme.text,
       fontSize: 16,
-      lineHeight: 35,
+      // lineHeight: 35,
       fontWeight: "bold",
     },
 
     RestDayText: {
       color: theme.text,
       fontSize: 20,
-      lineHeight: 33,
+      // lineHeight: 33,
       fontWeight: "bold",
       marginInline: 20,
       textAlign: "center"

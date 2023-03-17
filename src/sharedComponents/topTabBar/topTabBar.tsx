@@ -24,7 +24,7 @@ const TopTabBar = (props: Props) => {
 
   // const [scrollToIndex, setScrollToIndex] = useState(0);
   // const [dataSourceCords, setDataSourceCords] = useState([]);
-  const ref = useRef();
+  const ref = useRef({});
   const [selected, setSelected] = useState(0);
   const selectTab = (index) => {
     setSelected(index);
@@ -32,24 +32,29 @@ const TopTabBar = (props: Props) => {
     // if(ref.current != null) {
     //   ref.current.scrollTo({x: dataSourceCords[index - 2], y: 0, animated: true});
     // }
+    if(ref[index] != null) {
+      // console.log("should scroll ref", ref);
+
+      ref[index].scrollIntoView({ behavior: "smooth", block: "center" });
+    }
   }
 
   useEffect(() => {
     if(props.isProgramPage) {
       setSelected(0);
       props.selectDay(0);
-      // if(ref.current != null) {
-      //   ref.current.scrollTo({x: dataSourceCords[0 - 1], y: 0, animated: true});
-      // }
+      if(ref[0] != null) {
+        ref[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "center" });
+      }
     }
   }, [props.setFirstTab])
 
   useEffect(() => {
     setSelected(!props.isProgramPage ? 0 : selectedDay);
     props.selectDay(!props.isProgramPage ? 0 : selectedDay);
-    // if(ref.current != null) {
-    //   ref.current.scrollTo({x: dataSourceCords[0 - 1], y: 0, animated: true});
-    // }
+    if(ref[0] != null) {
+      ref[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "center" });
+    }
   }, [])
 
   useEffect(() => {
@@ -58,27 +63,21 @@ const TopTabBar = (props: Props) => {
     }
   }, [selectedDay])
 
-  // const scrollToTabOnLoad = () => {
-  //   if(ref.current != null && props.isProgramPage) {
-  //     ref.current.scrollTo({x: dataSourceCords[selectedDay - 2], y: 0, animated: true});
-  //   }
-  // }
+  const scrollToTabOnLoad = () => {
+    if(ref[0] != null && props.isProgramPage) {
+      ref[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "center" });
+    }
+  }
 
-// scrollview div scroll onContentSizeChange={scrollToTabOnLoad}
-
-// tabItem onLayout={(event) => {
-//   const layout = event.nativeEvent.layout;
-//   dataSourceCords[index] = layout.x;
-//   setDataSourceCords(dataSourceCords);
-// }}
   return (
     <>
       <div className="TopTabBar_Container" style={styles(activeTheme).container}>
-        <div className="TopTabBar_Wrapper" style={styles(activeTheme).wrapper} ref={ref}>
+        <div className="TopTabBar_Wrapper" style={styles(activeTheme).wrapper}>
           {days.map((item, index) => {
             return (
               <div
-                key={index}
+                ref={el => ref[index] = el}
+                key={"TopTabBar_Item" + index}
                 className="TopTabBar_Item"
                 style={(index == selected) ? styles(activeTheme).tabItemSelected : styles(activeTheme).tabItem}
                 onClick={() => selectTab(index)}
