@@ -19,11 +19,14 @@ const NavBar = (props: Props) => {
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
-  const [activeRoute, setActiveRoute] = useState("programPage");
+  const [activeRoute, setActiveRoute] = useState("programPage"); // should be a jotai atom
 
   const handleNavigate = (_route: string) => {
     console.log(_route);
     setActiveRoute(_route);
+    if(props.navBarOpen) {
+      props.setNavBarOpen(false);
+    }
   }
 
   const [isHover, setIsHover] = useState({ isHover: false, index: 0 });
@@ -37,7 +40,7 @@ const NavBar = (props: Props) => {
   return (
     <>
       <nav className={"NavBar"} style={{...styles(activeTheme).container, width: props.navBarOpen ? 300 : 40 }}>
-        {/* add backdrop when props.navBarOpen === true */}
+        {/* add backdrop when props.navBarOpen === true and onClick props.setNavBarOpen(false) */}
         <ul className={"NavBar_ItemList"} style={styles(activeTheme).list}>
           {routes.map((item, index) => {
             return (
@@ -61,6 +64,7 @@ const NavBar = (props: Props) => {
           })}
         </ul>
       </nav>
+      {props.navBarOpen && <div className="NavBar_Backdrop" style={styles(activeTheme).backdrop} onClick={() => props.setNavBarOpen(false)}></div>}
     </>
   );
 }

@@ -29,7 +29,8 @@ const ProgramPage = (props: Props) => {
 
   const [activeProgramData, setActiveProgramData] = useAtom(activeProgramAtom);
   // const data = activeProgramData.trainingProgram ? activeProgramData : defaultProgramData; // TODO - change this so it doesn't break depending on the program that's loaded
-  const data = activeProgramData;
+  // const data = activeProgramData;
+  const data = defaultProgramData; // TODO - remove this
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openMenu = () => {
@@ -45,7 +46,7 @@ const ProgramPage = (props: Props) => {
   const selectDay = (day) => {
     setSelectedDay(day);
   }
-  const selectWeek = ({ index }) => {
+  const selectWeek = (index) => {
     if(selectedWeek != index) {
       setSelectedDay(0);
     }
@@ -80,54 +81,6 @@ const ProgramPage = (props: Props) => {
     onScreenLoad();
   }, [activeProgramData])
 
-  // const MenuWeekList = () => (
-  //   <div style={styles(activeTheme).containerDrawer}>
-  //
-  //     <div style={styles(activeTheme).rmInputContainer}>
-  //       <div
-  //         style={styles(activeTheme).item}
-  //         onClick={() => {
-  //           setIsMenuOpen(!isMenuOpen);
-  //           navigation.push("RMReviewPage", {onermOBJ: data?.oneRMs, weightUnit: data?.weightUnit});
-  //         }}
-  //       >
-  //         <span style={styles(activeTheme).RMReview}>{selectedLocale.programPage.rmReviewTitle}</span>
-  //       </div>
-  //     </div>
-  //
-  //     <div style={styles(activeTheme).weekSelectorContainer}>
-  //       <span style={styles(activeTheme).titleWeekDrawer}>{selectedLocale.programPage.weekSelectorTitle}</span>
-  //       <div persistentScrollbar={true} overScrollMode="never">
-  //         {data?.trainingProgram?.map((item, index) => {
-  //           return (
-  //             <div key={index}
-  //               style={(index == selectedWeek) ? styles(activeTheme).drawerItemSelected : styles(activeTheme).drawerItem}
-  //               onClick={() => selectWeek({index})}
-  //             >
-  //               <span style={(index == selectedWeek) ? styles(activeTheme).drawerTextSelected : styles(activeTheme).drawerText}>
-  //                 {selectedLocale.programPage.week} {JSON.stringify(index + 1)}
-  //               </span>
-  //             </div>
-  //           )
-  //         })}
-  //       </div>
-  //     </div>
-  //
-  //   </div>
-  // );
-  // const menuWeekList = <MenuWeekList />
-
-  const flatListRenderItem = ({ item }) => (
-    <ExerciseItem
-      onermOBJ={data?.oneRMs}
-      rmId={item.RMid}
-      weightUnit={data.weightUnit}
-      navigation={navigation}
-      exerciseName={item.exerciseName}
-      data={item}
-    />
-  );
-
   // if(isInitialRender) {
   //   console.log(isInitialRender);
   //
@@ -151,27 +104,44 @@ const ProgramPage = (props: Props) => {
       />
       {data?.programName ? (
         <>
-        <WeekMenu
-          isOpen={isMenuOpen}
-          closeMenu={closeMenu}
-        />
-          {/*<div className="ProgramPage_Container2" style={styles(activeTheme).wrapper}>*/}
+          <WeekMenu
+            isOpen={isMenuOpen}
+            closeMenu={closeMenu}
+            selectWeek={selectWeek}
+            selectedWeek={selectedWeek}
+            data={data}
+          />
 
-            {/*<TopTabBar
-              setFirstTab={selectedWeek}
-              selectDay={setSelectedDay}
-              days={data?.trainingProgram[selectedWeek]?.week?.length}
-              isProgramPage={true}
-            />*/}
 
-            {/*<FlatList
-              data={data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day}
-              renderItem={flatListRenderItem}
-              keyExtractor={(item, index) => item.exerciseName + "" + index}
-            />*/}
+              <TopTabBar
+                setFirstTab={selectedWeek}
+                selectDay={setSelectedDay}
+                days={data?.trainingProgram[selectedWeek]?.week?.length}
+                isProgramPage={true}
+              />
 
-          {/*</div>*/}
-        {/*</WeekMenu>*/}
+              {/*<FlatList
+                data={data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day}
+                renderItem={flatListRenderItem}
+                keyExtractor={(item, index) => item.exerciseName + "" + index}
+              />*/}
+              <div className="ProgramPage_ExerciseList" style={styles(activeTheme).exerciseList}>
+                {data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day.map((item, index) => {
+                  return (
+                    <div key={"ProgramPage_ExerciseItem_Week" + selectWeek + "_Day" + selectedDay + "_Index" + index}>
+                      <ExerciseItem
+                        onermOBJ={data?.oneRMs}
+                        rmId={item.RMid}
+                        weightUnit={data.weightUnit}
+                        exerciseName={item.exerciseName}
+                        data={item}
+                      />
+                    </div>
+                  )
+                })}
+              </div>
+
+          {/*</WeekMenu>*/}
         </>
       ) : (
         <div className="ProgramPage_NoActiveProgramContainer" style={styles(activeTheme).noActiveProgramTextContainer}>

@@ -53,7 +53,19 @@ const styles = (theme, isHover, index, activeRoute, itemRoute) => {
       // marginRight: 30,
       position: "absolute",
       left: 8,
-    }
+    },
+    backdrop: {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 98,
+      background: "#00000070",
+    },
   });
 }
 

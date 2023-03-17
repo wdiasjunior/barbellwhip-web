@@ -1,0 +1,22 @@
+.TopTabBar_Container {
+
+}
+.TopTabBar_Container::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+.TopTabBar_Container::-webkit-scrollbar-track {
+  width: 0;
+  display: none;
+}
+.TopTabBar_Container::-webkit-scrollbar-thumb {
+  width: 0;
+  display: none;
+}
+
+.TopTabBar_Item {
+
+}
+.TopTabBar_ItemText {
+
+}

@@ -8,9 +8,11 @@ const styles = (theme) => {
       marginInline: 20,
       borderRadius: 10,
       height: 56,
+      display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
       flexDirection: "row",
+      cursor: "pointer",
     },
     text1: {
       color: theme.text,

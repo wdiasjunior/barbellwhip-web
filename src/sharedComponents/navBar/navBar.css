@@ -19,3 +19,16 @@ li {
 /* .NavBar:not(:hover) .NavBar_Item .NavBar_ItemText {
   display: none;
 } */
+
+/* .NavBar_Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 98;
+  background: #00000070;
+} */

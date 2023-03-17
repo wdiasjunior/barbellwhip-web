@@ -21,9 +21,8 @@ const ExerciseItem = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
 
-  // const isDone = false; // make this work for each item on the list?
-
   return (
+    <>
       <div
         style={styles(activeTheme).item}
         onClick={() => {
@@ -36,9 +35,10 @@ const ExerciseItem = (props: Props) => {
           // });
         }}
       >
-        <div style={styles(activeTheme).text1}>{props.exerciseName}</div>
+        <span style={styles(activeTheme).text1}>{props.exerciseName}</span>
         {/*{isDone && <Ionicons name="checkmark" size={30} color="#3da9db" />}*/}
       </div>
+    </>
   )
 }
 

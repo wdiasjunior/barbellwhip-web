@@ -77,3 +77,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+@media (hover: none) {
+  * {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
