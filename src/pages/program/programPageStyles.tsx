@@ -1,8 +1,17 @@
 const styles = (theme) => {
   return ({
     container: {
+      display: "flex",
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
+      height: "100vh",
+    },
+    wrapper: {
+      display: "flex",
+      flex: 1,
+      backgroundColor: theme.backgroundPrimary,
+      height: "100vh",
+      paddingLeft: 60,
     },
     containerDrawer: {
       justifyContent: "center",
@@ -20,18 +29,20 @@ const styles = (theme) => {
       backgroundColor: theme.backgroundSecondary,
     },
     drawerItemSelected: {
-      marginHorizontal: 15,
-      marginVertical: 3,
-      paddingHorizontal: 15,
+      marginInline: 15,
+      marginTop: 3,
+      marginBottom: 3,
+      paddingInline: 15,
       backgroundColor: theme.textHighlight,
       borderRadius: 10,
       height: 40,
       justifyContent: "center",
     },
     drawerItem: {
-      marginHorizontal: 15,
-      marginVertical: 3,
-      paddingHorizontal: 15,
+      marginInline: 15,
+      marginTop: 3,
+      marginBottom: 3,
+      paddingInline: 15,
       borderRadius: 10,
       height: 40,
       justifyContent: "center",
@@ -69,11 +80,14 @@ const styles = (theme) => {
       fontSize: 16,
     },
     noActiveProgramTextContainer: {
-      flex: 1,
       backgroundColor: theme.backgroundPrimary,
+      display: "flex",
+      // flex: 1,
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      marginHorizontal: 30,
+      marginInline: 30,
+      paddingLeft: 60,
     },
     noActiveProgramTextTitle: {
       color: theme.text,

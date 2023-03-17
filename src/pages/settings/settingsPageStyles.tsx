@@ -3,7 +3,7 @@ const styles = (theme) => {
     container: {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
-      paddingHorizontal: 20,
+      paddingInline: 20,
       // alignItems: "center",
       // justifyContent: "center",
     },

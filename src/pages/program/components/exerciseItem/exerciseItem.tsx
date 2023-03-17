@@ -24,21 +24,21 @@ const ExerciseItem = (props: Props) => {
   // const isDone = false; // make this work for each item on the list?
 
   return (
-      <TouchableOpacity
+      <div
         style={styles(activeTheme).item}
         onClick={() => {
-          navigation.push("ExerciseItemPage", {
-            exerciseName: props.exerciseName,
-            onermOBJ: props.onermOBJ,
-            rmId: props.rmId,
-            exerciseOBJ: props.data,
-            weightUnit: props.weightUnit
-          });
+          // navigation.push("ExerciseItemPage", {
+          //   exerciseName: props.exerciseName,
+          //   onermOBJ: props.onermOBJ,
+          //   rmId: props.rmId,
+          //   exerciseOBJ: props.data,
+          //   weightUnit: props.weightUnit
+          // });
         }}
       >
-        <Text adjustsFontSizeToFit style={styles(activeTheme).text1}>{props.exerciseName}</Text>
+        <div style={styles(activeTheme).text1}>{props.exerciseName}</div>
         {/*{isDone && <Ionicons name="checkmark" size={30} color="#3da9db" />}*/}
-      </TouchableOpacity>
+      </div>
   )
 }
 

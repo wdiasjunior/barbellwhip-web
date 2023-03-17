@@ -4,12 +4,14 @@ import Header from "../../sharedComponents/header/header";
 import TopTabBar from "../../sharedComponents/topTabBar/topTabBar";
 // import Loading from "../../sharedComponents/loading/loading";
 import ExerciseItem from "./components/exerciseItem/exerciseItem";
+import WeekMenu from "./components/weekMenu/weekMenu";
 
 import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom, activeProgramAtom, programPageSelectedDayAtom, programPageSelectedWeekAtom } from "../../helpers/jotai/atomsWithStorage";
 
 import { useInitialRender } from "../../helpers/useInitialRender";
 
+import "./programPage";
 import styles from "./programPageStyles";
 
 import defaultProgramData from "../../db/programs/strengthV4.json";
@@ -45,25 +47,25 @@ const ProgramPage = () => {
     }
     setSelectedWeek(index);
     setIsMenuOpen(!isMenuOpen);
-    navigation.setOptions({ headerTitle: () =>
-                  <Header
-                    title={data !== undefined ? data?.programName + " - " + selectedLocale.programPage.week + " " + (index + 1) : selectedLocale.programPage.defaultTitle}
-                    isMenuOpen={isMenuOpen}
-                    setIsMenuOpen={setIsMenuOpen}
-                    menu={data !== undefined}
-                  />
-              });
+    // navigation.setOptions({ headerTitle: () =>
+    //               <Header
+    //                 title={data !== undefined ? data?.programName + " - " + selectedLocale.programPage.week + " " + (index + 1) : selectedLocale.programPage.defaultTitle}
+    //                 isMenuOpen={isMenuOpen}
+    //                 setIsMenuOpen={setIsMenuOpen}
+    //                 menu={data !== undefined}
+    //               />
+    //           });
   }
 
   const onScreenLoad = () => {
-    navigation.setOptions({ headerTitle: () =>
-                  <Header
-                    title={data !== undefined ? data?.programName + " - " + selectedLocale.programPage.week + " " + (selectedWeek + 1) : selectedLocale.programPage.defaultTitle}
-                    isMenuOpen={isMenuOpen}
-                    setIsMenuOpen={setIsMenuOpen}
-                    menu={data !== undefined}
-                  />
-              });
+    // navigation.setOptions({ headerTitle: () =>
+    //               <Header
+    //                 title={data !== undefined ? data?.programName + " - " + selectedLocale.programPage.week + " " + (selectedWeek + 1) : selectedLocale.programPage.defaultTitle}
+    //                 isMenuOpen={isMenuOpen}
+    //                 setIsMenuOpen={setIsMenuOpen}
+    //                 menu={data !== undefined}
+    //               />
+    //           });
   }
 
   useLayoutEffect(() => {
@@ -75,39 +77,39 @@ const ProgramPage = () => {
   }, [activeProgramData])
 
   const MenuWeekList = () => (
-    <View style={styles(activeTheme).containerDrawer}>
+    <div style={styles(activeTheme).containerDrawer}>
 
-      <View style={styles(activeTheme).rmInputContainer}>
-        <TouchableOpacity
+      <div style={styles(activeTheme).rmInputContainer}>
+        <div
           style={styles(activeTheme).item}
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
             navigation.push("RMReviewPage", {onermOBJ: data?.oneRMs, weightUnit: data?.weightUnit});
           }}
         >
-          <Text style={styles(activeTheme).RMReview}>{selectedLocale.programPage.rmReviewTitle}</Text>
-        </TouchableOpacity>
-      </View>
+          <span style={styles(activeTheme).RMReview}>{selectedLocale.programPage.rmReviewTitle}</span>
+        </div>
+      </div>
 
-      <View style={styles(activeTheme).weekSelectorContainer}>
-        <Text style={styles(activeTheme).titleWeekDrawer}>{selectedLocale.programPage.weekSelectorTitle}</Text>
-        <ScrollView persistentScrollbar={true} overScrollMode="never">
+      <div style={styles(activeTheme).weekSelectorContainer}>
+        <span style={styles(activeTheme).titleWeekDrawer}>{selectedLocale.programPage.weekSelectorTitle}</span>
+        <div persistentScrollbar={true} overScrollMode="never">
           {data?.trainingProgram?.map((item, index) => {
             return (
-              <TouchableOpacity key={index}
+              <div key={index}
                 style={(index == selectedWeek) ? styles(activeTheme).drawerItemSelected : styles(activeTheme).drawerItem}
                 onClick={() => selectWeek({index})}
               >
-                <Text style={(index == selectedWeek) ? styles(activeTheme).drawerTextSelected : styles(activeTheme).drawerText}>
+                <span style={(index == selectedWeek) ? styles(activeTheme).drawerTextSelected : styles(activeTheme).drawerText}>
                   {selectedLocale.programPage.week} {JSON.stringify(index + 1)}
-                </Text>
-              </TouchableOpacity>
+                </span>
+              </div>
             )
           })}
-        </ScrollView>
-      </View>
+        </div>
+      </div>
 
-    </View>
+    </div>
   );
   const menuWeekList = <MenuWeekList />
 
@@ -130,53 +132,48 @@ const ProgramPage = () => {
   // }
 
   return (
-    <View style={styles(activeTheme).container}>
-      {data !== undefined ? (
-        <SideMenu
+    <div className="ProgramPage_Container" style={styles(activeTheme).container}>
+      <Header
+        title={data?.programName ? data?.programName + " - " + selectedLocale.programPage.week + " " + (selectedWeek + 1) : selectedLocale.programPage.defaultTitle}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+        menu={data?.programName}
+        backButton={false}
+      />
+      {data?.programName ? (
+        <WeekMenu
           menu={menuWeekList}
           isOpen={isMenuOpen}
-          onChange={closeMenu}
-          menuPosition={"right"}
-          bounceBackOnOverdraw={false}
-          animationFunction={(prop, value) =>
-            Animated.spring(prop, {
-              toValue: value,
-              // friction: 10,
-              overshootClamping: true,
-              useNativeDriver: true,
-              bounciness: 0,
-              // stiffness: 1,
-            })
-          }
+          closeMenu={closeMenu}
         >
-          <View style={styles(activeTheme).container}>
+          <div className="ProgramPage_Container2" style={styles(activeTheme).wrapper}>
 
-            <TopTabBar
+            {/*<TopTabBar
               setFirstTab={selectedWeek}
               selectDay={setSelectedDay}
               days={data?.trainingProgram[selectedWeek]?.week?.length}
               isProgramPage={true}
-            />
+            />*/}
 
-            <FlatList
+            {/*<FlatList
               data={data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day}
               renderItem={flatListRenderItem}
               keyExtractor={(item, index) => item.exerciseName + "" + index}
-            />
+            />*/}
 
-          </View>
-        </SideMenu>
+          </div>
+        </WeekMenu>
       ) : (
-        <View style={styles(activeTheme).noActiveProgramTextContainer}>
-          <Text style={styles(activeTheme).noActiveProgramTextTitle}>
+        <div className="ProgramPage_NoActiveProgramContainer" style={styles(activeTheme).noActiveProgramTextContainer}>
+          <span className="ProgramPage_NoActiveProgramTextTitle" style={styles(activeTheme).noActiveProgramTextTitle}>
             {selectedLocale.programPage.noActiveProgramTextTitle}
-          </Text>
-          <Text style={styles(activeTheme).noActiveProgramTextSubtitle}>
+          </span>
+          <span className="ProgramPage_NoActiveProgramTextSubtitle" style={styles(activeTheme).noActiveProgramTextSubtitle}>
             {selectedLocale.programPage.noActiveProgramTextSubtitle}
-          </Text>
-        </View>
+          </span>
+        </div>
       )}
-    </View>
+    </div>
   );
 }
 

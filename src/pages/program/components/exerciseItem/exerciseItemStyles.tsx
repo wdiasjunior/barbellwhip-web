@@ -2,9 +2,10 @@ const styles = (theme) => {
   return ({
     item: {
       backgroundColor: theme.backgroundSecondary,
-      paddingHorizontal: 15,
-      marginVertical: 5,
-      marginHorizontal: 20,
+      paddingInline: 15,
+      marginTop: 5,
+      marginBottom: 5,
+      marginInline: 20,
       borderRadius: 10,
       height: 56,
       justifyContent: "space-between",

@@ -1,5 +1,8 @@
 .App {
-
+  overflow: hidden;
+}
+#root {
+  overflow: hidden;
 }
 
 /* #root {

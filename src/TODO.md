@@ -11,7 +11,7 @@
 - install icons? or just create a generic component to return the SVGs?
 -
 
-#shared components
+# shared components
 - remake react native switch
 - modal?
 -

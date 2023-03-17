@@ -2,7 +2,8 @@ import React from "react";
 
 import { Provider } from "jotai";
 
-import NavBar from "./sharedComponents/NavBar/NavBar";
+import NavBar from "./sharedComponents/navBar/navBar";
+import ProgramPage from "./pages/program/programPage";
 
 import "./App.css";
 
@@ -13,6 +14,7 @@ function App() {
       <Provider>
         <div className="App">
           <NavBar />
+          <ProgramPage />
         </div>
       </Provider>
     </>

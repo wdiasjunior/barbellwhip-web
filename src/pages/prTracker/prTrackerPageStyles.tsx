@@ -8,7 +8,7 @@ const styles = (theme) => {
     },
     content: {
       paddingTop: 10,
-      paddingHorizontal: 20,
+      paddingInline: 20,
       alignItems: "center",
       justifyContent: "center",
     },

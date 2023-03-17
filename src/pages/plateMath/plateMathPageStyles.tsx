@@ -6,7 +6,7 @@ const styles = (theme) => {
     },
     controlsContainer: {
       flex: 1,
-      paddingHorizontal: 20,
+      paddingInline: 20,
     },
 
     cardIncrement: {

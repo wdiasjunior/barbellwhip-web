@@ -1,6 +1,5 @@
 import React from "react";
-// import Ionicons from "react-native-vector-icons/Ionicons";
-// import Entypo from "react-native-vector-icons/Entypo";
+import Icon from "../icon";
 
 import styles from "./headerStyles";
 
@@ -23,20 +22,20 @@ interface Props {
   importProgram(): any;
 }
 
-export default Header = (props: Props) => {
+const Header = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
 
   const saveProgram = async () => {
-    const fileName = programEditorData.programName;
-    if(fileName !== "") {
-      const programJSON = deepClone(programEditorData);
-      await writeToJSON(fileName, programJSON);
-      navigation.replace("ProgramEditorStack");
-    } else {
-      alert("Please fill in the program name field.")
-    }
+    // const fileName = programEditorData.programName;
+    // if(fileName !== "") {
+    //   const programJSON = deepClone(programEditorData);
+    //   await writeToJSON(fileName, programJSON);
+    //   navigation.replace("ProgramEditorStack");
+    // } else {
+    //   alert("Please fill in the program name field.")
+    // }
   }
 
   const importProgram = () => {
@@ -60,66 +59,74 @@ export default Header = (props: Props) => {
       // ask to save before goBack
       // prevent android back button goBack
       // console.log("stepOne");
-      navigation.goBack();
+      // navigation.goBack();
     // }
   }
 
   return (
-    <View style={styles(activeTheme).header}>
-      <View style={styles(activeTheme).contentLeft}>
+    <div className="Header" style={styles(activeTheme).header}>
+      <div className="Header_ContentLeft" style={styles(activeTheme).contentLeft}>
         {props.backButton ?
-          <Ionicons
+          <Icon
             name="arrow-back-sharp"
             size={24}
             style={styles(activeTheme).iconLeft}
+            className="Header_IconLeft"
             onClick={backButton}
           />
           :
-          <Ionicons
+          <Icon
             name="menu-sharp"
             size={24}
             style={styles(activeTheme).iconLeft}
+            className="Header_IconLeft"
             onClick={() => navigation.openDrawer()}
           />
         }
-      </View>
-      <View style={styles(activeTheme).contentCenter}>
-        <Text adjustsFontSizeToFit style={styles(activeTheme).headerText}>{props.title} </Text>
-      </View>
-      <View style={styles(activeTheme).contentRight}>
+      </div>
+      <div style={styles(activeTheme).contentCenter}>
+        <span style={styles(activeTheme).headerText}>{props.title} </span>
+      </div>
+      <div style={styles(activeTheme).contentRight}>
         {props.menu &&
-          <Ionicons
+          <Icon
             name="ellipsis-vertical"
             size={24}
             style={styles(activeTheme).iconRight}
+            className="Header_IconRight"
             onClick={setMenuOpenFromHeader}
           />
         }
         {props.weightRack &&
-          <Ionicons
+          <Icon
             name="settings-sharp"
             size={24}
             style={styles(activeTheme).iconRight}
+            className="Header_IconRight"
             onClick={() => navigation.push("WeightRackPage")}
           />
         }
         {props.import &&
-          <Ionicons
+          <Icon
             name="download-outline"
             size={24}
             style={styles(activeTheme).iconRight}
+            className="Header_IconRight"
             onClick={importProgram}
           />
         }
         {props.saveButton &&
-          <Entypo
+          <Icon
             name="save"
             size={24}
             style={styles(activeTheme).iconRight}
+            className="Header_IconRight"
             onClick={saveButton}
           />
         }
-      </View>
-    </View>
+      </div>
+    </div>
   );
 }
+
+export default Header;
