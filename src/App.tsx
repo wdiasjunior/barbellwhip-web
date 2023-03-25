@@ -2,7 +2,7 @@ import React, { useState, } from "react";
 
 import { Provider } from "jotai";
 
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, } from "react-router-dom";
 
 import NavBar from "./sharedComponents/navBar/navBar";
 import ProgramPage from "./pages/program/programPage";
@@ -13,6 +13,9 @@ import "./App.css";
 function App() {
 
   const [navBarOpen, setNavBarOpen] = useState(false);
+
+  let location = useLocation();
+  console.log("useLocation", location);
 
   return (
     <>
@@ -30,6 +33,7 @@ function App() {
                 */}
                 <Route path="/" element={<ProgramPage setNavBarOpen={setNavBarOpen} />} />
                 <Route path="/exerciseItemPage" element={<ExerciseItemPage />} />
+                <Route element={() => <h1>404 not found</h1>} />
             </Routes>
           </BrowserRouter>
         </Provider>
