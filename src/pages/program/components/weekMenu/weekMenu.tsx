@@ -53,20 +53,18 @@ const WeekMenu = (props: Props) => {
               <div>
                 {props.data?.trainingProgram?.map((item, index) => {
                   return (
-                    <>
-                      <div
-                        className={"WeekMenu_Item"}
-                        style={styles(activeTheme, isHover, index, props.selectedWeek).drawerItem}
-                        onClick={() => selectWeek(index)}
-                        onMouseEnter={() => handleMouseEnter(index)}
-                        onMouseLeave={() => handleMouseLeave(index)}
-                        key={"WeekMenu_Item" + index}
-                      >
-                        <span className={"WeekMenu_ItemText"} style={styles(activeTheme, isHover, index, props.selectedWeek).drawerText}>
-                          {selectedLocale.programPage.week} {index + 1}
-                        </span>
-                      </div>
-                    </>
+                    <div
+                      className={"WeekMenu_Item"}
+                      style={styles(activeTheme, isHover, index, props.selectedWeek).drawerItem}
+                      onClick={() => selectWeek(index)}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={() => handleMouseLeave(index)}
+                      key={"WeekMenu_Item" + index}
+                    >
+                      <span className={"WeekMenu_ItemText"} style={styles(activeTheme, isHover, index, props.selectedWeek).drawerText}>
+                        {selectedLocale.programPage.week} {index + 1}
+                      </span>
+                    </div>
                   )
                 })}
               </div>

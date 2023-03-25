@@ -91,7 +91,6 @@ const ProgramPage = (props: Props) => {
 
 // Header   menu={data?.programName}
 
-// WeekMenu   menu={menuWeekList}
   return (
     <div className="ProgramPage_Container" style={styles(activeTheme).container}>
       <Header
@@ -112,36 +111,28 @@ const ProgramPage = (props: Props) => {
             data={data}
           />
 
+          <TopTabBar
+            setFirstTab={selectedWeek}
+            selectDay={setSelectedDay}
+            days={data?.trainingProgram[selectedWeek]?.week?.length}
+            isProgramPage={true}
+          />
 
-              <TopTabBar
-                setFirstTab={selectedWeek}
-                selectDay={setSelectedDay}
-                days={data?.trainingProgram[selectedWeek]?.week?.length}
-                isProgramPage={true}
-              />
-
-              {/*<FlatList
-                data={data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day}
-                renderItem={flatListRenderItem}
-                keyExtractor={(item, index) => item.exerciseName + "" + index}
-              />*/}
-              <div className="ProgramPage_ExerciseList" style={styles(activeTheme).exerciseList}>
-                {data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day.map((item, index) => {
-                  return (
-                    <div key={"ProgramPage_ExerciseItem_Week" + selectWeek + "_Day" + selectedDay + "_Index" + index}>
-                      <ExerciseItem
-                        onermOBJ={data?.oneRMs}
-                        rmId={item.RMid}
-                        weightUnit={data.weightUnit}
-                        exerciseName={item.exerciseName}
-                        data={item}
-                      />
-                    </div>
-                  )
-                })}
-              </div>
-
-          {/*</WeekMenu>*/}
+          <div className="ProgramPage_ExerciseList" style={styles(activeTheme).exerciseList}>
+            {data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day.map((item, index) => {
+              return (
+                <div key={"ProgramPage_ExerciseItem_Week" + selectWeek + "_Day" + selectedDay + "_Index" + index}>
+                  <ExerciseItem
+                    onermOBJ={data?.oneRMs}
+                    rmId={item.RMid}
+                    weightUnit={data.weightUnit}
+                    exerciseName={item.exerciseName}
+                    data={item}
+                  />
+                </div>
+              )
+            })}
+          </div>
         </>
       ) : (
         <div className="ProgramPage_NoActiveProgramContainer" style={styles(activeTheme).noActiveProgramTextContainer}>

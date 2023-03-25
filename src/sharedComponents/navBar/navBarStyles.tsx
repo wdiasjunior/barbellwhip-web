@@ -41,6 +41,8 @@ const styles = (theme, isHover, index, activeRoute, itemRoute) => {
       cursor: "pointer",
       overflow: "hidden",
       position: "relative",
+      color: theme.text,
+      textDecoration: "none",
     },
     itemText: {
       color: itemRoute === activeRoute ? theme.textHighlight : theme.text,

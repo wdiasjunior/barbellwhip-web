@@ -25,7 +25,7 @@ const styles = (theme) => {
       overflowY: "hidden",
       backgroundColor: theme.backgroundPrimary,
       height: "100vh",
-      paddingTop: 53,
+      paddingTop: 60,
       paddingLeft: 60,
     },
     containerDrawer: {

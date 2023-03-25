@@ -5,6 +5,8 @@ import { activeThemeAtom, selectedLocaleAtom, } from "../../helpers/jotai/atomsW
 
 import Icon from "../icon";
 
+import { Link, } from "react-router-dom";
+
 import routes from "./routes";
 import styles from "./navBarStyles.tsx";
 import "./navBar.css";
@@ -19,10 +21,10 @@ const NavBar = (props: Props) => {
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
-  const [activeRoute, setActiveRoute] = useState("programPage"); // should be a jotai atom
+  const [activeRoute, setActiveRoute] = useState("/"); // should be a jotai atom?
 
   const handleNavigate = (_route: string) => {
-    console.log(_route);
+    // console.log(_route);
     setActiveRoute(_route);
     if(props.navBarOpen) {
       props.setNavBarOpen(false);
@@ -44,7 +46,8 @@ const NavBar = (props: Props) => {
         <ul className={"NavBar_ItemList"} style={styles(activeTheme).list}>
           {routes.map((item, index) => {
             return (
-              <li
+              <Link
+                to={item.route}
                 className={"NavBar_Item"}
                 style={{...styles(activeTheme, isHover, index, activeRoute, item.route).item, width: props.navBarOpen ? "auto" : 40, paddingLeft: props.navBarOpen ? 70 : 0 }}
                 onMouseEnter={() => handleMouseEnter(index)}
@@ -57,9 +60,9 @@ const NavBar = (props: Props) => {
                 </div>
 
                 <span className={"NavBar_ItemText"} style={{...styles(activeTheme, isHover, index, activeRoute, item.route).itemText, display: props.navBarOpen ? "block" : "none"}}>
-                  {selectedLocale[item.route]?.title}
+                  {item.route === "/" ? selectedLocale["programPage"]?.title : selectedLocale[item.route.replace("/", "")]?.title}
                 </span>
-              </li>
+              </Link>
             )
           })}
         </ul>
