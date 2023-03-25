@@ -127,7 +127,7 @@ const ProgramPage = (props: Props) => {
                     rmId={item.RMid}
                     weightUnit={data.weightUnit}
                     exerciseName={item.exerciseName}
-                    data={item}
+                    exerciseItem={item}
                   />
                 </div>
               )

@@ -14,6 +14,8 @@ const styles = (theme) => {
       flexDirection: "row",
       cursor: "pointer",
       overflow: "hidden",
+      color: theme.text,
+      textDecoration: "none",
     },
     text1: {
       color: theme.text,

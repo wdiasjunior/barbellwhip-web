@@ -6,42 +6,31 @@ import styles from "./exerciseItemPageStyles";
 
 import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/atomsWithStorage";
+import { exerciseItemPageAtom } from "../../../../helpers/jotai/exerciseItemPageAtom";
 
-// interface Props {
-//   exerciseName: any;
-//   onermOBJ: any;
-//   rmId: any;
-//   exerciseOBJ: any;
-//   weightUnit: any;
-// }
+interface Props {
+  exerciseName: any; // use this for the header
+  onermOBJ: any;
+  rmId: any;
+  exerciseOBJ: any;
+  weightUnit: any;
+}
 
 const ExerciseItemPage = (props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
+  const [exerciseItem, ] = useAtom(exerciseItemPageAtom);
 
-  const onScreenLoad = () => {
-    // navigation.setOptions({ headerTitle: () =>
-    //               <Header
-    //                 title={props.route.params.exerciseName}
-    //                 backButton={true}
-    //               />
-    //           });
-  }
-
-  useLayoutEffect(() => {
-    onScreenLoad();
-  }, [])
-
-  const setsList = props?.route?.params?.exerciseOBJ?.set;
-  const onermOBJ = props?.route?.params?.onermOBJ;
-  const rmId = props?.route?.params?.rmId;
-  const weightUnit = props?.route?.params?.weightUnit;
+  const setsList = exerciseItem.exerciseOBJ.set;
+  const onermOBJ = exerciseItem.onermOBJ;
+  const rmId = exerciseItem.rmId;
+  const weightUnit = exerciseItem.weightUnit;
   const weightRoundingFactor = weightUnit === "kg" ? 2.5 : 5;
-  const oneRMweight = onermOBJ?.find((el) => el.id === rmId) ?? 0; // check this
+  const oneRMweight = onermOBJ?.find((el) => el.id === rmId) ?? 0;
 
   return (
-    <div style={styles(activeTheme).container} overScrollMode="never">
+    <div style={styles(activeTheme).container}>
       <div style={styles(activeTheme).setList}>
         {setsList.map((item, index) => {
           return (
