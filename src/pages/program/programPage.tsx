@@ -22,7 +22,7 @@ interface Props {
 
 const ProgramPage = (props: Props) => {
 
-  const isInitialRender = useInitialRender();
+  // const isInitialRender = useInitialRender();
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
@@ -113,7 +113,7 @@ const ProgramPage = (props: Props) => {
 
           <TopTabBar
             setFirstTab={selectedWeek}
-            selectDay={setSelectedDay}
+            selectDay={selectDay}
             days={data?.trainingProgram[selectedWeek]?.week?.length}
             isProgramPage={true}
           />

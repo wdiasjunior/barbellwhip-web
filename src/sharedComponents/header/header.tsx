@@ -1,6 +1,8 @@
 import React from "react";
 import Icon from "../icon";
 
+import { useNavigate } from "react-router-dom";
+
 import styles from "./headerStyles";
 
 import { writeToJSON } from "../../db/fileSystem/fsWrite";
@@ -21,9 +23,12 @@ interface Props {
   import: boolean;
   importProgram(): any;
   setNavBarOpen: () => void;
+  goBackTo: string;
 }
 
 const Header = (props: Props) => {
+
+  const naviigate = useNavigate();
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
@@ -56,7 +61,7 @@ const Header = (props: Props) => {
 
   const backButton = () => {
     console.log("backButton");
-
+    naviigate(props.goBackTo);
     // TODO
     // if(!navigation?.getState()?.routes[0]?.name === "Info") {
       // ask to save before goBack

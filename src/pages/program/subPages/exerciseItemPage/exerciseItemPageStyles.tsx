@@ -3,7 +3,7 @@ const styles = (theme) => {
     container: {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
-      paddingInline: 20,
+      // paddingInline: 20,
     },
     content: {
       flex: 1,
@@ -11,15 +11,21 @@ const styles = (theme) => {
     },
     setList: {
       flex: 1,
-      paddingTop: 10,
+      paddingTop: 70,
+      paddingLeft: 90,
+      height: "100vh",
     },
     setListItem: {
+      display: "flex",
+      flexDirection: "column",
       paddingBottom: 20,
+      paddingRight: 20,
       marginBottom: 16,
       borderBottomWidth: 1,
       borderBottomColor: theme.textFaded,
     },
     setListItemRow: {
+      display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
       marginBottom: 8,
@@ -39,6 +45,7 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 24,
       fontWeight: "bold",
+      marginLeft: 4,
     },
     weightText: {
       color: theme.textHighlight,
