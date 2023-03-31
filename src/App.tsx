@@ -25,6 +25,15 @@ function App() {
     "/settingsPage",
   ];
 
+  const showBottomTabBar = [
+    "/",
+    "/calculatorPage",
+    "/plateMathPage",
+    "/step1",
+    "/step2",
+    "/step3",
+  ];
+
   return (
     <>
       <div className="App">
@@ -43,6 +52,7 @@ function App() {
           <Route path="/rmReviewPage" element={<RMReviewPage />} />
           {/*<Route element={<h1>404 not found</h1>} />*/}
         </Routes>
+        {/*{showBottomTabBar.includes(location.pathname) && <BottomTabBar />}*/}
       </div>
     </>
   );
