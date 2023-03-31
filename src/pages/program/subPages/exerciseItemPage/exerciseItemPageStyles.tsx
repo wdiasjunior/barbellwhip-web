@@ -14,16 +14,15 @@ const styles = (theme) => {
       paddingTop: 70,
       // paddingLeft: 80,
       paddingLeft: 20,
+      paddingRight: 20,
       height: "100vh",
     },
     setListItem: {
       display: "flex",
       flexDirection: "column",
       paddingBottom: 20,
-      paddingRight: 20,
       marginBottom: 16,
-      borderBottomWidth: 1,
-      borderBottomColor: theme.textFaded,
+      borderBottom: `1px solid ${theme.textFaded}`,
     },
     setListItemRow: {
       display: "flex",
