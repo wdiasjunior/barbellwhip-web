@@ -45,6 +45,7 @@ function App() {
         <Routes>
           {/*
             - save only one program on web version for the sake of simplicity and performance?
+              - an atomWithStorage that holds every program and an atomWithStorage to hold the active program?
             -
           */}
           <Route path="/" element={<ProgramPage setNavBarOpen={setNavBarOpen} />} />
