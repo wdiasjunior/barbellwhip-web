@@ -6,17 +6,17 @@ import styles from "./exerciseItemPageStyles";
 
 import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/atomsWithStorage";
-import { exerciseItemPageAtom } from "../../../../helpers/jotai/exerciseItemPageAtom";
+import { exerciseItemPageAtom } from "../../../../helpers/jotai/navigationDataAtoms";
 
-interface Props {
-  exerciseName: any; // use this for the header
-  onermOBJ: any;
-  rmId: any;
-  exerciseOBJ: any;
-  weightUnit: any;
-}
+// interface Props {
+//   exerciseName: any; // use this for the header
+//   onermOBJ: any;
+//   rmId: any;
+//   exerciseOBJ: any;
+//   weightUnit: any;
+// }
 
-const ExerciseItemPage = (props) => {
+const ExerciseItemPage = () => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);

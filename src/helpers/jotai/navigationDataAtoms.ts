@@ -8,4 +8,9 @@ const exerciseItemPageAtom = atom({
   rmId: "",
 });
 
-export { exerciseItemPageAtom };
+const rmReviewPageAtom = atom({
+  onermOBJ: [{}],
+  weightUnit: "kg",
+});
+
+export { exerciseItemPageAtom, rmReviewPageAtom };

@@ -5,7 +5,7 @@ import { Link, } from "react-router-dom";
 
 import { useAtom } from "jotai";
 import { activeThemeAtom } from "../../../../helpers/jotai/atomsWithStorage";
-import { exerciseItemPageAtom } from "../../../../helpers/jotai/exerciseItemPageAtom";
+import { exerciseItemPageAtom } from "../../../../helpers/jotai/navigationDataAtoms";
 
 import styles from "./exerciseItemStyles";
 

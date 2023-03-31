@@ -1,9 +1,14 @@
 const styles = (theme) => {
   return ({
     container: {
-      flex: 1,
       backgroundColor: theme.backgroundPrimary,
-      paddingTop: 10,
+      height: "100vh",
+    },
+    list: {
+      display: "flex",
+      flexDirection: "column",
+      paddingTop: 70,
+      paddingLeft: 60,
     },
     item: {
       backgroundColor: theme.backgroundSecondary,
@@ -11,9 +16,11 @@ const styles = (theme) => {
       paddingTop: 10,
       marginTop: 5,
       marginBottom: 5,
+      marginRight: 20,
       marginInline: 20,
       borderRadius: 10,
       height: 80,
+      display: "flex",
       alignContent: "center",
       flexDirection: "column",
     },

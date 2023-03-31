@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom, } from "../../../../helpers/jotai/atomsWithStorage";
 
@@ -17,6 +19,8 @@ interface Props {
 
 const WeekMenu = (props: Props) => {
 
+  const navigate = useNavigate();
+
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
@@ -30,6 +34,7 @@ const WeekMenu = (props: Props) => {
 
   const handleClickRMReview = () => {
     console.log("handleClickRMReview");
+    navigate("/rmReviewPage");
     // navigation.push("RMReviewPage", {onermOBJ: props.data?.oneRMs, weightUnit: props.data?.weightUnit});
   }
 

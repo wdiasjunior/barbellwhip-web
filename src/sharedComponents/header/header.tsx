@@ -28,7 +28,7 @@ interface Props {
 
 const Header = (props: Props) => {
 
-  const naviigate = useNavigate();
+  const navigate = useNavigate();
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
@@ -60,8 +60,7 @@ const Header = (props: Props) => {
   }
 
   const backButton = () => {
-    console.log("backButton");
-    naviigate(props.goBackTo);
+    navigate(props.goBackTo);
     // TODO
     // if(!navigation?.getState()?.routes[0]?.name === "Info") {
       // ask to save before goBack
