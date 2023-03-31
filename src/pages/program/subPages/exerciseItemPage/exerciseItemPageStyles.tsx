@@ -3,7 +3,6 @@ const styles = (theme) => {
     container: {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
-      // paddingInline: 20,
     },
     content: {
       flex: 1,
@@ -12,7 +11,6 @@ const styles = (theme) => {
     setList: {
       flex: 1,
       paddingTop: 70,
-      // paddingLeft: 80,
       paddingLeft: 20,
       paddingRight: 20,
       height: "100vh",
@@ -56,7 +54,6 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 16,
       fontWeight: "bold",
-      // marginTop: 10,
     },
   });
 }

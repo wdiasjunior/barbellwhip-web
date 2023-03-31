@@ -3,7 +3,9 @@ import React, { useState, } from "react";
 import { Routes, Route, useLocation, } from "react-router-dom";
 
 import NavBar from "./sharedComponents/navBar/navBar";
+import BottomTabBar from "./sharedComponents/bottomTabBar/bottomTabBar";
 import ProgramPage from "./pages/program/programPage";
+import CalculatorPage from "./pages/calculator/calculatorPage";
 import ExerciseItemPage from "./pages/program/subPages/exerciseItemPage/exerciseItemPage";
 import RMReviewPage from "./pages/program/subPages/rmReviewPage/rmReviewPage";
 
@@ -27,6 +29,8 @@ function App() {
 
   const showBottomTabBar = [
     "/",
+    "/exerciseItemPage",
+    "/rmReviewPage",
     "/calculatorPage",
     "/plateMathPage",
     "/step1",
@@ -40,19 +44,16 @@ function App() {
         {showNavBar.includes(location.pathname) && <NavBar setNavBarOpen={setNavBarOpen} navBarOpen={navBarOpen} />}
         <Routes>
           {/*
-            - individual header or a generic one for every page and pass props on every render/route?
-            - router component that just returns the pages based on a jotai atom specifying a route?
             - save only one program on web version for the sake of simplicity and performance?
-            - change components inline style and className format to match what I do in M3's codes?
-            - conditional render bottom tabs for program and program edtitor page stacks
             -
           */}
           <Route path="/" element={<ProgramPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/exerciseItemPage" element={<ExerciseItemPage />} />
           <Route path="/rmReviewPage" element={<RMReviewPage />} />
+          <Route path="/calculatorPage" element={<CalculatorPage setNavBarOpen={setNavBarOpen} />} />
           {/*<Route element={<h1>404 not found</h1>} />*/}
         </Routes>
-        {/*{showBottomTabBar.includes(location.pathname) && <BottomTabBar />}*/}
+        {showBottomTabBar.includes(location.pathname) && <BottomTabBar isProgramPage={!location.pathname.includes("step") ? true : false} />}
       </div>
     </>
   );

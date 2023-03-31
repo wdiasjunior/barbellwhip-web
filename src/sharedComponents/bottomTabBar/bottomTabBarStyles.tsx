@@ -1,58 +1,68 @@
 const styles = (theme, isHover, index, activeRoute, itemRoute) => {
 
-  const itemBackground = () => {
-    if(itemRoute === activeRoute) {
-      return theme.activeTransparent;
-    }
-    if(isHover && isHover.isHover && isHover.index === index) {
-      return isHover.index === index ? theme.backgroundPrimary : "transparent";
-    }
-  }
+  // const itemBackground = () => {
+  //   if(itemRoute === activeRoute) {
+  //     return theme.activeTransparent;
+  //   }
+  //   if(isHover && isHover.isHover && isHover.index === index) {
+  //     return isHover.index === index ? theme.backgroundPrimary : "transparent";
+  //   }
+  // }
 
   return ({
     container: {
       display: "flex",
-      flexDirection: "column",
-      // width: isHover && isHover.isHover ? 300 : 40,
+      flexDirection: "row",
       overflow: "hidden",
-      height: "100vh",
-      paddingTop: 50,
-      paddingInline: 10,
+      height: 50,
+      width: "100vw",
       background: theme.backgroundSecondary,
       position: "fixed",
-      top: 0,
+      bottom: 0,
       left: 0,
       zIndex: 99,
     },
     list: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-around",
+      width: "100%",
+      height: "100%",
       margin: 0,
       padding: 0,
-      overflow: "hidden",
     },
     item: {
       display: "flex",
-      flexDirection: "row",
+      flexDirection: "column",
       alignItems: "center",
-      height: 40,
-      marginBottom: 8,
-      paddingLeft: 70,
-      background: itemBackground(),
-      borderRadius: 8,
+      justifyContent: "space-around",
+      height: "100%",
       cursor: "pointer",
-      overflow: "hidden",
       position: "relative",
+      color: itemRoute === activeRoute ? theme.textHighlight : theme.text,
+      textDecoration: "none",
     },
     itemText: {
       color: itemRoute === activeRoute ? theme.textHighlight : theme.text,
-      fontWeight: itemRoute === activeRoute ? "bold" : "normal",
+      fontSize: 10,
+      minWidth: "fit-content",
+      whiteSpace: "nowrap",
+      position: "relative",
+      bottom: -6,
+    },
+    itemIconWrapper: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
     },
     itemIcon: {
       fill: itemRoute === activeRoute ? theme.textHighlight : theme.text,
       width: 24,
       height: 24,
-      // marginRight: 30,
+      marginInline: "auto",
       position: "absolute",
-      left: 8,
+      top: 3,
     },
   });
 }

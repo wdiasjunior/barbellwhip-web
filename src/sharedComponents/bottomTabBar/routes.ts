@@ -1,16 +1,16 @@
 export const routesProgramPage = [
   {
-    route: "programPage",
+    route: "/",
     icon: "list-outline",
     activeIcon: "list",
   },
   {
-    route: "calculatorPage",
+    route: "/calculatorPage",
     icon: "calculator-outline",
     activeIcon: "calculator",
   },
   {
-    route: "plateMathPage",
+    route: "/plateMathPage",
     icon: "barbell-sharp",
     activeIcon: "barbell-sharp",
   },
@@ -18,17 +18,17 @@ export const routesProgramPage = [
 
 export const routesProgramEditorPage = [
   {
-    route: "step1",
+    route: "/step1",
     icon: "",
     activeIcon: "",
   },
   {
-    route: "step2",
+    route: "/step2",
     icon: "",
     activeIcon: "",
   },
   {
-    route: "step3",
+    route: "/step3",
     icon: "",
     activeIcon: "",
   },

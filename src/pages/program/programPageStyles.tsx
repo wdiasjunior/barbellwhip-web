@@ -3,16 +3,12 @@ const styles = (theme) => {
     container: {
       display: "flex",
       flexDirection: "column",
-      // justifyContent: "center",
-      // alignItems: "center",
-      // flex: 1,
       backgroundColor: theme.backgroundPrimary,
       height: "100vh",
       width: "100vw",
     },
     wrapper: {
       display: "flex",
-      flex: 1,
       backgroundColor: theme.backgroundPrimary,
       height: "100vh",
       paddingLeft: 60,
@@ -20,7 +16,6 @@ const styles = (theme) => {
     exerciseList: {
       display: "flex",
       flexDirection: "column",
-      // flex: 1,
       overflowX: "auto",
       overflowY: "hidden",
       backgroundColor: theme.backgroundPrimary,
@@ -42,7 +37,6 @@ const styles = (theme) => {
     noActiveProgramTextContainer: {
       backgroundColor: theme.backgroundPrimary,
       display: "flex",
-      // flex: 1,
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",

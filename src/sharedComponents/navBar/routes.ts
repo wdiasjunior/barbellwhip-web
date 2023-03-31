@@ -14,16 +14,16 @@ const routes = [
   //   icon: "",
   //   activeIcon: "",
   // },
-  {
-    route: "/calculatorPage",
-    icon: "calculator-outline",
-    activeIcon: "calculator",
-  },
-  {
-    route: "/plateMathPage",
-    icon: "barbell-sharp",
-    activeIcon: "barbell-sharp",
-  },
+  // {
+  //   route: "/calculatorPage",
+  //   icon: "calculator-outline",
+  //   activeIcon: "calculator",
+  // },
+  // {
+  //   route: "/plateMathPage",
+  //   icon: "barbell-sharp",
+  //   activeIcon: "barbell-sharp",
+  // },
   {
     route: "/programEditorPage",
     icon: "file-tray-full-outline",

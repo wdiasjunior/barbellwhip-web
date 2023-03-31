@@ -52,6 +52,8 @@ const Icon = (props: Props) => {
     "save",
     "backspace",
     "arrow-back-sharp",
+    "list",
+    "list-outline",
   ];
 
   switch(props.name) {
@@ -178,6 +180,18 @@ const Icon = (props: Props) => {
     case "arrow-back-sharp":
       return (
         <ArrowBackSharp />
+      );
+      break;
+
+    case "list":
+      return (
+        <List />
+      );
+      break;
+
+    case "list-outline":
+      return (
+        <ListOutline />
       );
       break;
 
