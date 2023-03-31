@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useAtom } from "jotai";
 import { activeThemeAtom, selectedLocaleAtom, } from "../../../../helpers/jotai/atomsWithStorage";
+import { rmReviewPageAtom } from "../../../../helpers/jotai/navigationDataAtoms";
 
 import styles from "./weekMenuStyles.tsx";
 import "./weekMenu";
@@ -23,6 +24,7 @@ const WeekMenu = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
+  const [, setRmReviewPageData] = useAtom(rmReviewPageAtom);
 
   const [isHover, setIsHover] = useState({ isHover: false, index: 0 });
   const handleMouseEnter = (index: any) => {
@@ -33,9 +35,8 @@ const WeekMenu = (props: Props) => {
   }
 
   const handleClickRMReview = () => {
-    console.log("handleClickRMReview");
     navigate("/rmReviewPage");
-    // navigation.push("RMReviewPage", {onermOBJ: props.data?.oneRMs, weightUnit: props.data?.weightUnit});
+    setRmReviewPageData({ oneRMs: props.data.oneRMs, weightUnit: props.data.weightUnit })
   }
 
   const selectWeek = (index) => {
