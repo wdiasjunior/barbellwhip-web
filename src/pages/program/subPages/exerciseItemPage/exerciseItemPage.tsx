@@ -28,8 +28,6 @@ const ExerciseItemPage = () => {
   const weightUnit = exerciseItem.weightUnit;
   const weightRoundingFactor = weightUnit === "kg" ? 2.5 : 5;
   const oneRMweight = onermOBJ?.find((el) => el.id === rmId) ?? 0;
-  console.log(exerciseItem.exerciseName);
-
 
   return (
     <div className="ProgramPage_ExerciseItemPage_Container" style={styles(activeTheme).container}>

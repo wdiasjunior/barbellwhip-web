@@ -22,7 +22,7 @@ interface Props {
 
 const ProgramPage = (props: Props) => {
 
-  // const isInitialRender = useInitialRender();
+  const isInitialRender = useInitialRender();
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
@@ -47,39 +47,24 @@ const ProgramPage = (props: Props) => {
     setSelectedDay(day);
   }
   const selectWeek = (index) => {
-    if(selectedWeek != index) {
+    if(selectedWeek != index && !isInitialRender) {
       setSelectedDay(0);
     }
     setSelectedWeek(index);
     setIsMenuOpen(!isMenuOpen);
-    // navigation.setOptions({ headerTitle: () =>
-    //               <Header
-    //                 title={data !== undefined ? data?.programName + " - " + selectedLocale.programPage.week + " " + (index + 1) : selectedLocale.programPage.defaultTitle}
-    //                 isMenuOpen={isMenuOpen}
-    //                 setIsMenuOpen={setIsMenuOpen}
-    //                 menu={data !== undefined}
-    //               />
-    //           });
   }
 
-  const onScreenLoad = () => {
-    // navigation.setOptions({ headerTitle: () =>
-    //               <Header
-    //                 title={data !== undefined ? data?.programName + " - " + selectedLocale.programPage.week + " " + (selectedWeek + 1) : selectedLocale.programPage.defaultTitle}
-    //                 isMenuOpen={isMenuOpen}
-    //                 setIsMenuOpen={setIsMenuOpen}
-    //                 menu={data !== undefined}
-    //               />
-    //           });
-  }
+  // const onScreenLoad = () => {
+  //
+  // }
 
-  useLayoutEffect(() => {
-    onScreenLoad();
-  }, [])
+  // useLayoutEffect(() => {
+  //   onScreenLoad();
+  // }, [])
 
-  useLayoutEffect(() => {
-    onScreenLoad();
-  }, [activeProgramData])
+  // useLayoutEffect(() => {
+  //   onScreenLoad();
+  // }, [activeProgramData])
 
   // if(isInitialRender) {
   //   console.log(isInitialRender);
@@ -87,9 +72,6 @@ const ProgramPage = (props: Props) => {
   //   return <Loading />;
   //   // return null;
   // }
-
-
-// Header   menu={data?.programName}
 
   return (
     <div className="ProgramPage_Container" style={styles(activeTheme).container}>
@@ -121,7 +103,7 @@ const ProgramPage = (props: Props) => {
           <div className="ProgramPage_ExerciseList" style={styles(activeTheme).exerciseList}>
             {data?.trainingProgram[selectedWeek]?.week[selectedDay]?.day.map((item, index) => {
               return (
-                <div key={"ProgramPage_ExerciseItem_Week" + selectWeek + "_Day" + selectedDay + "_Index" + index}>
+                <div key={"ProgramPage_ExerciseItem_Week" + selectedWeek + "_Day" + selectedDay + "_Index" + index}>
                   <ExerciseItem
                     onermOBJ={data?.oneRMs}
                     rmId={item.RMid}

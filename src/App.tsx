@@ -14,12 +14,21 @@ function App() {
   const [navBarOpen, setNavBarOpen] = useState(false);
 
   let location = useLocation();
-  console.log("useLocation", location);
+  // console.log("useLocation", location);
+
+  const showNavBar = [
+    "/",
+    "/calculatorPage",
+    "/plateMathPage",
+    "/programEditorPage",
+    "/prTrackerPage",
+    "/settingsPage",
+  ];
 
   return (
     <>
       <div className="App">
-        <NavBar setNavBarOpen={setNavBarOpen} navBarOpen={navBarOpen} />
+        {showNavBar.includes(location.pathname) && <NavBar setNavBarOpen={setNavBarOpen} navBarOpen={navBarOpen} />}
         <Routes>
           {/*
             - individual header or a generic one for every page and pass props on every render/route?

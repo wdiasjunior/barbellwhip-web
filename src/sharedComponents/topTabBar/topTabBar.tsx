@@ -4,8 +4,9 @@ import styles from "./topTabBarStyles";
 import "./topTabBar.css";
 
 import { useAtom } from "jotai";
-import { programPageSelectedDayAtom } from "../../helpers/jotai/atomsWithStorage";
-import { activeThemeAtom, selectedLocaleAtom } from "../../helpers/jotai/atomsWithStorage";
+import { programPageSelectedDayAtom, activeThemeAtom, selectedLocaleAtom } from "../../helpers/jotai/atomsWithStorage";
+
+import { useInitialRender } from "../../helpers/useInitialRender";
 
 interface Props {
   days: number;
@@ -16,31 +17,28 @@ interface Props {
 
 const TopTabBar = (props: Props) => {
 
+  const isInitialRender = useInitialRender();
+
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
   const [selectedDay, setSelectedDay] = useAtom(programPageSelectedDayAtom);
 
   const days = Array.from(Array(props.days).keys());
 
-  // const [scrollToIndex, setScrollToIndex] = useState(0);
-  // const [dataSourceCords, setDataSourceCords] = useState([]);
   const ref = useRef({});
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(!props.isProgramPage ? 0 : selectedDay);
   const selectTab = (index) => {
-    setSelected(index);
-    props.selectDay(index);
-    // if(ref.current != null) {
-    //   ref.current.scrollTo({x: dataSourceCords[index - 2], y: 0, animated: true});
-    // }
-    if(ref[index] != null) {
-      // console.log("should scroll ref", ref);
-
-      ref[index].scrollIntoView({ behavior: "smooth", block: "center" });
+    if(!isInitialRender) {
+      setSelected(index);
+      props.selectDay(index);
+      if(ref[index] != null) {
+        ref[index].scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     }
   }
 
   useEffect(() => {
-    if(props.isProgramPage) {
+    if(props.isProgramPage && !isInitialRender) {
       setSelected(0);
       props.selectDay(0);
       if(ref[0] != null) {
@@ -50,10 +48,12 @@ const TopTabBar = (props: Props) => {
   }, [props.setFirstTab])
 
   useEffect(() => {
-    setSelected(!props.isProgramPage ? 0 : selectedDay);
-    props.selectDay(!props.isProgramPage ? 0 : selectedDay);
-    if(ref[0] != null) {
-      ref[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "center" });
+    if(!isInitialRender) {
+      setSelected(!props.isProgramPage ? 0 : selectedDay);
+      props.selectDay(!props.isProgramPage ? 0 : selectedDay);
+      if(ref[0] != null) {
+        ref[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "center" });
+      }
     }
   }, [])
 
@@ -68,6 +68,8 @@ const TopTabBar = (props: Props) => {
       ref[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "center" });
     }
   }
+
+  if(isInitialRender) return <></>;
 
   return (
     <>

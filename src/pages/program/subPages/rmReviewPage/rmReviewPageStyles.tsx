@@ -8,7 +8,7 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "column",
       paddingTop: 70,
-      paddingLeft: 60,
+      // paddingLeft: 60,
     },
     item: {
       backgroundColor: theme.backgroundSecondary,

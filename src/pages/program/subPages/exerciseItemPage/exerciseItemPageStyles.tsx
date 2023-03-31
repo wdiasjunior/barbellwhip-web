@@ -12,7 +12,8 @@ const styles = (theme) => {
     setList: {
       flex: 1,
       paddingTop: 70,
-      paddingLeft: 80,
+      // paddingLeft: 80,
+      paddingLeft: 20,
       height: "100vh",
     },
     setListItem: {
