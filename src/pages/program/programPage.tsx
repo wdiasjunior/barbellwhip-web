@@ -11,7 +11,7 @@ import { activeThemeAtom, selectedLocaleAtom, activeProgramAtom, programPageSele
 
 import { useInitialRender } from "../../helpers/useInitialRender";
 
-import "./programPage";
+// import "./programPage.css";
 import styles from "./programPageStyles";
 
 import defaultProgramData from "../../db/programs/strengthV4.json";
