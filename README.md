@@ -1,3 +1,3 @@
-# barbellwhip-web
+# BarbellWhip Web
 
 Experimental desktop and mobile web version of the BarbellWhip app
