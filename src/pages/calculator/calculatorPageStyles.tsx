@@ -47,7 +47,6 @@ const styles = (theme) => {
       height: 240,
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
       alignItems: "center",
       justifyContent: "space-between",
     },
