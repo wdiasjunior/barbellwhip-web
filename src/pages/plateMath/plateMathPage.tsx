@@ -24,7 +24,11 @@ import {
 
 import { useInitialRender } from "../../helpers/useInitialRender";
 
-const PlateMathPage = () => {
+interface Props {
+  setNavBarOpen: () => void;
+}
+
+const PlateMathPage = (props: Props) => {
 
   const isInitialRender = useInitialRender();
 
@@ -90,6 +94,11 @@ const PlateMathPage = () => {
 // )
   return (
     <div style={styles(activeTheme).container}>
+      <Header
+        title={selectedLocale.plateMathPage.title}
+        setNavBarOpen={props.setNavBarOpen}
+        weightRack={true}
+      />
       {!isInitialRender ? (
         <div style={styles(activeTheme).wrapper}>
           <div style={styles(activeTheme).controlsContainer}>

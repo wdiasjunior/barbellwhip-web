@@ -80,14 +80,12 @@ const Header = (props: Props) => {
         {props.backButton ?
           <Icon
             name="arrow-back-sharp"
-            size={24}
             style={styles(activeTheme).iconLeft}
             className="Header_IconLeft"
           />
           :
           <Icon
             name="menu-sharp"
-            size={24}
             style={styles(activeTheme).iconLeft}
             className="Header_IconLeft"
           />
@@ -97,44 +95,42 @@ const Header = (props: Props) => {
         <span style={styles(activeTheme).headerText}>{props.title} </span>
       </div>
       {/* add onClick to parent of icon since for some reason it doesn't work using it directly in the icon */}
-      <div style={styles(activeTheme).contentRight} onClick={setMenuOpenFromHeader}>
-        {props.menu &&
-          <Icon
-            name="ellipsis-vertical"
-            size={24}
-            style={styles(activeTheme).iconRight}
-            className="Header_IconRight"
-            onClick={setMenuOpenFromHeader}
-          />
-        }
-        {props.weightRack &&
-          <Icon
-            name="settings-sharp"
-            size={24}
-            style={styles(activeTheme).iconRight}
-            className="Header_IconRight"
-            onClick={() => navigation.push("WeightRackPage")}
-          />
-        }
-        {props.import &&
-          <Icon
-            name="download-outline"
-            size={24}
-            style={styles(activeTheme).iconRight}
-            className="Header_IconRight"
-            onClick={importProgram}
-          />
-        }
-        {props.saveButton &&
-          <Icon
-            name="save"
-            size={24}
-            style={styles(activeTheme).iconRight}
-            className="Header_IconRight"
-            onClick={saveButton}
-          />
-        }
-      </div>
+      {props.menu &&
+        <div style={styles(activeTheme).contentRight} onClick={setMenuOpenFromHeader}>
+            <Icon
+              name="ellipsis-vertical"
+              style={styles(activeTheme).iconRight}
+              className="Header_IconRight"
+            />
+        </div>
+      }
+      {props.weightRack &&
+        <div style={styles(activeTheme).contentRight} onClick={() => navigate("/plateRackPage")}>
+            <Icon
+              name="settings-sharp"
+              style={styles(activeTheme).iconRight}
+              className="Header_IconRight"
+            />
+        </div>
+      }
+      {props.import &&
+        <div style={styles(activeTheme).contentRight} onClick={importProgram}>
+            <Icon
+              name="download-outline"
+              style={styles(activeTheme).iconRight}
+              className="Header_IconRight"
+            />
+        </div>
+      }
+      {props.saveButton &&
+        <div style={styles(activeTheme).contentRight} onClick={saveButton}>
+            <Icon
+              name="save"
+              style={styles(activeTheme).iconRight}
+              className="Header_IconRight"
+            />
+        </div>
+      }
     </div>
   );
 }

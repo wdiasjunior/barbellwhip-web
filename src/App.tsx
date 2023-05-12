@@ -55,7 +55,7 @@ function App() {
           <Route path="/rmReviewPage" element={<RMReviewPage />} />
           <Route path="/calculatorPage" element={<CalculatorPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/plateMathPage" element={<PlateMathPage setNavBarOpen={setNavBarOpen} />} />
-          {/*<Route path="*" element={<NotFoundPage />} />*/}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {showBottomTabBar.includes(location.pathname) && <BottomTabBar isProgramPage={!location.pathname.includes("step") ? true : false} />}
       </div>

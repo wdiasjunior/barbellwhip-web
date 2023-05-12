@@ -65,6 +65,7 @@ const styles = (theme, isHover, index, selectedWeek) => {
     weekSelectorList: {
       flex: 1,
       height: "calc(100% - 30px)",
+      paddingBottom: 50,
     },
     titleWeekDrawer: {
       color: theme.text,
