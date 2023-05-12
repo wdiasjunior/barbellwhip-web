@@ -8,4 +8,4 @@ Using node version `v18.12.1` install the dependencies by running `npm i`.
 
 Run the command below
 
-`npx run dev`
+`npm run dev`
