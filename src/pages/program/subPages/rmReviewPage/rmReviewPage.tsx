@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import Header from "../../../../sharedComponents/header/header";
 
 import styles from "./rmReviewPageStyles";
@@ -15,9 +17,16 @@ import { rmReviewPageAtom } from "../../../../helpers/jotai/navigationDataAtoms"
 
 const RMReviewPage = () => {
 
+  const navigate = useNavigate();
+
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
   const [rmReviewPageData, ] = useAtom(rmReviewPageAtom);
+
+  if(rmReviewPageData.oneRMs.length === 0) { // gambiarra to fix empty screen on reload
+    navigate("/");
+    return null;
+  }
 
   const onermOBJ = rmReviewPageData.oneRMs;
   const weightUnit = rmReviewPageData.weightUnit;
