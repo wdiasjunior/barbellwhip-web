@@ -41,7 +41,7 @@ export const styles = (theme) => {
       // backgroundColor: "white",
       textAlign: "center",
       fontSize: 16,
-      // lineHeight: 16,
+      lineHeight: 16,
       // height: 25,
       width: "100%",
       color: theme.backgroundSecondary,
@@ -64,7 +64,7 @@ export const plateColors = {
     1    : "#8c8c8c", // TODO - find colors for these
     0.5  : "#8c8c8c", // TODO - find colors for these
   },
-  lb: {
+  lbs: {
     100  : "#8c8c8c", // TODO - find colors for these
     55   : "#FF9999",
     45   : "#588dff",

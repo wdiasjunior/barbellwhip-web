@@ -16,7 +16,7 @@ interface Props {
 
 const WeightView = (props: Props) => {
   return (
-      <View style={styles(props.activeTheme).plateWrap}>
+      <div style={styles(props.activeTheme).plateWrap}>
         {
           props.plates.map((weight, index) => {
             return (
@@ -28,7 +28,7 @@ const WeightView = (props: Props) => {
               />
             );
         })}
-      </View>
+      </div>
   );
 }
 // size={WeightCalc.getPlatePercentOfMax(weight, props.plates)}

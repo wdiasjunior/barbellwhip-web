@@ -5,7 +5,7 @@ import { activeThemeAtom, selectedLocaleAtom, } from "../../helpers/jotai/atomsW
 
 import Icon from "../icon";
 
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { routesProgramPage, routesProgramEditorPage } from "./routes";
 import styles from "./bottomTabBarStyles.tsx";

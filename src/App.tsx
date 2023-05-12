@@ -6,6 +6,7 @@ import NavBar from "./sharedComponents/navBar/navBar";
 import BottomTabBar from "./sharedComponents/bottomTabBar/bottomTabBar";
 import ProgramPage from "./pages/program/programPage";
 import CalculatorPage from "./pages/calculator/calculatorPage";
+import PlateMathPage from "./pages/plateMath/plateMathPage";
 import ExerciseItemPage from "./pages/program/subPages/exerciseItemPage/exerciseItemPage";
 import RMReviewPage from "./pages/program/subPages/rmReviewPage/rmReviewPage";
 import NotFoundPage from "./pages/notFound/notFoundPage";
@@ -53,7 +54,8 @@ function App() {
           <Route path="/exerciseItemPage" element={<ExerciseItemPage />} />
           <Route path="/rmReviewPage" element={<RMReviewPage />} />
           <Route path="/calculatorPage" element={<CalculatorPage setNavBarOpen={setNavBarOpen} />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/plateMathPage" element={<PlateMathPage setNavBarOpen={setNavBarOpen} />} />
+          {/*<Route path="*" element={<NotFoundPage />} />*/}
         </Routes>
         {showBottomTabBar.includes(location.pathname) && <BottomTabBar isProgramPage={!location.pathname.includes("step") ? true : false} />}
       </div>
