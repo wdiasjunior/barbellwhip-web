@@ -15,7 +15,7 @@ const styles = (theme) => {
       // height: "100vh",
       overflow: "auto",
       paddingLeft: 60,
-      paddingBottom: 70,
+      paddingBottom: 48,
       paddingTop: 44,
     },
     cardWarning: {

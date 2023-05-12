@@ -14,7 +14,7 @@ const styles = (theme, isHover, index, selectedWeek) => {
       flex: 1,
       backgroundColor: theme.backgroundSecondary,
       paddingTop: 50,
-      height: "100vh",
+      height: "calc(100vh - 100px)",
       width: 250,
       maxWidth: 250,
       position: "absolute",
@@ -59,6 +59,12 @@ const styles = (theme, isHover, index, selectedWeek) => {
     },
     weekSelectorContainer: {
       flex: 1,
+      height: "calc(100% - 64px)",
+    },
+    weekSelectorList: {
+      flex: 1,
+      overflow: "auto",
+      height: "calc(100% - 30px)",
     },
     titleWeekDrawer: {
       color: theme.text,

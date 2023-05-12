@@ -1,5 +1,7 @@
 import React, { useLayoutEffect, } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import Header from "../../../../sharedComponents/header/header";
 
 import styles from "./exerciseItemPageStyles";
@@ -18,9 +20,16 @@ import { exerciseItemPageAtom } from "../../../../helpers/jotai/navigationDataAt
 
 const ExerciseItemPage = () => {
 
+  const navigate = useNavigate();
+
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
   const [exerciseItem, ] = useAtom(exerciseItemPageAtom);
+
+  if(exerciseItem.exerciseName === "") { // gambiarra to fix empty screen on reload
+    navigate("/");
+    return null;
+  }
 
   const setsList = exerciseItem.exerciseOBJ.set;
   const onermOBJ = exerciseItem.onermOBJ;
