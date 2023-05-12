@@ -41,6 +41,7 @@ const styles = (theme) => {
     cardIncrement: {
       backgroundColor: theme.backgroundSecondary,
       padding: 22,
+      paddingInline: 0,
       marginTop: 20,
       marginInline: 20,
       borderRadius: 10,

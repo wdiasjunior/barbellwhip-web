@@ -60,10 +60,10 @@ const styles = (theme, isHover, index, selectedWeek) => {
     weekSelectorContainer: {
       flex: 1,
       height: "calc(100% - 64px)",
+      overflow: "auto",
     },
     weekSelectorList: {
       flex: 1,
-      overflow: "auto",
       height: "calc(100% - 30px)",
     },
     titleWeekDrawer: {

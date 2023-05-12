@@ -13,7 +13,8 @@ const styles = (theme) => {
       paddingTop: 70,
       paddingLeft: 20,
       paddingRight: 20,
-      height: "calc(100vh - 120px)",
+      paddingBottom: 50,
+      height: "calc(100vh - 170px)",
       overflowX: "auto",
     },
     setListItem: {
