@@ -44,11 +44,11 @@ const routes = [
   //   icon: "",
   //   activeIcon: "",
   // },
-  {
-    route: "/prTrackerPage",
-    icon: "bar-chart-outline",
-    activeIcon: "bar-chart",
-  },
+  // {
+  //   route: "/prTrackerPage",
+  //   icon: "bar-chart-outline",
+  //   activeIcon: "bar-chart",
+  // },
   {
     route: "/settingsPage",
     icon: "settings-outline",

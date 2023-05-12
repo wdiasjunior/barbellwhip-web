@@ -3,11 +3,14 @@ const styles = (theme) => {
     container: {
       backgroundColor: theme.backgroundPrimary,
       height: "100vh",
+      height: "calc(100vh - 50px)",
     },
     list: {
       display: "flex",
       flexDirection: "column",
-      paddingTop: 70,
+      paddingTop: 60,
+      height: "calc(100% - 70px)",
+      overflow: "auto",
     },
     item: {
       backgroundColor: theme.backgroundSecondary,
@@ -19,6 +22,7 @@ const styles = (theme) => {
       marginInline: 20,
       borderRadius: 10,
       height: 80,
+      minHeight: 80,
       display: "flex",
       alignContent: "center",
       flexDirection: "column",

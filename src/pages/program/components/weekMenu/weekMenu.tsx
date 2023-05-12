@@ -54,9 +54,9 @@ const WeekMenu = (props: Props) => {
               </div>
             </div>
 
-            <div style={styles(activeTheme).weekSelectorContainer} className={"WeekMenu_WeekList"}>
-              <span style={styles(activeTheme).titleWeekDrawer}>{selectedLocale.programPage.weekSelectorTitle}</span>
-              <div>
+            <div style={styles(activeTheme).weekSelectorContainer} className={"WeekMenu_WeekListContainer"}>
+              <span style={styles(activeTheme).titleWeekDrawer} className={"WeekMenu_WeekListTitle"}>{selectedLocale.programPage.weekSelectorTitle}</span>
+              <div style={styles(activeTheme).weekSelectorList} className={"WeekMenu_WeekList"}>
                 {props.data?.trainingProgram?.map((item, index) => {
                   return (
                     <div

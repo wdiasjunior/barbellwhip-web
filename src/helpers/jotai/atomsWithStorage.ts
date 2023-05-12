@@ -19,11 +19,57 @@ const calculatorPageRepsAtom = atomWithStorage("calculatorPageReps", 1);
 const calculatorPageWeightAtom = atomWithStorage("calculatorPageWeight", 150);
 const calculatorPageWeightUnitAtom = atomWithStorage("calculatorPageWeightUnit", "kg");
 
-// Plate Math Page - for future reference only
-// const plateMathPageWeight = atomWithStorage("plateMathPageWeight", 150);
-// const plateMathWeightUnit = atomWithStorage("plateMathWeightUnit", "kg");
-// const plateMathSelectedBar = atomWithStorage("plateMathSelectedBar", 1);
-// const plateMathWeightRack = atomWithStorage("plateMathWeightRack", 1);
+// Plate Math Page
+const plateMathPageWeight = atomWithStorage("plateMathPageWeight", 150);
+const plateMathWeightUnit = atomWithStorage("plateMathWeightUnit", false); // false == kg == left, true == lbs == right
+const plateMathShowBumper = atomWithStorage("plateMathShowBumper", true);
+const plateMathBarWeight = atomWithStorage("plateMathBarWeight", {
+  lbs: 45,
+  kg: 20,
+});
+const plateMathWeightRack = atomWithStorage("plateMathWeightRack", {
+  kg: {
+    50   : 0,
+    25   : 0,
+    20   : 6,
+    15   : 2,
+    10   : 2,
+    5    : 2,
+    2.5  : 2,
+    2    : 0,
+    1.5  : 0,
+    1.25 : 2,
+    1    : 0,
+    0.5  : 0,
+  },
+  lbs: {
+    100  : 0,
+    55   : 0,
+    45   : 6,
+    35   : 2,
+    25   : 2,
+    10   : 2,
+    5    : 2,
+    2.5  : 2,
+    1.25 : 2,
+  }
+});
+const plateMathBumperPlatesRack = atomWithStorage("plateMathBumperPlatesRack", {
+  kg: {
+    25 : 0,
+    20 : 0,
+    15 : 2,
+    10 : 2,
+    5  : 2
+  },
+  lbs: {
+    55 : 0,
+    45 : 0,
+    35 : 2,
+    25 : 2,
+    10 : 2
+  },
+});
 
 // Settings Page - for future reference only
 // const settingsPageWeightRoundAtom = atomWithStorage("settingsPageWeightRound", true);
@@ -62,6 +108,12 @@ export {
   calculatorPageRepsAtom,
   calculatorPageWeightAtom,
   calculatorPageWeightUnitAtom,
+  plateMathPageWeight,
+  plateMathWeightUnit,
+  plateMathShowBumper,
+  plateMathBarWeight,
+  plateMathWeightRack,
+  plateMathBumperPlatesRack,
   activeThemeIdAtom,
   activeThemeAtom,
   selectedLocaleIdAtom,

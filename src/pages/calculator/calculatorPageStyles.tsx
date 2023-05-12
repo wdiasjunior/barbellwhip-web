@@ -15,7 +15,7 @@ const styles = (theme) => {
       // height: "100vh",
       overflow: "auto",
       paddingLeft: 60,
-      paddingBottom: 70,
+      paddingBottom: 48,
       paddingTop: 44,
     },
     cardWarning: {
@@ -41,13 +41,13 @@ const styles = (theme) => {
     cardIncrement: {
       backgroundColor: theme.backgroundSecondary,
       padding: 22,
+      paddingInline: 0,
       marginTop: 20,
       marginInline: 20,
       borderRadius: 10,
       height: 240,
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
       alignItems: "center",
       justifyContent: "space-between",
     },
@@ -84,6 +84,20 @@ const styles = (theme) => {
     incrementText: {
       color: theme.text,
       fontSize: 16,
+    },
+    weightWrapper: {
+      display: "flex",
+      flexDirection: "column",
+    },
+    weight: {
+      color: theme.text,
+      fontSize: 24,
+      textAlign: "center",
+    },
+    weightConverted: {
+      color: theme.text,
+      fontSize: 12,
+      textAlign: "center",
     },
     repsSets: {
       color: theme.text,

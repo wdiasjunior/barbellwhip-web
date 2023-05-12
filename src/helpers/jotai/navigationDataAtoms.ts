@@ -9,7 +9,7 @@ const exerciseItemPageAtom = atom({
 });
 
 const rmReviewPageAtom = atom({
-  onermOBJ: [],
+  oneRMs: [],
   weightUnit: "kg",
 });
 

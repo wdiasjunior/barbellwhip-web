@@ -4,16 +4,18 @@ const styles = (theme) => {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
     },
+    wrapper: {
+      flex: 1,
+    },
     controlsContainer: {
       flex: 1,
-      paddingInline: 20,
+      paddingHorizontal: 20,
     },
 
     cardIncrement: {
       backgroundColor: theme.backgroundSecondary,
       padding: 22,
       marginTop: 20,
-      // marginBottom: 10,
       borderRadius: 10,
       height: 260,
       justifyContent: "center",
@@ -58,6 +60,11 @@ const styles = (theme) => {
     weight: {
       color: theme.text,
       fontSize: 24,
+      textAlign: "center",
+    },
+    weightConverted: {
+      color: theme.text,
+      fontSize: 12,
       textAlign: "center",
     },
     info: {

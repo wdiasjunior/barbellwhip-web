@@ -11,6 +11,7 @@ const styles = (theme) => {
       padding: 0,
       margin: 0,
       position: "fixed",
+      top: 0,
       zIndex: 999,
     },
     contentLeft: {
