@@ -84,6 +84,20 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 16,
     },
+    weightWrapper: {
+      display: "flex",
+      flexDirection: "column",
+    },
+    weight: {
+      color: theme.text,
+      fontSize: 24,
+      textAlign: "center",
+    },
+    weightConverted: {
+      color: theme.text,
+      fontSize: 12,
+      textAlign: "center",
+    },
     repsSets: {
       color: theme.text,
       fontSize: 24,

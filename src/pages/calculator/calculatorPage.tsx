@@ -5,8 +5,16 @@ import styles from "./calculatorPageStyles";
 import NumberInput from "../../sharedComponents/numberInput/numberInput";
 import Header from "../../sharedComponents/header/header";
 
+import { weightConversion } from "../../helpers/weightConversion";
+
 import { useAtom } from "jotai";
-import { activeThemeAtom, selectedLocaleAtom, calculatorPageRepsAtom, calculatorPageWeightAtom, calculatorPageWeightUnitAtom } from "../../helpers/jotai/atomsWithStorage";
+import {
+  activeThemeAtom,
+  selectedLocaleAtom,
+  calculatorPageRepsAtom,
+  calculatorPageWeightAtom,
+  calculatorPageWeightUnitAtom
+} from "../../helpers/jotai/atomsWithStorage";
 
 interface Props {
   setNavBarOpen: () => void;
@@ -102,15 +110,16 @@ const CalculatorPage = (props: Props) => {
 
         <div style={styles(activeTheme).cardIncrement}>
 
-          <div style={styles(activeTheme).rowWrapper}>
+          <div style={{marginBottom: 20, ...styles(activeTheme).rowWrapper}}>
             <span style={styles(activeTheme).title}>{selectedLocale.calculatorPage.weightLifted}</span>
             <div style={styles(activeTheme).row}>
               <div onClick={decrementWeight} style={styles(activeTheme).incrementWrapper}>
                 <span style={styles(activeTheme).incrementText}>-</span>
               </div>
 
-              <div onClick={() => toggleModal("0", weightUnit)}>
-                <span style={styles(activeTheme).repsSets}>{weightLifted}</span>
+              <div onClick={() => toggleModal("0", weightUnit)} style={styles(activeTheme).weightWrapper}>
+                <span style={styles(activeTheme).weight}>{weightLifted} {weightUnit}</span>
+                <span style={styles(activeTheme).weightConverted}>{weightConversion(weightLifted, weightUnit === "kg")} {weightUnit === "kg" ? "lbs" : "kg"}</span>
               </div>
 
               <div onClick={incrementWeight} style={styles(activeTheme).incrementWrapper}>
