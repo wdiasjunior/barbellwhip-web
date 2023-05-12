@@ -29,13 +29,11 @@ const styles = (theme) => {
       flexDirection: "row",
       justifyContent: "center",
       alignItems: "center",
-      // paddingInline: 20,
     },
 
     cardIncrement: {
       backgroundColor: theme.backgroundSecondary,
       paddingInline: 22,
-      // paddingBottom: 0,
       marginTop: 20,
       borderRadius: 10,
       height: 260,
@@ -72,7 +70,6 @@ const styles = (theme) => {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",
-      // width: "80%",
     },
     incrementWrapper: {
       minWidth: 50,
@@ -111,7 +108,6 @@ const styles = (theme) => {
     info: {
       color: theme.text,
       fontSize: 18,
-      marginBottom: 10,
       textAlign: "center",
     },
     infoWeight: {
