@@ -10,6 +10,7 @@ const styles = (theme) => {
       // marginTop: 10,
       marginBottom: 40,
       flex: 1,
+      display: "flex",
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "center",
