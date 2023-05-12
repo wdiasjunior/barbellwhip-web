@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 
 import Header from "../../sharedComponents/header/header";
+import Switch from "../../sharedComponents/switch/switch";
 // import Loading from "../../sharedComponents/loading/loading";
 import WeightView from "./components/weightView/weightView";
 import NumberInput from "../../sharedComponents/numberInput/numberInput";
@@ -113,7 +114,7 @@ const PlateMathPage = (props: Props) => {
                     </div>
                   </div>
 
-                  <div onClick={toggleModal}>
+                  <div onClick={toggleModal} style={styles(activeTheme).weightWrapper}>
                     <span style={styles(activeTheme).weight}>{currentWeight} {weightUnit ? "lbs" : "kg"}</span>
                     <span style={styles(activeTheme).weightConverted}>{weightConversion(currentWeight, !weightUnit)} {!weightUnit ? "lbs" : "kg"}</span>
                   </div>
@@ -133,15 +134,17 @@ const PlateMathPage = (props: Props) => {
                 <span style={styles(activeTheme).infoWeight}> {WeightCalc.getClosestAvailableWeight(currentWeight, barWeight[weightUnit ? "lbs" : "kg"], weightRack[weightUnit ? "lbs" : "kg"])}{weightUnit}</span>
               </span>*/}
 
-              <span style={styles(activeTheme).bumperLabel}>{selectedLocale.plateMathPage.bumperToggleLabel}</span>
-              {/*<Switch
-                trackColor={{ false: activeTheme.inactive, true: activeTheme.active }}
-                thumbColor={"#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={setShowBumper}
-                value={showBumper}
-                style={{ transform: [{ scaleX: 1.1 }, { scaleY: 1.1 }], marginTop: 10, }}
-              />*/}
+              <div style={styles(activeTheme).bumperSwitchContainer}>
+                <span style={styles(activeTheme).bumperLabel}>{selectedLocale.plateMathPage.bumperToggleLabel}</span>
+                <Switch
+                  trackColor={{ false: activeTheme.inactive, true: activeTheme.active }}
+                  thumbColor={"#f4f3f4"}
+                  ios_backgroundColor="#3e3e3e"
+                  onValueChange={setShowBumper}
+                  value={showBumper}
+                  style={{ transform: [{ scaleX: 1.1 }, { scaleY: 1.1 }], marginTop: 10, }}
+                />
+              </div>
             </div>
           </div>
 

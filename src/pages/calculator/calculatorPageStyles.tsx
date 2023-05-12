@@ -88,6 +88,7 @@ const styles = (theme) => {
     weightWrapper: {
       display: "flex",
       flexDirection: "column",
+      cursor: "pointer",
     },
     weight: {
       color: theme.text,
@@ -103,6 +104,7 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 24,
       margin: 20,
+      cursor: "pointer",
     },
 
     card1RM: {
