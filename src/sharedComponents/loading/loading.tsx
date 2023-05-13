@@ -10,9 +10,9 @@ const Loading = () => {
   const [activeTheme, ] = useAtom(activeThemeAtom);
 
   return (
-    <View style={styles(activeTheme).container}>
+    <div style={styles(activeTheme).container}>
       <ActivityIndicator size="large" color={activeTheme.textFaded} />
-    </View>
+    </div>
   );
 }
 

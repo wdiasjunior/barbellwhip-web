@@ -1,11 +1,14 @@
 import React from "react";
 
 import styles from "./weightRackPageStyles";
+import "./weightRackPage.css";
 
 import { deepClone } from "../../../helpers/deepClone";
 import { weightConversion } from "../../../helpers/weightConversion";
 
-import Loading from "../../../sharedComponents/loading/loading";
+import Header from "../../../sharedComponents/header/header";
+import Switch from "../../../sharedComponents/switch/switch";
+// import Loading from "../../../sharedComponents/loading/loading";
 
 import { useAtom } from "jotai";
 import {
@@ -41,25 +44,34 @@ const WeightRackPage = () => {
   }
 
   const editWeightRack = (_input, _field, _weightUnit) => {
+    const input = _input.target.value.toString()
     const auxWeightRack = deepClone(weightRack);
-    auxWeightRack[_weightUnit][_field] = _input;
+    auxWeightRack[_weightUnit][_field] = input;
     setWeightRack(auxWeightRack);
   }
 
   const editBumperPlateRack = (_input, _field, _weightUnit) => {
+    const input = _input.target.value.toString()
     const auxBumperPlatesRack = deepClone(bumperPlatesRack);
-    auxBumperPlatesRack[_weightUnit][_field] = _input;
+    auxBumperPlatesRack[_weightUnit][_field] = input;
     setBumperPlatesRack(auxBumperPlatesRack);
   }
 
   const editBarWeight = (_input, _weightUnit) => {
+    const input = _input.target.value.toString()
     const auxBarWeight = deepClone(barWeight);
-    auxBarWeight[_weightUnit] = _input;
+    auxBarWeight[_weightUnit] = input;
     setBarWeight(auxBarWeight);
   }
 
   return (
     <div style={styles(activeTheme).container}>
+      <Header
+        title={selectedLocale.plateMathPage.weightRackPage.title}
+        menu={false}
+        backButton={true}
+        goBackTo="/plateMathPage"
+      />
       {!isInitialRender ? (
         <div style={styles(activeTheme).wrapper}>
           <div style={styles(activeTheme).inputGroup}>
@@ -84,23 +96,19 @@ const WeightRackPage = () => {
               <div style={styles(activeTheme).inputWeightRackRow}>
                 <span style={styles(activeTheme).inputLabel}>kg</span>
                   <input
-                    cursorColor={activeTheme.active}
-                    style={[styles(activeTheme).input, styles(activeTheme).shadowProp]}
+                    style={styles(activeTheme).input}
                     value={barWeight.kg.toString()}
-                    onChangeText={(input) => editBarWeight(input, "kg")}
-                    keyboardType="numeric"
-                    returnKeyType="done"
+                    onChange={(input) => editBarWeight(input, "kg")}
+                    type="number"
                   />
               </div>
               <div style={styles(activeTheme).inputWeightRackRow}>
                 <span style={styles(activeTheme).inputLabel}>lbs</span>
                   <input
-                    cursorColor={activeTheme.active}
-                    style={[styles(activeTheme).input, styles(activeTheme).shadowProp]}
+                    style={styles(activeTheme).input}
                     value={barWeight.lbs.toString()}
-                    onChangeText={(input) => editBarWeight(input, "lbs")}
-                    keyboardType="numeric"
-                    returnKeyType="done"
+                    onChange={(input) => editBarWeight(input, "lbs")}
+                    type="number"
                   />
               </div>
             </div>
@@ -116,12 +124,10 @@ const WeightRackPage = () => {
                     <div style={styles(activeTheme).inputWeightRackRow} key={"PlateRackPage_WeightRackInput_1_" + j} >
                       <span style={styles(activeTheme).inputLabel}>{plate[0]} </span>
                       <input
-                        cursorColor={activeTheme.active}
-                        style={[styles(activeTheme).input, styles(activeTheme).shadowProp]}
+                        style={styles(activeTheme).input}
                         value={plate[1].toString()}
-                        onChangeText={(input) => editWeightRack(input, plate[0], "kg")}
-                        keyboardType="numeric"
-                        returnKeyType="done"
+                        onChange={(input) => editWeightRack(input, plate[0], "kg")}
+                        type="number"
                       />
                     </div>
                   )
@@ -134,12 +140,10 @@ const WeightRackPage = () => {
                     <div style={styles(activeTheme).inputWeightRackRow} key={"PlateRackPage_WeightRackInput_2_" + j} >
                       <span style={styles(activeTheme).inputLabel}>{plate[0]} </span>
                       <input
-                        cursorColor={activeTheme.active}
-                        style={[styles(activeTheme).input, styles(activeTheme).shadowProp]}
+                        style={styles(activeTheme).input}
                         value={plate[1].toString()}
-                        onChangeText={(input) => editWeightRack(input, plate[0], "lbs")}
-                        keyboardType="numeric"
-                        returnKeyType="done"
+                        onChange={(input) => editWeightRack(input, plate[0], "lbs")}
+                        type="number"
                       />
                     </div>
                   )
@@ -158,12 +162,10 @@ const WeightRackPage = () => {
                     <div style={styles(activeTheme).inputWeightRackRow} key={"PlateRackPage_BumperPlatesRackInput_1_" + j} >
                       <span style={styles(activeTheme).inputLabel}>{plate[0]} </span>
                       <input
-                        cursorColor={activeTheme.active}
-                        style={[styles(activeTheme).input, styles(activeTheme).shadowProp]}
+                        style={styles(activeTheme).input}
                         value={plate[1].toString()}
-                        onChangeText={(input) => editBumperPlateRack(input, plate[0], "kg")}
-                        keyboardType="numeric"
-                        returnKeyType="done"
+                        onChange={(input) => editBumperPlateRack(input, plate[0], "kg")}
+                        type="number"
                       />
                     </div>
                   )
@@ -176,12 +178,10 @@ const WeightRackPage = () => {
                     <div style={styles(activeTheme).inputWeightRackRow} key={"PlateRackPage_BumperPlatesRackInput_2_" + j} >
                       <span style={styles(activeTheme).inputLabel}>{plate[0]} </span>
                       <input
-                        cursorColor={activeTheme.active}
-                        style={[styles(activeTheme).input, styles(activeTheme).shadowProp]}
+                        style={styles(activeTheme).input}
                         value={plate[1].toString()}
-                        onChangeText={(input) => editBumperPlateRack(input, plate[0], "lbs")}
-                        keyboardType="numeric"
-                        returnKeyType="done"
+                        onChange={(input) => editBumperPlateRack(input, plate[0], "lbs")}
+                        type="number"
                       />
                     </div>
                   )
@@ -197,7 +197,9 @@ const WeightRackPage = () => {
 
         </div>
       ) : (
-        <Loading />
+        <>
+          {/*<Loading />*/}
+        </>
       )}
     </div>
   );

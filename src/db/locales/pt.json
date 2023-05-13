@@ -35,10 +35,13 @@
     "currentBarWeightLabel": "Peso da barra atual",
     "bumperToggleLabel": "Anilhas Bumper",
     "weightRackPage": {
-      "title": "weightRackPageTitle",
-      "priorityRackTitle": "priorityRackTitle",
-      "rackTitle": "rackTitle",
-      "barsTitle": "barsTitle"
+      "title": "Plate Math Settings",
+      "weightUnitLabel": "Unidade de Peso",
+      "barWeightTitle": "Peso da Barra",
+      "plateRackTitle": "Rack de Anilhas (qtd. por anilha)",
+      "bumperPlatesRackTitle": "Rack de Anilhas Bumper (qtd. por anilha)",
+      "colorCodedPlatesTitle": "Anilhas Coloridas",
+      "collarsSwitchTitle": "2.5kg Collars"
     }
   },
   "programEditorPage": {
@@ -55,6 +58,7 @@
     },
     "programEditorStep1": {
       "title": "Criar Treino",
+      "title2": "Editar Treino",
       "tabTitle": "Info",
       "programName": "Nome do Treino",
       "add1RMexerciseButton": "ADD EXERCÍCIO 1RM",
@@ -63,12 +67,14 @@
     },
     "programEditorStep2": {
       "title": "Criar Treino",
+      "title2": "Editar Treino",
       "tabTitle": "Semanas",
       "addWeekButton": "ADD SEMANA",
       "week": "Semana"
     },
     "programEditorStep3": {
       "title": "Criar Treino",
+      "title2": "Editar Treino",
       "tabTitle": "Dias",
       "emptyDayInfo": "Deixe o dia vazio para marca-lo como dia de descanso",
       "addExerciseButton": "ADD EXERCÍCIO",

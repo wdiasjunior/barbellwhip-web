@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Icon from "../icon";
 
 import { useNavigate } from "react-router-dom";
@@ -32,6 +32,7 @@ const Header = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
+  const inputRef = useRef(null);
 
   const saveProgram = async () => {
     // const fileName = programEditorData.programName;
@@ -44,8 +45,13 @@ const Header = (props: Props) => {
     // }
   }
 
-  const importProgram = () => {
-    props.importProgram();
+  const importProgram = (e) => {
+    props.importProgram(e);
+  }
+  const handleClickImportProgram = () => {
+    inputRef.current.click();
+    console.log(inputRef.current);
+    importProgram(inputRef.current);
   }
 
   const setMenuOpenFromHeader = () => {
@@ -105,7 +111,7 @@ const Header = (props: Props) => {
         </div>
       }
       {props.weightRack &&
-        <div style={styles(activeTheme).contentRight} onClick={() => navigate("/plateRackPage")}>
+        <div style={styles(activeTheme).contentRight} onClick={() => navigate("/weightRackPage")}>
             <Icon
               name="settings-sharp"
               style={styles(activeTheme).iconRight}
@@ -114,7 +120,14 @@ const Header = (props: Props) => {
         </div>
       }
       {props.import &&
-        <div style={styles(activeTheme).contentRight} onClick={importProgram}>
+        <div style={styles(activeTheme).contentRight} onClick={handleClickImportProgram}>
+            <input
+              type="file"
+              onChange={importProgram}
+              // accept="application/JSON"
+              ref={inputRef}
+              style={{display: "none"}}
+            />
             <Icon
               name="download-outline"
               style={styles(activeTheme).iconRight}

@@ -1,10 +1,8 @@
 import { atom } from "jotai";
-import { atomWithStorage, createJSONStorage } from "jotai/utils";
+import { atomWithStorage } from "jotai/utils";
 
 import { themes } from "../../themes/";
 import { locales } from "../../db/locales/";
-
-// const storage = createJSONStorage(() => AsyncStorage);
 
 // Active Program
 const activeProgramAtom = atomWithStorage("activeProgramAtom", {});

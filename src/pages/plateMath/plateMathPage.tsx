@@ -44,15 +44,15 @@ const PlateMathPage = (props: Props) => {
   const [isModalWeightInputVisible, setModalWeightInputVisible] = useState(false);
   const currentPlates = showBumper ? WeightCalc.getPlates(currentWeight, barWeight[weightUnit ? "lbs" : "kg"], weightRack[weightUnit ? "lbs" : "kg"], bumperPlatesRack[weightUnit ? "lbs" : "kg"]) : WeightCalc.getPlates(currentWeight, barWeight[weightUnit ? "lbs" : "kg"], weightRack[weightUnit ? "lbs" : "kg"]);
 
-  const onScreenLoad = () => {
-    // navigation.setOptions({ headerTitle: () =>
-    //               <Header title={selectedLocale.plateMathPage.title} weightRack={true} />
-    //           });
-  }
-
-  useLayoutEffect(() => {
-    if(isInitialRender) onScreenLoad();
-  }, [])
+  // const onScreenLoad = () => {
+  //   // navigation.setOptions({ headerTitle: () =>
+  //   //               <Header title={selectedLocale.plateMathPage.title} weightRack={true} />
+  //   //           });
+  // }
+  //
+  // useLayoutEffect(() => {
+  //   if(isInitialRender) onScreenLoad();
+  // }, [])
 
   const decrementWeight = () => {
     if((currentWeight - 5) < 0) {
@@ -90,9 +90,6 @@ const PlateMathPage = (props: Props) => {
   // (bar weight + plates weight)
   // color coded plates? toggle to turn it on and off?
 
-// return (
-//   <div style={styles(activeTheme).container}></div>
-// )
   return (
     <div style={styles(activeTheme).container}>
       <Header

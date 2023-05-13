@@ -2,10 +2,28 @@ const styles = (theme) => {
   return ({
     container: {
       flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      width: "100vw",
+      whiteSpace: "nowrap",
       backgroundColor: theme.backgroundPrimary,
-      paddingInline: 20,
-      // alignItems: "center",
-      // justifyContent: "center",
+    },
+    wrapper: {
+      display: "flex",
+      flexDirection: "column",
+      backgroundColor: theme.backgroundPrimary,
+      height: "100%",
+      width: "100%",
+      overflow: "auto",
+      paddingLeft: 150,
+      // paddingRight: 22,
+      // paddingBottom: 100,
+      paddingTop: 44,
+      overflow: "auto",
+      // paddingInline: 20,
     },
     title: {
       color: theme.textHighlight,
@@ -20,6 +38,8 @@ const styles = (theme) => {
 
     themeSelectorContainer: {
       marginTop: 20,
+      // maxWidth: "88%",
+      marginRight: 100,
     },
     themeSelectorTitle: {
       color: theme.textHighlight,
@@ -28,12 +48,13 @@ const styles = (theme) => {
       marginBottom: 10,
     },
     themeSelectorItem: {
+      display: "flex",
       flexDirection: "row",
       alignItems: "center",
       height: 46,
       marginBottom: 6,
-      borderBottomWidth: 1,
-      borderBottomColor: theme.textFaded,
+      borderBottom: `1px solid ${theme.textFaded}`,
+      cursor: "pointer",
     },
     themeSelectorIconContainer: {
       marginRight: 12,

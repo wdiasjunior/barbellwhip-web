@@ -1,6 +1,6 @@
 # BarbellWhip Web
 
-Experimental desktop and mobile web version of the [BarbellWhip](https://github.com/wdiasjunior/BarbellWhip) app.
+Experimental web version of the [BarbellWhip](https://github.com/wdiasjunior/BarbellWhip) app.
 
 ## How to run
 
