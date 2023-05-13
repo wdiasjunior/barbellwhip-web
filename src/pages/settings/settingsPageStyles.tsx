@@ -54,6 +54,7 @@ const styles = (theme) => {
       height: 46,
       marginBottom: 6,
       borderBottom: `1px solid ${theme.textFaded}`,
+      cursor: "pointer",
     },
     themeSelectorIconContainer: {
       marginRight: 12,
