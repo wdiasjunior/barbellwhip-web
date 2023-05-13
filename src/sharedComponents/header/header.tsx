@@ -105,7 +105,7 @@ const Header = (props: Props) => {
         </div>
       }
       {props.weightRack &&
-        <div style={styles(activeTheme).contentRight} onClick={() => navigate("/plateRackPage")}>
+        <div style={styles(activeTheme).contentRight} onClick={() => navigate("/weightRackPage")}>
             <Icon
               name="settings-sharp"
               style={styles(activeTheme).iconRight}

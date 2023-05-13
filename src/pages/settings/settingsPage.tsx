@@ -73,7 +73,7 @@ const SettingsPage = (props: Props) => {
         </div>
 
         <div style={styles(activeTheme).themeSelectorContainer}>
-          <span style={styles(activeTheme).themeSelectorTitle}>Theme:</span>
+          <span style={styles(activeTheme).themeSelectorTitle}>{selectedLocale.settingsPage.themeSelectorTitle}:</span>
           {themes.map((theme, index) => {
             return (
               <div

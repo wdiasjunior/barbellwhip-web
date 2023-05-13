@@ -1,25 +1,40 @@
 const styles = (theme) => {
   return ({
     container: {
-      flex: 1,
+      display: "flex",
+      flexDirection: "column",
       backgroundColor: theme.backgroundPrimary,
+      height: "100vh",
+      width: "100vw",
+      // whiteSpace: "nowrap",
     },
     wrapper: {
-      flex: 1,
-      paddingHorizontal: 22,
+      display: "flex",
+      flexDirection: "column",
+      backgroundColor: theme.backgroundPrimary,
+      // height: "100vh",
+      overflow: "auto",
+      // paddingLeft: 60,
+      paddingBottom: 48,
+      paddingTop: 80,
+      // paddingTop: 44,
+      paddingInline: 22,
     },
     title: {
       fontSize: 20,
       color: theme.textHighlight,
     },
     row: {
+      display: "flex",
       flexDirection: "row",
       justifyContent: "space-between",
     },
     column: {
+      display: "flex",
       flexDirection: "column",
     },
     inputGroup: {
+      // display: "flex",
       flex: 1,
       width: "100%",
       paddingVertical: 22,
@@ -42,11 +57,13 @@ const styles = (theme) => {
       color: theme.text,
     },
     inputWeightRackRow: {
+      display: "flex",
       flexDirection: "row",
       alignItems: "center",
       marginBottom: 12,
     },
     inputWeightRackColumn: {
+      display: "flex",
       flexDirection: "column",
     },
     shadowProp: {

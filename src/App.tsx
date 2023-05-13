@@ -7,6 +7,7 @@ import BottomTabBar from "./sharedComponents/bottomTabBar/bottomTabBar";
 import ProgramPage from "./pages/program/programPage";
 import CalculatorPage from "./pages/calculator/calculatorPage";
 import PlateMathPage from "./pages/plateMath/plateMathPage";
+import WeightRackPage from "./pages/plateMath/weightRackPage/weightRackPage";
 import ExerciseItemPage from "./pages/program/subPages/exerciseItemPage/exerciseItemPage";
 import RMReviewPage from "./pages/program/subPages/rmReviewPage/rmReviewPage";
 import SettingsPage from "./pages/settings/settingsPage";
@@ -56,8 +57,9 @@ function App() {
           <Route path="/rmReviewPage" element={<RMReviewPage />} />
           <Route path="/calculatorPage" element={<CalculatorPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/plateMathPage" element={<PlateMathPage setNavBarOpen={setNavBarOpen} />} />
+          <Route path="/weightRackPage" element={<WeightRackPage />} />
           <Route path="/settingsPage" element={<SettingsPage setNavBarOpen={setNavBarOpen} />} />
-          <Route path="*" element={<NotFoundPage />} />
+          {/*<Route path="*" element={<NotFoundPage />} />*/}
         </Routes>
         {showBottomTabBar.includes(location.pathname) && <BottomTabBar isProgramPage={!location.pathname.includes("step") ? true : false} />}
       </div>

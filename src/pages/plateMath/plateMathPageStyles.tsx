@@ -24,11 +24,6 @@ const styles = (theme) => {
       overflow: "auto",
     },
     controlsContainer: {
-      // flex: 1,
-      // display: "flex",
-      // flexDirection: "row",
-      // justifyContent: "center",
-      // alignItems: "center",
       marginInline: 50,
     },
 
