@@ -10,6 +10,7 @@ import PlateMathPage from "./pages/plateMath/plateMathPage";
 import WeightRackPage from "./pages/plateMath/weightRackPage/weightRackPage";
 import ExerciseItemPage from "./pages/program/subPages/exerciseItemPage/exerciseItemPage";
 import RMReviewPage from "./pages/program/subPages/rmReviewPage/rmReviewPage";
+import ProgramEditorPage from "./pages/programEditor/programEditorPage";
 import SettingsPage from "./pages/settings/settingsPage";
 import NotFoundPage from "./pages/notFound/notFoundPage";
 
@@ -47,19 +48,15 @@ function App() {
       <div className="App">
         {showNavBar.includes(location.pathname) && <NavBar setNavBarOpen={setNavBarOpen} navBarOpen={navBarOpen} />}
         <Routes>
-          {/*
-            - save only one program on web version for the sake of simplicity and performance?
-              - an atomWithStorage that holds every program and an atomWithStorage to hold the active program?
-            -
-          */}
           <Route path="/" element={<ProgramPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/exerciseItemPage" element={<ExerciseItemPage />} />
           <Route path="/rmReviewPage" element={<RMReviewPage />} />
           <Route path="/calculatorPage" element={<CalculatorPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/plateMathPage" element={<PlateMathPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/weightRackPage" element={<WeightRackPage />} />
+          <Route path="/programEditorPage" element={<ProgramEditorPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/settingsPage" element={<SettingsPage setNavBarOpen={setNavBarOpen} />} />
-          {/*<Route path="*" element={<NotFoundPage />} />*/}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {showBottomTabBar.includes(location.pathname) && <BottomTabBar isProgramPage={!location.pathname.includes("step") ? true : false} />}
       </div>

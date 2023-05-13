@@ -66,10 +66,6 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "column",
     },
-    shadowProp: {
-      elevation: 2,
-      shadowColor: "#171717",
-    },
     input: {
       backgroundColor: theme.backgroundSecondary,
       height: 50,

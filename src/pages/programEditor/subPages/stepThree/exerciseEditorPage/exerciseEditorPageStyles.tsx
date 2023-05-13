@@ -3,7 +3,10 @@ const styles = (theme) => {
     container: {
       flex: 1,
       backgroundColor: theme.backgroundPrimary,
-      paddingInline: 20,
+    },
+    wrapper: {
+      flex: 1,
+      paddingHorizontal: 20,
     },
     setList: {
       flex: 1,
@@ -17,7 +20,7 @@ const styles = (theme) => {
     weightText: {
       color: theme.textHighlight,
       fontSize: 20,
-      // lineHeight: 30,
+      lineHeight: 30,
       fontWeight: "bold",
     },
 
@@ -29,13 +32,12 @@ const styles = (theme) => {
       borderColor: theme.backgroundSecondary,
       borderWidth: 1,
       borderRadius: 12,
-      marginTop: 6,
-      marginBottom: 6,
+      marginVertical: 6,
       padding: 10,
       paddingLeft: 22,
       color: theme.text,
       fontSize: 20,
-      // lineHeight: 30,
+      lineHeight: 30,
       fontWeight: "bold",
     },
     inputExerciseVariationName: {
@@ -45,13 +47,12 @@ const styles = (theme) => {
       borderColor: theme.backgroundSecondary,
       borderWidth: 1,
       borderRadius: 12,
-      marginTop: 6,
-      marginBottom: 6,
+      marginVertical: 6,
       padding: 10,
       paddingLeft: 22,
       color: theme.text,
       fontSize: 20,
-      // lineHeight: 30,
+      lineHeight: 30,
       fontWeight: "bold",
     },
 
@@ -88,16 +89,15 @@ const styles = (theme) => {
       flex: 1,
       backgroundColor: theme.active,
       borderRadius: 10,
-      marginTop: 12,
-      marginBottom: 12,
-      // marginInline: 20,
+      marginVertical: 12,
+      // marginHorizontal: 20,
       justifyContent: "center",
       alignItems: "center",
     },
     AddExerciseButtonText: {
       color: theme.text,
       fontSize: 16,
-      // lineHeight: 35,
+      lineHeight: 35,
       fontWeight: "bold",
     },
   });

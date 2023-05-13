@@ -9,16 +9,15 @@ const styles = (theme) => {
     AddWeekButton: {
       backgroundColor: theme.active,
       borderRadius: 10,
-      marginTop: 12,
-      marginBottom: 12,
-      marginInline: 20,
+      marginVertical: 12,
+      marginHorizontal: 20,
       justifyContent: "center",
       alignItems: "center",
     },
     AddWeekButtonText: {
       color: theme.text,
       fontSize: 16,
-      // lineHeight: 35,
+      lineHeight: 35,
       fontWeight: "bold",
     },
 
@@ -30,10 +29,9 @@ const styles = (theme) => {
     },
     weekItem: {
       backgroundColor: theme.backgroundSecondary,
-      paddingInline: 15,
-      marginTop: 5,
-      marginBottom: 5,
-      marginInline: 20,
+      paddingHorizontal: 15,
+      marginVertical: 5,
+      marginHorizontal: 20,
       borderRadius: 10,
       height: 56,
       justifyContent: "space-between",
@@ -42,10 +40,9 @@ const styles = (theme) => {
     },
     weekItemSelected: {
       backgroundColor: theme.active,
-      paddingInline: 15,
-      marginTop: 5,
-      marginBottom: 5,
-      marginInline: 20,
+      paddingHorizontal: 15,
+      marginVertical: 5,
+      marginHorizontal: 20,
       borderRadius: 10,
       height: 56,
       justifyContent: "space-between",
@@ -55,13 +52,13 @@ const styles = (theme) => {
     weekItemText: {
       color: theme.text,
       fontSize: 20,
-      // lineHeight: 30,
+      lineHeight: 30,
       fontWeight: "bold",
     },
     weekSelectedItemText: {
       color: theme.backgroundSecondary,
       fontSize: 20,
-      // lineHeight: 30,
+      lineHeight: 30,
       fontWeight: "bold",
     },
     weekItemIconContainer: {
