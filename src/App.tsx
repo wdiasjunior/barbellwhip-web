@@ -9,6 +9,7 @@ import CalculatorPage from "./pages/calculator/calculatorPage";
 import PlateMathPage from "./pages/plateMath/plateMathPage";
 import ExerciseItemPage from "./pages/program/subPages/exerciseItemPage/exerciseItemPage";
 import RMReviewPage from "./pages/program/subPages/rmReviewPage/rmReviewPage";
+import SettingsPage from "./pages/settings/settingsPage";
 import NotFoundPage from "./pages/notFound/notFoundPage";
 
 import "./App.css";
@@ -55,6 +56,7 @@ function App() {
           <Route path="/rmReviewPage" element={<RMReviewPage />} />
           <Route path="/calculatorPage" element={<CalculatorPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/plateMathPage" element={<PlateMathPage setNavBarOpen={setNavBarOpen} />} />
+          <Route path="/settingsPage" element={<SettingsPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         {showBottomTabBar.includes(location.pathname) && <BottomTabBar isProgramPage={!location.pathname.includes("step") ? true : false} />}

@@ -1,15 +1,26 @@
 import React, { useState, useEffect, useLayoutEffect, } from "react";
-// import Ionicons from "react-native-vector-icons/Ionicons";
+
+import Header from "../../sharedComponents/header/header";
+import Icon from "../../sharedComponents/icon";
 
 import styles from "./settingsPageStyles";
 
 import { useAtom } from "jotai";
-import { activeThemeIdAtom, activeThemeAtom, selectedLocaleIdAtom, selectedLocaleAtom } from "../../helpers/jotai/atomsWithStorage";
+import {
+  activeThemeIdAtom,
+  activeThemeAtom,
+  selectedLocaleIdAtom,
+  selectedLocaleAtom
+} from "../../helpers/jotai/atomsWithStorage";
 
 import { themes } from "../../themes/";
 import { locales } from "../../db/locales/";
 
-const SettingsPage = () => {
+interface Props {
+  setNavBarOpen: () => void;
+}
+
+const SettingsPage = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [activeThemeId, setActiveThemeId] = useAtom(activeThemeIdAtom);
@@ -18,96 +29,75 @@ const SettingsPage = () => {
   const [selectedLocaleId, setSelectedLocaleId] = useAtom(selectedLocaleIdAtom);
 
   return (
-    <View style={styles(activeTheme).container}>
-        {/*<Text style={styles(activeTheme).title}>Settings Page</Text>*/}
+    <div style={styles(activeTheme).container}>
+      <Header
+        title={selectedLocale.settingsPage.title}
+        setNavBarOpen={props.setNavBarOpen}
+      />
+      <div style={styles(activeTheme).wrapper}>
+        {/*<span style={styles(activeTheme).title}>Settings Page</span>*/}
 
-        {/*<Text style={styles(activeTheme).subtitle}>
+        {/* TODO */}
+        {/*<span style={styles(activeTheme).subtitle}>
           Weights are rounded to 2.5kg so that it's easier on the head mid training session, and it's applied in every screen.
           In the future, it will be added a toggle so that you can disable this behaviour.
-        </Text>*/}
 
-        {/*<Text style={styles(activeTheme).subtitle}>Calculation Formulas - Select the formulas used to calculate your 1RM</Text>*/}
-
-        {/* theme picker disabled until I find a way to change the Suspense fallback View's background color with the color theme */}
-        {/*<View style={styles(activeTheme).themeSelectorContainer}>
-          <Text style={styles(activeTheme).themeSelectorTitle}>Theme:</Text>
-          {themes.map((theme, index) => {
-            return (
-              <TouchableOpacity
-                style={styles(activeTheme).themeSelectorItem}
-                key={index + "" + theme.id}
-                onClick={() => setActiveThemeId(theme.id)}
-              >
-                <View style={styles(activeTheme).themeSelectorIconContainer}>
-                  {theme.id === activeThemeId &&
-                    <Ionicons
-                      name="checkmark-sharp"
-                      size={20}
-                      style={styles(activeTheme).themeSelectorIcon}
-                    />
-                  }
-                </View>
-                <Text style={styles(activeTheme).themeSelectorItemText}>{theme.name}</Text>
-              </TouchableOpacity>
-            )
-          })}
-        </View>*/}
-
-        {/*
           enable rounding of 1rm estimates and 1rm percentages?
-          1 switch of each per page?
-        */}
+          global setting? 1 switch of each per page?
+        </span>*/}
 
-        <View style={styles(activeTheme).themeSelectorContainer}>
-          <Text style={styles(activeTheme).themeSelectorTitle}>{selectedLocale.settingsPage.languageSelectorTitle}:</Text>
+        {/*<span style={styles(activeTheme).subtitle}>Calculation Formulas - Select the formulas used to calculate your 1RM</span>*/}
+
+        <div style={styles(activeTheme).themeSelectorContainer}>
+          <span style={styles(activeTheme).themeSelectorTitle}>{selectedLocale.settingsPage.languageSelectorTitle}:</span>
           {locales.map((locale, index) => {
             return (
-              <TouchableOpacity
+              <div
                 style={styles(activeTheme).themeSelectorItem}
                 key={index + "" + locale.id}
                 onClick={() => setSelectedLocaleId(locale.id)}
               >
-                <View style={styles(activeTheme).themeSelectorIconContainer}>
+                <div style={styles(activeTheme).themeSelectorIconContainer}>
                   {locale.id === selectedLocaleId &&
-                    <Ionicons
+                    <Icon
                       name="checkmark-sharp"
                       size={20}
                       style={styles(activeTheme).themeSelectorIcon}
                     />
                   }
-                </View>
-                <Text style={styles(activeTheme).themeSelectorItemText}>{locale.name}</Text>
-              </TouchableOpacity>
+                </div>
+                <span style={styles(activeTheme).themeSelectorItemText}>{locale.name}</span>
+              </div>
             )
           })}
-        </View>
-    </View>
+        </div>
+
+        <div style={styles(activeTheme).themeSelectorContainer}>
+          <span style={styles(activeTheme).themeSelectorTitle}>Theme:</span>
+          {themes.map((theme, index) => {
+            return (
+              <div
+                style={styles(activeTheme).themeSelectorItem}
+                key={index + "" + theme.id}
+                onClick={() => setActiveThemeId(theme.id)}
+              >
+                <div style={styles(activeTheme).themeSelectorIconContainer}>
+                  {theme.id === activeThemeId &&
+                    <Icon
+                      name="checkmark-sharp"
+                      size={20}
+                      style={styles(activeTheme).themeSelectorIcon}
+                    />
+                  }
+                </div>
+                <span style={styles(activeTheme).themeSelectorItemText}>{theme.name}</span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
   );
 }
-
-// About
-//
-//   <div id="container">
-//   <strong>By powerlifters, to powerlifters.</strong><br><br>
-//
-//   <br><p>An open source project created to make</p>
-//   <p>training log a better experience.</p><br>
-//
-//   {/*<Text style={styles(activeTheme).subtitle}>For a tutorial on how to use this app click this link</Text>*/}
-//
-//   <p>To report bugs, suggest new features</p>
-//   <p>or if want to contribute to the project</p>
-//   <p>access the link below.</p><br>
-//   <p><a style="color: #3dc2ff;" href="https://github.com/" target="_blank">GitHub Repository</a></p><br>
-//
-//   {/*<Text style={styles(activeTheme).subtitle}>About (made with eXtreme Go Horse process - XGH)</Text>*/}
-//
-//   <p>This app is ad free.<br>If you feel like it, please support the developer.</p><br>
-//   <p><a style="color: #3dc2ff;" href="https://paypal.com/" target="_blank">Donate</a></p><br><br><br>
-//   <p style="color: #ffffff">Created by Wellington Junior.</p>
-//   </div>
-//
-//   {/*<Text style={styles(activeTheme).subtitle}>Version Number</Text>*/}
-//   {/* add easter egg on multiple clicks */}
 
 export default SettingsPage;
