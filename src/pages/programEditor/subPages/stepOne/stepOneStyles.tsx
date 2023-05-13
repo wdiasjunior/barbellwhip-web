@@ -83,6 +83,7 @@ const styles = (theme) => {
     },
     onermItemIcon: {
       color: theme.text,
+      fill: theme.text,
     },
 
     AddOneRMButton: {

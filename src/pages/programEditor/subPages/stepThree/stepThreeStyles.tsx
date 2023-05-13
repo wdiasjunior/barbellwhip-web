@@ -31,6 +31,7 @@ const styles = (theme) => {
     },
     exerciseItemIcon: {
       color: theme.text,
+      fill: theme.text,
     },
 
     AddExerciseButton: {

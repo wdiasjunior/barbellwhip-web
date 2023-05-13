@@ -54,6 +54,7 @@ const styles = (theme) => {
     },
     icon: {
       color: theme.text,
+      fill: theme.text,
     }
   });
 }

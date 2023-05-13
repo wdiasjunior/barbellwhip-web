@@ -50,11 +50,13 @@ const styles = (theme) => {
       left: -2,
       marginRight: 22,
       color: theme.text,
+      fill: theme.text,
     },
     iconRight: {
       width: 40,
       paddingLeft: 10,
       color: theme.text,
+      fill: theme.text,
     },
   });
 }

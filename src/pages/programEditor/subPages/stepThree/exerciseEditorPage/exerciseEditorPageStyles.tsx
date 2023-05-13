@@ -69,6 +69,7 @@ const styles = (theme) => {
     },
     exerciseItemRemoveIcon: {
       color: theme.text,
+      fill: theme.text,
     },
     row: {
       flexDirection: "row",

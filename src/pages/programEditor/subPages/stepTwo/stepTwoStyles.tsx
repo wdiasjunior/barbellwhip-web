@@ -67,6 +67,7 @@ const styles = (theme) => {
     },
     weekItemIcon: {
       color: theme.text,
+      fill: theme.text,
     },
 
     title: {

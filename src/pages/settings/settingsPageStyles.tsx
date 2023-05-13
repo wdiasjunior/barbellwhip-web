@@ -62,6 +62,7 @@ const styles = (theme) => {
     },
     themeSelectorIcon: {
       color: theme.textHighlight,
+      fill: theme.textHighlight,
     },
     themeSelectorItemText: {
       fontSize: 16,
