@@ -21,7 +21,8 @@ const NavBar = (props: Props) => {
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
-  const [activeRoute, setActiveRoute] = useState("/"); // should be a jotai atom?
+  // const [activeRoute, setActiveRoute] = useState("/");
+  const [activeRoute, setActiveRoute] = useState(window.location.pathname);
 
   const handleSelectRoute = (_route: string) => {
     // console.log(_route);
