@@ -1,9 +1,21 @@
 const styles = (theme) => {
   return ({
+    // container: {
+    //   flex: 1,
+    //   display: "flex",
+    //   backgroundColor: theme.backgroundPrimary,
+    //   paddingTop: 12,
+    // },
+
     container: {
-      flex: 1,
+      display: "flex",
+      flexDirection: "column",
       backgroundColor: theme.backgroundPrimary,
-      paddingTop: 12,
+      height: "100vh",
+      width: "100vw",
+      // paddingTop: 60,
+      // padding: 60,
+      // whiteSpace: "nowrap",
     },
 
     programNameTextInput: {
@@ -61,10 +73,12 @@ const styles = (theme) => {
       marginHorizontal: 20,
       borderRadius: 10,
       height: 150,
+      display: "flex",
       justifyContent: "center",
       flexDirection: "column",
     },
     onermItem_InputRow: {
+      display: "flex",
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
@@ -91,6 +105,7 @@ const styles = (theme) => {
       borderRadius: 10,
       marginVertical: 12,
       marginHorizontal: 20,
+      display: "flex",
       justifyContent: "center",
       alignItems: "center",
     },
@@ -108,6 +123,7 @@ const styles = (theme) => {
       marginHorizontal: 20,
       borderRadius: 10,
       height: 50,
+      display: "flex",
       justifyContent: "space-around",
       alignItems: "center",
       flexDirection: "row",

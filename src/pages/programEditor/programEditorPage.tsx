@@ -5,6 +5,8 @@ import Modal from "../../sharedComponents/modal/modal";
 import Icon from "../../sharedComponents/icon";
 // import Loading from "../../sharedComponents/loading/loading";
 
+import { useNavigate } from "react-router-dom";
+
 import { useAtom } from "jotai";
 import {
   activeThemeAtom,
@@ -28,6 +30,7 @@ import styles from "./programEditorPageStyles";
 const ProgramEditorPage = () => {
 
   // const isFocused = useIsFocused();
+  const navigate = useNavigate();
 
   const isInitialRender = useInitialRender();
 
@@ -99,7 +102,7 @@ const ProgramEditorPage = () => {
       oneRMs: [],
       trainingProgram: [ { week: new Array(7).fill({ day:[] }) } ]
     });
-    navigate("StepsTabs");
+    navigate("/step1");
   }
 
   const programOptionModal = async (action) => {
@@ -124,7 +127,7 @@ const ProgramEditorPage = () => {
         setProgramEditorData(programData);
         setModalOpen(false);
         setProgramEditorMode("Edit");
-        navigation.push("StepsTabs");
+        navigate("/step1");
         break;
       case "share":
         const url = returnFileURL(programNameForAction.name);
