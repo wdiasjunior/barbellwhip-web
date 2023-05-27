@@ -20,8 +20,7 @@ const BottomTabBar = (props: Props) => {
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
-  const [activeRoute, setActiveRoute] = useState("/"); // should be a jotai atom?
-  const isProgramPage = true;
+  const [activeRoute, setActiveRoute] = useState(props.isProgramPage ? "/" : "/step1");
   const routes = props.isProgramPage ? routesProgramPage : routesProgramEditorPage;
 
   const handleSelectRoute = (_route: string) => {
@@ -65,7 +64,7 @@ const BottomTabBar = (props: Props) => {
                     {item.route === "/" ? selectedLocale["programPage"]?.title : selectedLocale[item.route.replace("/", "")]?.title}
                   </span>
                 ) : (
-                  <span className={"BottomTabBar_ItemText"} style={{...styles(activeTheme, isHover, index, activeRoute, item.route).itemText}}>
+                  <span className={"BottomTabBar_ItemText"} style={{...styles(activeTheme, isHover, index, activeRoute, item.route).itemText_Steps}}>
                     {item.title}
                   </span>
                 )}

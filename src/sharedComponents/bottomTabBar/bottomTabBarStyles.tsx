@@ -50,6 +50,15 @@ const styles = (theme, isHover, index, activeRoute, itemRoute) => {
       position: "relative",
       bottom: -6,
     },
+    itemText_Steps: {
+      color: itemRoute === activeRoute ? theme.textHighlight : theme.text,
+      fontSize: 16,
+      minWidth: "fit-content",
+      whiteSpace: "nowrap",
+      position: "relative",
+      bottom: 6,
+      fontWeight: "bold",
+    },
     itemIconWrapper: {
       display: "flex",
       alignItems: "center",
