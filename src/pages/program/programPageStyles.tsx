@@ -39,9 +39,9 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center",
-      marginInline: 30,
-      paddingLeft: 60,
+      height: "calc(100vh - 50px)",
+      marginLeft: 60,
+      paddingInline: 30,
     },
     noActiveProgramTextTitle: {
       color: theme.text,
