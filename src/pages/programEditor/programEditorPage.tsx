@@ -27,7 +27,11 @@ import { useInitialRender } from "../../helpers/useInitialRender";
 
 import styles from "./programEditorPageStyles";
 
-const ProgramEditorPage = () => {
+interface Props {
+  setNavBarOpen: () => void;
+}
+
+const ProgramEditorPage = (props: Props) => {
 
   // const isFocused = useIsFocused();
   const navigate = useNavigate();
@@ -155,6 +159,7 @@ const ProgramEditorPage = () => {
           title={selectedLocale.programEditorPage.title}
           import={true}
           importProgram={importProgram}
+          setNavBarOpen={props.setNavBarOpen}
         />
 
         {showFabButton &&
