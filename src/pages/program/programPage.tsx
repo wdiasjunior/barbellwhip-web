@@ -14,7 +14,7 @@ import { useInitialRender } from "../../helpers/useInitialRender";
 // import "./programPage.css";
 import styles from "./programPageStyles";
 
-import defaultProgramData from "../../db/programs/strengthV4.json";
+// import defaultProgramData from "../../db/programs/strengthV4.json";
 
 interface Props {
   setNavBarOpen: () => void;
@@ -29,8 +29,8 @@ const ProgramPage = (props: Props) => {
 
   const [activeProgramData, setActiveProgramData] = useAtom(activeProgramAtom);
   // const data = activeProgramData.trainingProgram ? activeProgramData : defaultProgramData; // TODO - change this so it doesn't break depending on the program that's loaded
-  // const data = activeProgramData;
-  const data = defaultProgramData; // TODO - remove this
+  const data = activeProgramData;
+  // const data = defaultProgramData; // TODO - remove this
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openMenu = () => {
