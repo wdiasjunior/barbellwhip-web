@@ -20,7 +20,7 @@ const BottomTabBar = (props: Props) => {
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
-  const [activeRoute, setActiveRoute] = useState(props.isProgramPage ? "/" : "/step1");
+  const [activeRoute, setActiveRoute] = useState(window.location.pathname);
   const routes = props.isProgramPage ? routesProgramPage : routesProgramEditorPage;
 
   const handleSelectRoute = (_route: string) => {
