@@ -68,7 +68,6 @@ const WeightRackPage = () => {
     <div style={styles(activeTheme).container}>
       <Header
         title={selectedLocale.plateMathPage.weightRackPage.title}
-        menu={false}
         backButton={true}
         goBackTo="/plateMathPage"
       />

@@ -82,7 +82,6 @@ const StepOne = () => {
     <div style={styles(activeTheme).container}>
       <Header
         title={programEditorMode === "Create" ? selectedLocale.programEditorPage.programEditorStep1.title : selectedLocale.programEditorPage.programEditorStep1.title2}
-        menu={false}
         saveButton={true}
         backButton={true}
         goBackTo={"/programEditorPage"}

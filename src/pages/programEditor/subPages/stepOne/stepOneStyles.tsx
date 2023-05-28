@@ -7,23 +7,18 @@ const styles = (theme) => {
       height: "100vh",
       width: "100vw",
       paddingTop: 60,
-      // padding: 60,
-      // whiteSpace: "nowrap",
     },
     listContainer: {
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.backgroundPrimary,
-      // height: "100%",
       width: "100%",
       overflow: "auto",
-      // paddingBottom: 48,
     },
 
     programNameTextInput: {
       backgroundColor: theme.backgroundSecondary,
       height: 30,
-      // width: "100%",
       borderColor: theme.backgroundSecondary,
       borderWidth: 1,
       borderRadius: 15,
@@ -40,7 +35,6 @@ const styles = (theme) => {
     oneRMTextInput: {
       backgroundColor: theme.backgroundSecondary,
       height: 30,
-      // width: "100%",
       borderColor: theme.placeholderText,
       borderWidth: 1,
       borderRadius: 12,
@@ -81,7 +75,6 @@ const styles = (theme) => {
       marginBottom: 5,
       marginInline: 20,
       borderRadius: 10,
-      // height: 150,
       height: "fit-content",
       display: "flex",
       justifyContent: "center",
@@ -124,7 +117,6 @@ const styles = (theme) => {
     AddOneRMButtonText: {
       color: theme.text,
       fontSize: 16,
-      lineHeight: 35,
       fontWeight: "bold",
       userSelect: "none",
     },

@@ -1,8 +1,4 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, useCallback, } from "react";
-import { Text, View, TouchableOpacity, SafeAreaView, ScrollView, } from "react-native";
-import DraggableFlatList, { ScaleDecorator } from "react-native-draggable-flatlist";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 import { useAtom } from "jotai";
 import { programEditorDataAtom, selectedWeekAtom, programEditorModeAtom } from "../../../../helpers/jotai/programEditorAtoms";
@@ -12,11 +8,12 @@ import { useInitialRender } from "../../../../helpers/useInitialRender";
 import { deepClone } from "../../../../helpers/deepClone";
 
 import Header from "../../../../sharedComponents/header/header";
-import Loading from "../../../../sharedComponents/loading/loading";
+import Icon from "../../../../sharedComponents/icon";
+// import Loading from "../../../../sharedComponents/loading/loading";
 
 import styles from "./stepTwoStyles";
 
-const StepTwo = ({ navigation }) => {
+const StepTwo = () => {
 
   const isInitialRender = useInitialRender();
 
@@ -27,21 +24,6 @@ const StepTwo = ({ navigation }) => {
   const [selectedWeek, setSelectedWeek] = useAtom(selectedWeekAtom);
   const [programEditorMode, ] = useAtom(programEditorModeAtom);
   const weekRef = useRef(null);
-
-  const onScreenLoad = () => {
-    navigation.setOptions({ headerTitle: () =>
-                  <Header
-                    title={programEditorMode === "Create" ? selectedLocale.programEditorPage.programEditorStep2.title : selectedLocale.programEditorPage.programEditorStep2.title2}
-                    menu={false}
-                    saveButton={true}
-                    backButton={true}
-                  />
-              });
-  }
-
-  useLayoutEffect(() => {
-    if(isInitialRender) onScreenLoad();
-  }, [])
 
   const addWeek = () => {
     let auxAtom = deepClone(programEditorData);
@@ -90,53 +72,117 @@ const StepTwo = ({ navigation }) => {
     }
 
     return (
-      <ScaleDecorator>
-        <TouchableOpacity
-          style={selectedWeek == index ? styles(activeTheme).weekItemSelected : styles(activeTheme).weekItem}
-          onPress={() => selectWeek(index)}
-        >
-          <TouchableOpacity style={{width: 40, height: 30}} onLongPress={drag} delayLongPress={50}>
-            <Ionicons name="reorder-three-outline" size={30} style={styles(activeTheme).weekItemIcon} />
-          </TouchableOpacity>
-          <Text style={(selectedWeek == index) ? styles(activeTheme).weekSelectedItemText : styles(activeTheme).weekItemText}>{selectedLocale.programEditorPage.programEditorStep2.week} {index + 1}</Text>
+      <div
+        style={selectedWeek == index ? styles(activeTheme).weekItemSelected : styles(activeTheme).weekItem}
+        onClick={() => selectWeek(index)}
+      >
+        <div style={{width: 32, height: 30, cursor: "pointer"}} onLongPress={drag} delayLongPress={50}>
+          <Icon name="reorder-three-outline" size={30} style={styles(activeTheme).weekItemIcon} />
+        </div>
+        <span style={(selectedWeek == index) ? styles(activeTheme).weekSelectedItemText : styles(activeTheme).weekItemText}>{selectedLocale.programEditorPage.programEditorStep2.week} {index + 1}</span>
 
-          <TouchableOpacity style={styles(activeTheme).weekItemIconContainer} >
-            <Ionicons onPress={() => duplicateWeek(index)} name="copy-outline" size={20} style={styles(activeTheme).weekItemIcon} />
-          </TouchableOpacity>
+        <div style={styles(activeTheme).weekItemIconContainer} >
+          <Icon onClick={() => duplicateWeek(index)} name="copy-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+        </div>
 
-          <TouchableOpacity style={styles(activeTheme).weekItemIconContainer}  onPress={() => deleteWeek(index)} >
-            <Ionicons name="trash-outline" size={20} style={styles(activeTheme).weekItemIcon} />
-          </TouchableOpacity>
-        </TouchableOpacity>
-      </ScaleDecorator>
+        <div style={styles(activeTheme).weekItemIconContainer}  onClick={() => deleteWeek(index)} >
+          <Icon name="trash-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+        </div>
+      </div>
     )
   }, [programEditorData.trainingProgram, addWeek, reorder, selectWeek, duplicateWeek]); // TODO - check this - not sure if this array should have all of this
 
   return (
-    <View style={styles(activeTheme).container}>
+    <div style={styles(activeTheme).container}>
+      <Header
+        title={programEditorMode === "Create" ? selectedLocale.programEditorPage.programEditorStep2.title : selectedLocale.programEditorPage.programEditorStep2.title2}
+        saveButton={true}
+        backButton={true}
+        goBackTo={"/programEditorPage"}
+      />
       {!isInitialRender ? (
-        <View style={styles(activeTheme).weekList}>
-          <GestureHandlerRootView>
-            <DraggableFlatList
-              ref={weekRef}
-              data={programEditorData.trainingProgram}
-              keyExtractor={(item, index) => index}
-              onDragEnd={({data, from, to}) => reorder(data, from, to)}
-              renderItem={renderWeekItem}
-              ListFooterComponent={() => {
-                return (
-                  <TouchableOpacity onPress={addWeek} style={styles(activeTheme).AddWeekButton}>
-                    <Text style={styles(activeTheme).AddWeekButtonText}>{selectedLocale.programEditorPage.programEditorStep2.addWeekButton}</Text>
-                  </TouchableOpacity>
-                )
-              }}
-            />
-          </GestureHandlerRootView>
-        </View>
+        <div style={styles(activeTheme).weekList}>
+          {/*<DraggableFlatList
+            ref={weekRef}
+            data={programEditorData.trainingProgram}
+            keyExtractor={(item, index) => index}
+            onDragEnd={({data, from, to}) => reorder(data, from, to)}
+            renderItem={renderWeekItem}
+            ListFooterComponent={() => {
+              return (*/}
+
+
+
+
+
+
+
+
+
+
+              <div
+                style={false ? styles(activeTheme).weekItemSelected : styles(activeTheme).weekItem}
+                onClick={() => selectWeek(1)}
+              >
+                <div style={{width: 32, height: 30, cursor: "pointer"}}>
+                  <Icon name="reorder-three-outline" size={30} style={styles(activeTheme).weekItemIcon} />
+                </div>
+                <span style={(false) ? styles(activeTheme).weekSelectedItemText : styles(activeTheme).weekItemText}>{selectedLocale.programEditorPage.programEditorStep2.week} 1</span>
+
+                <div style={styles(activeTheme).weekItemIconContainer} >
+                  <Icon onClick={() => duplicateWeek(1)} name="copy-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+                </div>
+
+                <div style={styles(activeTheme).weekItemIconContainer}  onClick={() => deleteWeek(1)} >
+                  <Icon name="trash-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+                </div>
+              </div>
+              <div
+                style={true ? styles(activeTheme).weekItemSelected : styles(activeTheme).weekItem}
+                onClick={() => selectWeek(1)}
+              >
+                <div style={{width: 32, height: 30, cursor: "pointer"}}>
+                  <Icon name="reorder-three-outline" size={30} style={styles(activeTheme).weekItemIcon} />
+                </div>
+                <span style={(true) ? styles(activeTheme).weekSelectedItemText : styles(activeTheme).weekItemText}>{selectedLocale.programEditorPage.programEditorStep2.week} 2</span>
+
+                <div style={styles(activeTheme).weekItemIconContainer} >
+                  <Icon onClick={() => duplicateWeek(1)} name="copy-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+                </div>
+
+                <div style={styles(activeTheme).weekItemIconContainer}  onClick={() => deleteWeek(1)} >
+                  <Icon name="trash-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div onClick={addWeek} style={styles(activeTheme).AddWeekButton}>
+                  <span style={styles(activeTheme).AddWeekButtonText}>{selectedLocale.programEditorPage.programEditorStep2.addWeekButton}</span>
+                </div>
+              {/*)
+            }}
+          />*/}
+        </div>
       ) : (
-        <Loading />
+        <>
+          {/*<Loading />*/}
+        </>
       )}
-    </View>
+    </div>
   );
 }
 

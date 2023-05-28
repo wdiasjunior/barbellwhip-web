@@ -36,7 +36,6 @@ const RMReviewPage = () => {
       <div className="ProgramPage_RMReviewPage_Container" style={styles(activeTheme).container}>
         <Header
           title={selectedLocale.programPage.rmReviewTitle}
-          menu={false}
           backButton={true}
           goBackTo="/"
         />
