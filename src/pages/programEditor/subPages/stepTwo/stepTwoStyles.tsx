@@ -7,14 +7,7 @@ const styles = (theme) => {
       height: "100vh",
       width: "100vw",
       paddingTop: 60,
-      // padding: 60,
-      // whiteSpace: "nowrap",
     },
-    // container: {
-    //   width: "100%",
-    //   height: "100%",
-    //   backgroundColor: theme.backgroundPrimary,
-    // },
 
     AddWeekButton: {
       backgroundColor: theme.active,
@@ -51,6 +44,8 @@ const styles = (theme) => {
       justifyContent: "space-between",
       alignItems: "center",
       flexDirection: "row",
+      cursor: "pointer",
+      userSelect: "none",
     },
     weekItemSelected: {
       backgroundColor: theme.active,
@@ -64,11 +59,14 @@ const styles = (theme) => {
       justifyContent: "space-between",
       alignItems: "center",
       flexDirection: "row",
+      cursor: "pointer",
+      userSelect: "none",
     },
     weekItemText: {
       color: theme.text,
       fontSize: 20,
       fontWeight: "bold",
+      userSelect: "none",
     },
     weekSelectedItemText: {
       color: theme.backgroundSecondary,
