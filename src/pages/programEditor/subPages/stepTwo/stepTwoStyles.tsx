@@ -32,13 +32,12 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 16,
       fontWeight: "bold",
+      userSelect: "none",
     },
 
     weekList: {
       width: "100%",
       height: "100%",
-      // paddingTop: 12,
-      // flex: 1,
     },
     weekItem: {
       backgroundColor: theme.backgroundSecondary,

@@ -1,34 +1,18 @@
 const styles = (theme) => {
   return ({
     container: {
-      position: "relative", // absolute
+      position: "relative",
       top: 50,
       marginLeft: 60,
-      // width: "100%",
       maxHeight: 53,
       minHeight: 53,
-      // display: "flex",
-      // // flexDirection: "row",
-      // marginBottom: 10,
-      // // marginTop: 50,
-      // // marginLeft: 60,
       overflowY: "hidden",
       overflowX: "auto",
       scrollPadding: 80,
     },
     wrapper: {
-      // position: "relative",
-      // // top: 50,
-      // // left: 60,
-      // // width: "100%",
-      // // maxHeight: 53,
       display: "flex",
       flexDirection: "row",
-      // // marginBottom: 10,
-      // // marginTop: 50,
-      // // marginLeft: 60,
-      // // overflowY: "hidden",
-      // // overflowX: "auto",
     },
     tabItem: {
       backgroundColor: theme.backgroundSecondary,
@@ -55,16 +39,16 @@ const styles = (theme) => {
     text: {
       color: theme.text,
       fontSize: 18,
-      // lineHeight: 30,
       fontWeight: "bold",
       textTransform: "capitalize",
+      userSelect: "none",
     },
     textSelected: {
       color: theme.textHighlight,
       fontSize: 18,
-      // lineHeight: 30,
       fontWeight: "bold",
       textTransform: "capitalize",
+      userSelect: "none",
     },
   });
 }

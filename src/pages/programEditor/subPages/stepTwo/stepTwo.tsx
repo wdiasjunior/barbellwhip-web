@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef, useCallback, } from "react";
+import React, { useState, useRef, useCallback, } from "react";
 
 import { useAtom } from "jotai";
 import { programEditorDataAtom, selectedWeekAtom, programEditorModeAtom } from "../../../../helpers/jotai/programEditorAtoms";

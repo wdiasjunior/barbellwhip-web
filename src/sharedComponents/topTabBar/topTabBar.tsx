@@ -73,7 +73,7 @@ const TopTabBar = (props: Props) => {
 
   return (
     <>
-      <div className="TopTabBar_Container" style={styles(activeTheme).container}>
+      <div className="TopTabBar_Container" style={{...styles(activeTheme).container, marginLeft: window.location.pathname === "/" ? 60 : 0}}>
         <div className="TopTabBar_Wrapper" style={styles(activeTheme).wrapper}>
           {days.map((item, index) => {
             return (
