@@ -59,7 +59,7 @@ const ProgramEditorPage = (props: Props) => {
 
   const saveProgram = (fileName: string, programJSON: Object) => {
     const _programJSON = JSON.stringify(programJSON);
-    setProgramList(prev => [...prev, { name: fileName, program: _programJSON }]);
+    setProgramList(prev => [...prev, { name: fileName + ".json", program: _programJSON }]);
   }
 
   const deleteProgram = () => {
@@ -85,7 +85,8 @@ const ProgramEditorPage = (props: Props) => {
         fileReader.readAsText(e.target.files[0], "UTF-8");
         fileReader.onload = e => {
           const program = JSON.parse(e.target.result);
-          setProgramList(prev => [...prev, { name: program.programName + ".json", program: JSON.stringify(program) }]);
+          // setProgramList(prev => [...prev, { name: program.programName + ".json", program: JSON.stringify(program) }]);
+          saveProgram(program.programName, program);
         };
       } else {
         alert(selectedLocale.programEditorPage.importErrorMessage);

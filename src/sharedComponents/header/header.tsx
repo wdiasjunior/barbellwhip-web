@@ -5,10 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./headerStyles";
 
-import { writeToJSON } from "../../db/fileSystem/fsWrite";
-
 import { useAtom } from "jotai";
-import { programEditorDataAtom } from "../../helpers/jotai/programEditorAtoms";
+import { programEditorDataAtom, programListAtom } from "../../helpers/jotai/programEditorAtoms";
 import { activeThemeAtom } from "../../helpers/jotai/atomsWithStorage";
 
 import { deepClone } from "../../helpers/deepClone";
@@ -32,17 +30,18 @@ const Header = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
+  const [, setProgramList] = useAtom(programListAtom);
   const inputRef = useRef(null);
 
-  const saveProgram = async () => {
-    // const fileName = programEditorData.programName;
-    // if(fileName !== "") {
-    //   const programJSON = deepClone(programEditorData);
-    //   await writeToJSON(fileName, programJSON);
-    //   navigation.replace("ProgramEditorStack");
-    // } else {
-    //   alert("Please fill in the program name field.")
-    // }
+  const saveProgram = () => {
+    const fileName = programEditorData.programName;
+    if(fileName !== "") {
+      const programJSON = deepClone(programEditorData);
+      setProgramList(prev => [...prev, { name: fileName + ".json", program: programJSON }]);
+      navigate(props.goBackTo);
+    } else {
+      alert("Please fill in the program name field.")
+    }
   }
 
   const importProgram = (e) => {

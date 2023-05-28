@@ -47,17 +47,17 @@ const StepOne = () => {
 
   const editProgramName = (e) => {
     let auxAtom = deepClone(programEditorData);
-    auxAtom.programName = e;
+    auxAtom.programName = e.target.value.toString();
     setProgramEditorData(auxAtom);
   }
   const editRMname = (e, index) => {
     let auxAtom = deepClone(programEditorData);
-    auxAtom.oneRMs[index].name = e;
+    auxAtom.oneRMs[index].name = e.target.value.toString();
     setProgramEditorData(auxAtom);
   }
   const editRMweight = (e, index) => {
     let auxAtom = deepClone(programEditorData);
-    auxAtom.oneRMs[index].weight = e;
+    auxAtom.oneRMs[index].weight = e.target.value.toString();
     setProgramEditorData(auxAtom);
   }
 
@@ -88,7 +88,7 @@ const StepOne = () => {
         goBackTo={"/programEditorPage"}
       />
       {!isInitialRender ? (
-        <div>
+        <div style={styles(activeTheme).listContainer}>
           <input
             placeholder={selectedLocale.programEditorPage.programEditorStep1.programName}
             style={styles(activeTheme).programNameTextInput}
@@ -121,7 +121,7 @@ const StepOne = () => {
                 <div style={styles(activeTheme).onermItem_InputRow} >
                   <input
                     placeholder={selectedLocale.programEditorPage.programEditorStep1.weightLabel}
-                    keyboardType="numeric"
+                    type="numeric"
                     style={styles(activeTheme).oneRMNumberInput}
                     value={item.weight+""}
                     onChange={(input) => editRMweight(input, index)}
