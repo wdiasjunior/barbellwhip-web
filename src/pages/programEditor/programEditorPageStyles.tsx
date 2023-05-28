@@ -61,7 +61,7 @@ const styles = (theme) => {
       position: "absolute",
       bottom: 20,
       right: 20,
-      zIndex: 999999,
+      zIndex: 97,
       cursor: "pointer",
     },
     FabButtonText: {
