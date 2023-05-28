@@ -77,7 +77,6 @@ const ProgramEditorPage = (props: Props) => {
   }
 
   const importProgram = (e) => {
-    console.log("importProgram");
     // console.log("importProgram", e.target.files[0]);
     const fileReader = new FileReader();
     if(e.target && e.target.files) {
@@ -96,8 +95,6 @@ const ProgramEditorPage = (props: Props) => {
   // console.log(programList);
 
   const handleFabButtonClick = () => {
-    console.log("handleFabButtonClick");
-
     setProgramEditorMode("Create");
     setSelectedWeek(0);
     setSelectedDay(0);
@@ -135,8 +132,9 @@ const ProgramEditorPage = (props: Props) => {
         navigate("/step1");
         break;
       case "share":
-        const url = returnFileURL(programNameForAction.name);
-        Share.open({ url: `file://${url}` });
+        alert("TODO");
+        // const url = returnFileURL(programNameForAction.name);
+        // Share.open({ url: `file://${url}` });
         setModalOpen(false);
         break;
       case "delete":
