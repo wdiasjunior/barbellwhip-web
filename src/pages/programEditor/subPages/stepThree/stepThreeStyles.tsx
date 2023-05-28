@@ -11,25 +11,10 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.backgroundPrimary,
+      overflow: "auto",
       height: "100vh",
       paddingTop: 60,
     },
-
-    // container: {
-    //   display: "flex",
-    //   flexDirection: "column",
-    //   backgroundColor: theme.backgroundPrimary,
-    //   height: "100vh",
-    //   width: "100vw",
-    //   paddingTop: 60,
-    //   // padding: 60,
-    //   // whiteSpace: "nowrap",
-    // },
-
-    // container: {
-    //   flex: 1,
-    //   backgroundColor: theme.backgroundPrimary,
-    // },
 
     exerciseList: {
       flex: 1,
@@ -99,6 +84,7 @@ const styles = (theme) => {
 
     modalContent: {
       display: "flex",
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: theme.backgroundPrimary,

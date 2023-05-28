@@ -36,7 +36,7 @@ const Header = (props: Props) => {
   const saveProgram = () => {
     const fileName = programEditorData.programName;
     if(fileName !== "") {
-      const programJSON = deepClone(programEditorData);
+      const programJSON = JSON.stringify(programEditorData);
       setProgramList(prev => [...prev, { name: fileName + ".json", program: programJSON }]);
       navigate(props.goBackTo);
     } else {

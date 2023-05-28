@@ -7,6 +7,7 @@ const styles = (theme) => {
       height: "100vh",
       width: "100vw",
       paddingTop: 60,
+      overflow: "auto",
     },
 
     AddWeekButton: {

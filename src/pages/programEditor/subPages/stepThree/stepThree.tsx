@@ -5,7 +5,13 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useNavigate } from "react-router-dom";
 
 import { useAtom } from "jotai";
-import { programEditorDataAtom, selectedWeekAtom, selectedDayAtom, programEditorModeAtom } from "../../../../helpers/jotai/programEditorAtoms";
+import {
+  programEditorDataAtom,
+  selectedWeekAtom,
+  selectedDayAtom,
+  programEditorModeAtom,
+  exerciseEditorDataAtom,
+} from "../../../../helpers/jotai/programEditorAtoms";
 import { activeThemeAtom, selectedLocaleAtom } from "../../../../helpers/jotai/atomsWithStorage";
 import { useInitialRender } from "../../../../helpers/useInitialRender";
 
@@ -29,6 +35,7 @@ const StepThree = () => {
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
+  const [, setExerciseEditorData] = useAtom(exerciseEditorDataAtom);
   const [selectedWeek, setSelectedWeek] = useAtom(selectedWeekAtom);
   const [selectedDay, setSelectedDay] = useAtom(selectedDayAtom);
   const [programEditorMode, ] = useAtom(programEditorModeAtom);
@@ -63,23 +70,30 @@ const StepThree = () => {
 
     if(data === "simple") {
       setModalOpen(false);
-      navigate("ExerciseEditorPage", {
+      navigate("/exerciseEditorPage");
+      setExerciseEditorData({
         oneRMweight: 0, // TODO - never used? check this
         exerciseIndex: "add",
+        exerciseType: "",
       });
     } else {
       setModalOpen(false);
-      navigate("ExerciseEditorPage", {
+      navigate("/exerciseEditorPage");
+      setExerciseEditorData({
         oneRMweight: data.weight, // TODO - never used? check this
         oneRMname: data.name,
         exerciseIndex: "add",
+        exerciseType: "",
       });
     }
   }
 
   const editExercise = (index) => {
-    navigate("ExerciseEditorPage", {
+    navigate("/exerciseEditorPage");
+    setExerciseEditorData({
       exerciseIndex: index,
+      exerciseType: "",
+      oneRMname: "",
     });
   }
 

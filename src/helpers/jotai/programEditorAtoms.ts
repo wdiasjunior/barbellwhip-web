@@ -16,10 +16,17 @@ const programEditorModeAtom = atom("Create");
 
 const programListAtom = atomWithStorage("programListAtom", []);
 
+const exerciseEditorDataAtom = atom({
+  exerciseIndex: "",
+  exerciseType: "",
+  oneRMname: "",
+});
+
 export {
   programEditorDataAtom,
   selectedDayAtom,
   selectedWeekAtom,
   programEditorModeAtom,
   programListAtom,
+  exerciseEditorDataAtom,
 };
