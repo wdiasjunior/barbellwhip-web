@@ -54,25 +54,6 @@ const ProgramPage = (props: Props) => {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  // const onScreenLoad = () => {
-  //
-  // }
-
-  // useLayoutEffect(() => {
-  //   onScreenLoad();
-  // }, [])
-
-  // useLayoutEffect(() => {
-  //   onScreenLoad();
-  // }, [activeProgramData])
-
-  // if(isInitialRender) {
-  //   console.log(isInitialRender);
-  //
-  //   return <Loading />;
-  //   // return null;
-  // }
-
   return (
     <div className="ProgramPage_Container" style={styles(activeTheme).container}>
       <Header

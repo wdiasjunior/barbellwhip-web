@@ -5,7 +5,7 @@ const programEditorDataAtom = atom({
   programName: "",
   weightUnit: "kg",
   oneRMs: [],
-  trainingProgram: [ { week: new Array(7).fill({ day:[] }) } ]
+  trainingProgram: [ { week: new Array(7).fill({ day: [] }) } ]
 });
 
 const selectedDayAtom = atom(0);

@@ -22,7 +22,8 @@ const styles = (theme) => {
       display: "flex",
       justifyContent: "flex-start",
       flexDirection: "column",
-      // paddingInline: 20,
+      paddingBottom: 60,
+      overflow: "auto",
     },
     exerciseItem: {
       backgroundColor: theme.backgroundSecondary,
@@ -57,6 +58,7 @@ const styles = (theme) => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      minHeight: 36,
       height: 36,
       cursor: "pointer",
     },

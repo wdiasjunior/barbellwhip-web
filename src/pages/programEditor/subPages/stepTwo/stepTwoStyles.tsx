@@ -19,6 +19,7 @@ const styles = (theme) => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      minHeight: 36,
       height: 36,
       cursor: "pointer",
     },
@@ -32,6 +33,8 @@ const styles = (theme) => {
     weekList: {
       width: "100%",
       height: "100%",
+      paddingBottom: 180,
+      overflow: "auto",
     },
     weekItem: {
       backgroundColor: theme.backgroundSecondary,

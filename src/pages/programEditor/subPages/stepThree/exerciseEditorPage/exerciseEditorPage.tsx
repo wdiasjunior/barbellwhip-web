@@ -103,7 +103,7 @@ const ExerciseEditorPage = () => {
               return (
                 <div style={styles(activeTheme).exerciseItem} key={"ExerciseEditorPage_SetListExercise" + index}>
 
-                <div style={styles(activeTheme).col}>
+                <div style={{...styles(activeTheme).col, width: "100%"}}>
                   <span style={styles(activeTheme).inputLabel}>{selectedLocale.programEditorPage.exerciseEditorPage.exerciseVariation}</span>
                   <div style={styles(activeTheme).row}>
                     <input
@@ -214,7 +214,7 @@ const ExerciseEditorPage = () => {
                     </div>
                   </div>
 
-                  <div style={styles(activeTheme).col}>
+                  <div style={{...styles(activeTheme).col, width: "100%"}}>
                     <span style={styles(activeTheme).inputLabel}>{selectedLocale.programEditorPage.exerciseEditorPage.description}</span>
                     <input
                       style={styles(activeTheme).inputDynamicHeight}

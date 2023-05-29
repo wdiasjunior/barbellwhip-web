@@ -14,6 +14,7 @@ const styles = (theme) => {
       backgroundColor: theme.backgroundPrimary,
       width: "100%",
       overflow: "auto",
+      paddingBottom: 180,
     },
 
     programNameTextInput: {
@@ -111,6 +112,7 @@ const styles = (theme) => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      minHeight: 36,
       height: 36,
       cursor: "pointer",
     },

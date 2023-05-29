@@ -5,14 +5,15 @@ const styles = (theme) => {
       flexDirection: "column",
       backgroundColor: theme.backgroundPrimary,
       height: "100vh",
-      width: "100vw",
+      // width: "100vw",
     },
     wrapper: {
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.backgroundPrimary,
-      overflow: "auto",
-      height: "100vh",
+      overflowY: "auto",
+      overflowX: "hidden",
+      // height: "100vh",
       paddingTop: 60,
       paddingInline: 20,
     },
@@ -20,6 +21,7 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "column",
       paddingTop: 10,
+      paddingBottom: 60,
     },
     inputLabel: {
       color: theme.text,
@@ -34,9 +36,9 @@ const styles = (theme) => {
 
     input: {
       backgroundColor: theme.backgroundSecondary,
-      height: 50,
+      // height: 50,
       // width: "100%",
-      minWidth: "45%",
+      // minWidth: "45%",
       borderColor: theme.backgroundSecondary,
       borderWidth: 1,
       borderRadius: 12,
@@ -50,9 +52,9 @@ const styles = (theme) => {
     },
     inputDynamicHeight: {
       backgroundColor: theme.backgroundSecondary,
-      height: 50,
+      // height: 50,
       // width: "100%",
-      minWidth: "45%",
+      // minWidth: "45%",
       borderColor: theme.backgroundSecondary,
       borderWidth: 1,
       borderRadius: 12,
@@ -66,7 +68,7 @@ const styles = (theme) => {
     },
     inputExerciseVariationName: {
       backgroundColor: theme.backgroundSecondary,
-      height: 50,
+      // height: 50,
       width: "80%",
       borderColor: theme.backgroundSecondary,
       borderWidth: 1,
@@ -85,8 +87,7 @@ const styles = (theme) => {
       flexDirection: "column",
       paddingBottom: 20,
       marginBottom: 16,
-      borderBottomWidth: 1,
-      borderBottomColor: theme.textFaded,
+      borderBottom: `1px solid ${theme.textFaded}`,
     },
     exerciseItemRemoveIconContainer: {
       width: 25,
@@ -103,17 +104,20 @@ const styles = (theme) => {
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
+      gap: 8,
     },
     col: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
+      width: "50%",
     },
     colWeight: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "flex-start",
-      minWidth: "45%",
+      // minWidth: "45%",
+      width: "50%",
     },
 
     AddExerciseButton: {
@@ -126,6 +130,7 @@ const styles = (theme) => {
       justifyContent: "center",
       alignItems: "center",
       cursor: "pointer",
+      minHeight: 36,
       height: 36,
     },
     AddExerciseButtonText: {
