@@ -89,6 +89,7 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "column",
       cursor: "pointer",
+      userSelect: "none",
     },
     weight: {
       color: theme.text,
@@ -104,7 +105,11 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 24,
       margin: 20,
+      width: 50,
+      display: "inline-block",
+      textAlign: "center",
       cursor: "pointer",
+      userSelect: "none",
     },
 
     card1RM: {

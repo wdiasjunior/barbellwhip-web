@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect, } from "react";
-// import Ionicon from "react-native-vector-icons/Ionicons";
+
+import Icon from "../icon";
 
 import styles from "./numberInputStyles";
 
@@ -68,39 +69,39 @@ const NumberInput = (props: Props) => {
     }
   }
 
-  // <Text adjustsFontSizeToFit={true} style={styles(activeTheme).text}>teste</Text>
   return (
-    <View style={styles(activeTheme).container}>
-      <View style={styles(activeTheme).input}>
-        <Text style={styles(activeTheme).inputText}>{weightString} <Text style={styles(activeTheme).inputTextLabel}>{props.inputLabel}</Text></Text>
-        <Ionicon
-          name="backspace"
-          size={30}
-          style={styles(activeTheme).icon}
-          onClick={() => handleInput("backspace")}
-        />
-      </View>
+    <div style={styles(activeTheme).container}>
+      <div style={styles(activeTheme).input}>
+        <span style={styles(activeTheme).inputText}>{weightString} <span style={styles(activeTheme).inputTextLabel}>{props.inputLabel}</span></span>
+        <div style={styles(activeTheme).iconContainer} onClick={() => handleInput("backspace")}>
+          <Icon
+            name="backspace"
+            size={30}
+            style={styles(activeTheme).icon}
+          />
+        </div>
+      </div>
 
-      <View style={styles(activeTheme).numpad}>
+      <div style={styles(activeTheme).numpad}>
         {buttons.map((value, index) => {
           return (
-            <TouchableOpacity
+            <div
               key={index}
               style={styles(activeTheme).numpadButton}
               onClick={() => handleInput(value)}
             >
-              <Text style={styles(activeTheme).numpadButtonText}>{value}</Text>
-            </TouchableOpacity>
+              <span style={styles(activeTheme).numpadButtonText}>{value}</span>
+            </div>
           );
         })}
-      </View>
+      </div>
 
-      <View style={styles(activeTheme).bottomButtonsRow}>
-        <Text style={styles(activeTheme).bottomButtonsText} onClick={props.toggleModal}>{selectedLocale.numberInputModal.cancelButtonLabel}</Text>
-        <Text style={styles(activeTheme).bottomButtonsText} onClick={() => props.toggleModal(weightString, props.inputLabel)}>OK</Text>
-      </View>
+      <div style={styles(activeTheme).bottomButtonsRow}>
+        <span style={styles(activeTheme).bottomButtonsText} onClick={props.toggleModal}>{selectedLocale.numberInputModal.cancelButtonLabel}</span>
+        <span style={styles(activeTheme).bottomButtonsText} onClick={() => props.toggleModal(weightString, props.inputLabel)}>OK</span>
+      </div>
 
-    </View>
+    </div>
   );
 }
 

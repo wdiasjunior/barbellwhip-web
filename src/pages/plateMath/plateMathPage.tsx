@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 
 import Header from "../../sharedComponents/header/header";
 import Switch from "../../sharedComponents/switch/switch";
+import Modal from "../../sharedComponents/modal/modal";
 // import Loading from "../../sharedComponents/loading/loading";
 import WeightView from "./components/weightView/weightView";
 import NumberInput from "../../sharedComponents/numberInput/numberInput";
@@ -43,16 +44,6 @@ const PlateMathPage = (props: Props) => {
   const [bumperPlatesRack, ] = useAtom(plateMathBumperPlatesRack);
   const [isModalWeightInputVisible, setModalWeightInputVisible] = useState(false);
   const currentPlates = showBumper ? WeightCalc.getPlates(currentWeight, barWeight[weightUnit ? "lbs" : "kg"], weightRack[weightUnit ? "lbs" : "kg"], bumperPlatesRack[weightUnit ? "lbs" : "kg"]) : WeightCalc.getPlates(currentWeight, barWeight[weightUnit ? "lbs" : "kg"], weightRack[weightUnit ? "lbs" : "kg"]);
-
-  // const onScreenLoad = () => {
-  //   // navigation.setOptions({ headerTitle: () =>
-  //   //               <Header title={selectedLocale.plateMathPage.title} weightRack={true} />
-  //   //           });
-  // }
-  //
-  // useLayoutEffect(() => {
-  //   if(isInitialRender) onScreenLoad();
-  // }, [])
 
   const decrementWeight = () => {
     if((currentWeight - 5) < 0) {
@@ -155,21 +146,14 @@ const PlateMathPage = (props: Props) => {
             weightUnit={weightUnit ? "lbs" : "kg"}
           />
 
-          {/*<Modal
+          <Modal
             isVisible={isModalWeightInputVisible}
-            onBackButtonClick={() => setModalWeightInputVisible(false)}
             onBackdropPress={() => setModalWeightInputVisible(false)}
-            useNativeDriver={true}
-            hideModalContentWhileAnimating={true}
-            animationInTiming={100}
-            animationOutTiming={1}
-            backdropTransitionInTiming={100}
-            backdropTransitionOutTiming={1}
           >
             <div style={styles(activeTheme).modalContent}>
               <NumberInput weightUnit={weightUnit ? "lbs" : "kg"} toggleModal={toggleModal} inputLabel={weightUnit ? "lbs" : "kg"}/>
             </div>
-          </Modal>*/}
+          </Modal>
         </div>
       ) : (
         <>

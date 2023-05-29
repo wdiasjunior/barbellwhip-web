@@ -73,7 +73,6 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 20,
       fontWeight: "bold",
-      fontWeight: "Bottom",
       marginInline: 20,
       textAlign: "center"
     },
