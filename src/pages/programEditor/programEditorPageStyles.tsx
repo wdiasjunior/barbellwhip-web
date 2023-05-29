@@ -61,7 +61,7 @@ const styles = (theme) => {
       position: "absolute",
       bottom: 20,
       right: 20,
-      zIndex: 999999,
+      zIndex: 97,
       cursor: "pointer",
     },
     FabButtonText: {
@@ -124,6 +124,7 @@ const styles = (theme) => {
 
     modalContent: {
       display: "flex",
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: theme.backgroundPrimary,
@@ -142,6 +143,7 @@ const styles = (theme) => {
       height: 50,
       marginTop: 5,
       marginBottom: 5,
+      cursor: "pointer",
     },
     modalItemText: {
       color: theme.text,

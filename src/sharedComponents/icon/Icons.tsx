@@ -80,7 +80,7 @@ export const EllipsisVertical = () => {
 
 export const Edit = () => {
   return (
-    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="--darkreader-inline-fill: currentColor; --darkreader-inline-stroke: currentColor;" data-darkreader-inline-fill="" data-darkreader-inline-stroke="">
+    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
       <path fill="none" d="M0 0h24v24H0z"></path>
       <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 5.63l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 000-1.41z"></path>
     </svg>
@@ -198,7 +198,7 @@ export const DownloadOutline = () => {
 
 export const Save = () => {
   return (
-    <svg version="1.1" id="Save" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xmlSpace="preserve">
+    <svg version="1.1" id="Save" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20" enableBackground="new 0 0 20 20" xmlSpace="preserve">
       <path d="M15.173,2H4C2.899,2,2,2.9,2,4v12c0,1.1,0.899,2,2,2h12c1.101,0,2-0.9,2-2V5.127L15.173,2z M14,8  c0,0.549-0.45,1-1,1H7C6.45,9,6,8.549,6,8V3h8V8z M13,4h-2v4h2V4z"/>
     </svg>
   );

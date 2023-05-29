@@ -11,6 +11,10 @@ import WeightRackPage from "./pages/plateMath/weightRackPage/weightRackPage";
 import ExerciseItemPage from "./pages/program/subPages/exerciseItemPage/exerciseItemPage";
 import RMReviewPage from "./pages/program/subPages/rmReviewPage/rmReviewPage";
 import ProgramEditorPage from "./pages/programEditor/programEditorPage";
+import StepOne from "./pages/programEditor/subPages/stepOne/stepOne";
+import StepTwo from "./pages/programEditor/subPages/stepTwo/stepTwo";
+import StepThree from "./pages/programEditor/subPages/stepThree/stepThree";
+import ExerciseEditorPage from "./pages/programEditor/subPages/stepThree/exerciseEditorPage/exerciseEditorPage";
 import SettingsPage from "./pages/settings/settingsPage";
 import NotFoundPage from "./pages/notFound/notFoundPage";
 
@@ -55,6 +59,10 @@ function App() {
           <Route path="/plateMathPage" element={<PlateMathPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="/weightRackPage" element={<WeightRackPage />} />
           <Route path="/programEditorPage" element={<ProgramEditorPage setNavBarOpen={setNavBarOpen} />} />
+          <Route path="/step1" element={<StepOne />} />
+          <Route path="/step2" element={<StepTwo />} />
+          <Route path="/step3" element={<StepThree />} />
+          <Route path="/exerciseEditorPage" element={<ExerciseEditorPage />} />
           <Route path="/settingsPage" element={<SettingsPage setNavBarOpen={setNavBarOpen} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

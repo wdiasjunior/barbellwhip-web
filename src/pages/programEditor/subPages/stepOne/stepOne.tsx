@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react"; // , useRef
-import { Text, View, Switch, TouchableOpacity, SafeAreaView, ScrollView, KeyboardAvoidingView, TextInput, } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import React, { useState, useEffect } from "react";
 
 import { useAtom } from "jotai";
 import { programEditorDataAtom, programEditorModeAtom } from "../../../../helpers/jotai/programEditorAtoms";
@@ -11,7 +9,9 @@ import { deepClone } from "../../../../helpers/deepClone";
 import { randomUUID } from "../../../../helpers/randomUUID";
 
 import Header from "../../../../sharedComponents/header/header";
-import Loading from "../../../../sharedComponents/loading/loading";
+import Switch from "../../../../sharedComponents/switch/switch";
+// import Loading from "../../../../sharedComponents/loading/loading";
+import Icon from "../../../../sharedComponents/icon";
 
 import styles from "./stepOneStyles";
 
@@ -27,7 +27,7 @@ import styles from "./stepOneStyles";
   keyboard avoiding view not working properly
 */
 
-const StepOne = ({ navigation }) => {
+const StepOne = () => {
 
   const isInitialRender = useInitialRender();
 
@@ -39,23 +39,6 @@ const StepOne = ({ navigation }) => {
   const [weightUnit, setWeightUnit] = useState(programEditorData.weightUnit === "kg" ? false : true); // false == kg == left, true == lbs == right
   const toggleWeightUnitSwitch = () => setWeightUnit(previousState => !previousState);
 
-  // const refInputRMName, refInputRMWeight = useRef();
-
-  const onScreenLoad = () => {
-    navigation.setOptions({ headerTitle: () =>
-                  <Header
-                    title={programEditorMode === "Create" ? selectedLocale.programEditorPage.programEditorStep1.title : selectedLocale.programEditorPage.programEditorStep1.title2}
-                    menu={false}
-                    saveButton={true}
-                    backButton={true}
-                  />
-              });
-  }
-
-  useLayoutEffect(() => {
-    if(isInitialRender) onScreenLoad();
-  }, [])
-
   useEffect(() => {
     let auxAtom = deepClone(programEditorData);
     auxAtom.weightUnit = weightUnit ? "lbs" : "kg";
@@ -64,17 +47,17 @@ const StepOne = ({ navigation }) => {
 
   const editProgramName = (e) => {
     let auxAtom = deepClone(programEditorData);
-    auxAtom.programName = e;
+    auxAtom.programName = e.target.value.toString();
     setProgramEditorData(auxAtom);
   }
   const editRMname = (e, index) => {
     let auxAtom = deepClone(programEditorData);
-    auxAtom.oneRMs[index].name = e;
+    auxAtom.oneRMs[index].name = e.target.value.toString();
     setProgramEditorData(auxAtom);
   }
   const editRMweight = (e, index) => {
     let auxAtom = deepClone(programEditorData);
-    auxAtom.oneRMs[index].weight = e;
+    auxAtom.oneRMs[index].weight = e.target.value.toString();
     setProgramEditorData(auxAtom);
   }
 
@@ -96,71 +79,71 @@ const StepOne = ({ navigation }) => {
   }
 
   return (
-    <View style={styles(activeTheme).container}>
+    <div style={styles(activeTheme).container}>
+      <Header
+        title={programEditorMode === "Create" ? selectedLocale.programEditorPage.programEditorStep1.title : selectedLocale.programEditorPage.programEditorStep1.title2}
+        saveButton={true}
+        backButton={true}
+        goBackTo={"/programEditorPage"}
+      />
       {!isInitialRender ? (
-        <ScrollView overScrollMode="never">
-          <TextInput
+        <div style={styles(activeTheme).listContainer}>
+          <input
             placeholder={selectedLocale.programEditorPage.programEditorStep1.programName}
-            placeholderTextColor={activeTheme.placeholderText}
-            cursorColor={activeTheme.active}
             style={styles(activeTheme).programNameTextInput}
             value={programEditorData.programName}
-            onChangeText={(input) => editProgramName(input)}
+            onChange={(input) => editProgramName(input)}
           />
 
-          <View style={styles(activeTheme).weightUnitContainer} >
-            <Text style={styles(activeTheme).weightUnitText}>kg</Text>
+          <div style={styles(activeTheme).weightUnitContainer} >
+            <span style={styles(activeTheme).weightUnitText}>kg</span>
             <Switch
               trackColor={{ false: activeTheme.active, true: activeTheme.active }}
               thumbColor={"#f4f3f4"}
               ios_backgroundColor="#3e3e3e"
               onValueChange={toggleWeightUnitSwitch}
               value={weightUnit}
-              style={{ transform: [{ scaleX: 1.1 }, { scaleY: 1.1 }] }}
+              style={{ transform: [{ scaleX: 1.1 }, { scaleY: 1.1 }], marginTop: 10, }}
             />
-            <Text style={styles(activeTheme).weightUnitText}>lbs</Text>
-          </View>
+            <span style={styles(activeTheme).weightUnitText}>lbs</span>
+          </div>
 
           {programEditorData.oneRMs.map((item, index) => {
             return (
-              <View style={styles(activeTheme).onermItem} key={"ProgramEditorPage_StepOne_RMItem" + index} >
-                <TextInput
+              <div style={styles(activeTheme).onermItem} key={"ProgramEditorPage_StepOne_RMItem" + index} >
+                <input
                   placeholder={selectedLocale.programEditorPage.programEditorStep1.RMexercise}
-                  placeholderTextColor={activeTheme.placeholderText}
-                  cursorColor={activeTheme.active}
                   style={styles(activeTheme).oneRMTextInput}
                   value={item.name}
-                  returnKeyType="done"
-                  onChangeText={(input) => editRMname(input, index)}
+                  onChange={(input) => editRMname(input, index)}
                 />
-                <View style={styles(activeTheme).onermItem_InputRow} >
-                  <TextInput
+                <div style={styles(activeTheme).onermItem_InputRow} >
+                  <input
                     placeholder={selectedLocale.programEditorPage.programEditorStep1.weightLabel}
-                    keyboardType="numeric"
-                    placeholderTextColor={activeTheme.placeholderText}
-                    cursorColor={activeTheme.active}
+                    type="numeric"
                     style={styles(activeTheme).oneRMNumberInput}
                     value={item.weight+""}
-                    onChangeText={(input) => editRMweight(input, index)}
-                    returnKeyType="done"
+                    onChange={(input) => editRMweight(input, index)}
                   />
-                  <TouchableOpacity style={styles(activeTheme).onermItemIconContainer} onPress={() => remove1rm(index)}>
-                    <Ionicons name="trash-outline" size={30} style={styles(activeTheme).onermItemIcon} />
-                  </TouchableOpacity>
-                </View>
-              </View>
+                  <div style={styles(activeTheme).onermItemIconContainer} onClick={() => remove1rm(index)}>
+                    <Icon name="trash-outline" size={30} style={styles(activeTheme).onermItemIcon} />
+                  </div>
+                </div>
+              </div>
             )
           })}
 
-          <TouchableOpacity onPress={add1rm} style={styles(activeTheme).AddOneRMButton}>
-            <Text style={styles(activeTheme).AddOneRMButtonText}>{selectedLocale.programEditorPage.programEditorStep1.add1RMexerciseButton}</Text>
-          </TouchableOpacity>
+          <div onClick={add1rm} style={styles(activeTheme).AddOneRMButton}>
+            <span style={styles(activeTheme).AddOneRMButtonText}>{selectedLocale.programEditorPage.programEditorStep1.add1RMexerciseButton}</span>
+          </div>
 
-        </ScrollView>
+        </div>
       ) : (
-        <Loading />
+        <>
+          {/*<Loading />*/}
+        </>
       )}
-    </View>
+    </div>
   );
 }
 export default StepOne;

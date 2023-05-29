@@ -4,6 +4,7 @@ import oneRMCalc from "./math";
 import styles from "./calculatorPageStyles";
 import NumberInput from "../../sharedComponents/numberInput/numberInput";
 import Header from "../../sharedComponents/header/header";
+import Modal from "../../sharedComponents/modal/modal";
 
 import { weightConversion } from "../../helpers/weightConversion";
 
@@ -37,16 +38,6 @@ const CalculatorPage = (props: Props) => {
   const percentCol1 = [0.95, 0.9, 0.85, 0.8, 0.75, 0.7];
   const percentCol2 = [0.65, 0.6, 0.55, 0.5, 0.45, 0.4];
   const percentLabel = (i) => i.toFixed(2).toString().replace("0.", "");
-
-  // const onScreenLoad = () => {
-  //   navigation.setOptions({ headerTitle: () =>
-  //                 <Header title={selectedLocale.calculatorPage.title} menu={false} />
-  //             });
-  // }
-  //
-  // useLayoutEffect(() => {
-  //   onScreenLoad();
-  // }, [])
 
   const decrementReps = () => {
     if(repsPerformed > 1) {
@@ -228,21 +219,14 @@ const CalculatorPage = (props: Props) => {
           </div>
         </div>
 
-        {/*<Modal
+        <Modal
           isVisible={isModalWeightInputVisible}
-          onBackButtonClick={() => setModalWeightInputVisible(false)}
           onBackdropPress={() => setModalWeightInputVisible(false)}
-          useNativeDriver={true}
-          hideModalContentWhileAnimating={true}
-          animationInTiming={100}
-          animationOutTiming={1}
-          backdropTransitionInTiming={100}
-          backdropTransitionOutTiming={1}
         >
           <div style={styles(activeTheme).modalContent}>
             <NumberInput toggleModal={toggleModal} inputLabel={inputLabel}/>
           </div>
-        </Modal>*/}
+        </Modal>
 
       </div>
     </div>

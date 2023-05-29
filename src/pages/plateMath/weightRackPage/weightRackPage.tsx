@@ -44,21 +44,21 @@ const WeightRackPage = () => {
   }
 
   const editWeightRack = (_input, _field, _weightUnit) => {
-    const input = _input.target.value.toString()
+    const input = _input.target.value.toString();
     const auxWeightRack = deepClone(weightRack);
     auxWeightRack[_weightUnit][_field] = input;
     setWeightRack(auxWeightRack);
   }
 
   const editBumperPlateRack = (_input, _field, _weightUnit) => {
-    const input = _input.target.value.toString()
+    const input = _input.target.value.toString();
     const auxBumperPlatesRack = deepClone(bumperPlatesRack);
     auxBumperPlatesRack[_weightUnit][_field] = input;
     setBumperPlatesRack(auxBumperPlatesRack);
   }
 
   const editBarWeight = (_input, _weightUnit) => {
-    const input = _input.target.value.toString()
+    const input = _input.target.value.toString();
     const auxBarWeight = deepClone(barWeight);
     auxBarWeight[_weightUnit] = input;
     setBarWeight(auxBarWeight);
@@ -68,7 +68,6 @@ const WeightRackPage = () => {
     <div style={styles(activeTheme).container}>
       <Header
         title={selectedLocale.plateMathPage.weightRackPage.title}
-        menu={false}
         backButton={true}
         goBackTo="/plateMathPage"
       />

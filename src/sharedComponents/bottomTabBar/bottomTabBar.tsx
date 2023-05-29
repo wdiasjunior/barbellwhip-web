@@ -20,8 +20,7 @@ const BottomTabBar = (props: Props) => {
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
 
-  const [activeRoute, setActiveRoute] = useState("/"); // should be a jotai atom?
-  const isProgramPage = true;
+  const [activeRoute, setActiveRoute] = useState(window.location.pathname);
   const routes = props.isProgramPage ? routesProgramPage : routesProgramEditorPage;
 
   const handleSelectRoute = (_route: string) => {
@@ -53,14 +52,23 @@ const BottomTabBar = (props: Props) => {
                 key={"BottomTabBar_Item" + index}
               >
                 <div className={"BottomTabBar_ItemIconWrapper"} style={styles(activeTheme, isHover, index, activeRoute, item.route).itemIconWrapper}>
-                  <div className={"BottomTabBar_ItemIcon"} style={styles(activeTheme, isHover, index, activeRoute, item.route).itemIcon}>
-                    <Icon name={activeRoute === item.route ? item.activeIcon : item.icon}/>
-                  </div>
+                  {item.title === "" &&
+                    <div className={"BottomTabBar_ItemIcon"} style={styles(activeTheme, isHover, index, activeRoute, item.route).itemIcon}>
+                      <Icon name={activeRoute === item.route ? item.activeIcon : item.icon}/>
+                    </div>
+                  }
                 </div>
 
-                <span className={"BottomTabBar_ItemText"} style={{...styles(activeTheme, isHover, index, activeRoute, item.route).itemText}}>
-                  {item.route === "/" ? selectedLocale["programPage"]?.title : selectedLocale[item.route.replace("/", "")]?.title}
-                </span>
+                {item.title === "" ? (
+                  <span className={"BottomTabBar_ItemText"} style={{...styles(activeTheme, isHover, index, activeRoute, item.route).itemText}}>
+                    {item.route === "/" ? selectedLocale["programPage"]?.title : selectedLocale[item.route.replace("/", "")]?.title}
+                  </span>
+                ) : (
+                  <span className={"BottomTabBar_ItemText"} style={{...styles(activeTheme, isHover, index, activeRoute, item.route).itemText_Steps}}>
+                    {item.title}
+                  </span>
+                )}
+
               </Link>
             )
           })}

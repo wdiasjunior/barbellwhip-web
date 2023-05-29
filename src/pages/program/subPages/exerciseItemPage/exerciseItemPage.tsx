@@ -42,7 +42,6 @@ const ExerciseItemPage = () => {
     <div className="ProgramPage_ExerciseItemPage_Container" style={styles(activeTheme).container}>
       <Header
         title={exerciseItem.exerciseName}
-        menu={false}
         backButton={true}
         goBackTo="/"
       />

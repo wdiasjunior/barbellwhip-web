@@ -20,11 +20,15 @@ const NavBar = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [selectedLocale, ] = useAtom(selectedLocaleAtom);
-
-  const [activeRoute, setActiveRoute] = useState("/"); // should be a jotai atom?
+  const isProgramPageTabStack = (
+    window.location.pathname === "/" ? true :
+    window.location.pathname === "/calculatorPage" ? true :
+    window.location.pathname === "/plateMathPage" ? true :
+    null
+  );
+  const [activeRoute, setActiveRoute] = useState(isProgramPageTabStack ? "/" : window.location.pathname);
 
   const handleSelectRoute = (_route: string) => {
-    // console.log(_route);
     setActiveRoute(_route);
     if(props.navBarOpen) {
       props.setNavBarOpen(false);
