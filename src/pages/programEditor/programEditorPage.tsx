@@ -92,7 +92,6 @@ const ProgramEditorPage = (props: Props) => {
       }
     }
   }
-  // console.log(programList);
 
   const handleFabButtonClick = () => {
     setProgramEditorMode("Create");

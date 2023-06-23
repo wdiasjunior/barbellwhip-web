@@ -10,6 +10,7 @@ import { programEditorDataAtom, programListAtom } from "../../helpers/jotai/prog
 import { activeThemeAtom } from "../../helpers/jotai/atomsWithStorage";
 
 import { deepClone } from "../../helpers/deepClone";
+import { trainingProgramCleanUp } from "../../helpers/trainingProgramCleanUp";
 
 interface Props {
   setIsMenuOpen(): any;
@@ -36,7 +37,8 @@ const Header = (props: Props) => {
   const saveProgram = () => {
     const fileName = programEditorData.programName;
     if(fileName !== "") {
-      const programJSON = JSON.stringify(programEditorData);
+      const programJSON = JSON.stringify(trainingProgramCleanUp(programEditorData));
+      alert("TODO - add loading overlay to react native version");
       setProgramList(prev => [...prev, { name: fileName + ".json", program: programJSON }]);
       navigate(props.goBackTo);
     } else {
@@ -81,7 +83,12 @@ const Header = (props: Props) => {
 
   return (
     <div className="Header" style={styles(activeTheme).header}>
-      <div className="Header_ContentLeft" style={styles(activeTheme).contentLeft} onClick={props.backButton ? backButton : handleToggleNavBar}>
+      <div
+        role="button"
+        className="Header_ContentLeft"
+        style={styles(activeTheme).contentLeft}
+        onClick={props.backButton ? backButton : handleToggleNavBar}
+      >
         {props.backButton ?
           <Icon
             name="arrow-back-sharp"
@@ -101,7 +108,11 @@ const Header = (props: Props) => {
       </div>
       {/* add onClick to parent of icon since for some reason it doesn't work using it directly in the icon */}
       {props.menu &&
-        <div style={styles(activeTheme).contentRight} onClick={setMenuOpenFromHeader}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={setMenuOpenFromHeader}
+        >
             <Icon
               name="ellipsis-vertical"
               style={styles(activeTheme).iconRight}
@@ -110,7 +121,11 @@ const Header = (props: Props) => {
         </div>
       }
       {props.weightRack &&
-        <div style={styles(activeTheme).contentRight} onClick={() => navigate("/weightRackPage")}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={() => navigate("/weightRackPage")}
+        >
             <Icon
               name="settings-sharp"
               style={styles(activeTheme).iconRight}
@@ -119,7 +134,11 @@ const Header = (props: Props) => {
         </div>
       }
       {props.import &&
-        <div style={styles(activeTheme).contentRight} onClick={handleClickImportProgram}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={handleClickImportProgram}
+        >
             <input
               type="file"
               onChange={importProgram}
@@ -135,7 +154,11 @@ const Header = (props: Props) => {
         </div>
       }
       {props.saveButton &&
-        <div style={styles(activeTheme).contentRight} onClick={saveButton}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={saveButton}
+        >
             <Icon
               name="save"
               style={styles(activeTheme).iconRight}

@@ -42,3 +42,18 @@
 
 # misc
 -
+
+barbellwhip-web
+
+drag and drop reorder
+
+exercise editor page
+
+program page glitching just like in react native
+
+number input modal calculators
+
+change program editor program data to atom with storage in both apps? prevent accidental discard of progress
+
+prevent adding empty days (rest days) and empty exercises to the saved file?
+does program page have a rest day info text?
