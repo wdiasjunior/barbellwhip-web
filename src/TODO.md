@@ -1,6 +1,6 @@
 - copy new stuff/logic that gets done in the react native repo
 
-- jotai - change this `const [, setValue] = useAtom(valueAtom)` to useSetAtom to increase performance
+- jotai - change this `const [, setValue] = useAtom(valueAtom)` to useSetAtom to increase performance?
   - https://jotai.org/docs/api/core#use-set-atom
 
 - figure out a way to make a better desktop app layout
@@ -28,7 +28,6 @@
 -
 
 # program management / program editor page
-- save programs in local storage? atomWithStorage?
 -
 
 # PR Tracker page

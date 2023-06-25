@@ -56,6 +56,7 @@ const ProgramPage = (props: Props) => {
 
   return (
     <div className="ProgramPage_Container" style={styles(activeTheme).container}>
+    {/* barbellwhip header program page show week if trainingProgram.length > 1 */}
       <Header
         title={data?.programName ? data?.programName + " - " + selectedLocale.programPage.week + " " + (selectedWeek + 1) : selectedLocale.programPage.defaultTitle}
         isMenuOpen={isMenuOpen}
