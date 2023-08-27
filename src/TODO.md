@@ -11,48 +11,10 @@
 - exerciseItemPage not scrolling if content overflows
 - weekMenu not scrolling if content overflows
 - if exerciseItemPage is reloaded it throws 404 (should go back to /)
--
-
-# shared components
-- remake react native switch
-- modal?
--
-
-# calculator page
--
-
-# plate math page
--
-
-# program page
--
-
-# program management / program editor page
--
-
-# PR Tracker page
--
-
-# program downloader page (?)
--
-
-# settings page
--
-
-# misc
--
-
-barbellwhip-web
-
-drag and drop reorder
-
-exercise editor page
-
-program page glitching just like in react native
-
-number input modal calculators
-
-change program editor program data to atom with storage in both apps? prevent accidental discard of progress
-
-prevent adding empty days (rest days) and empty exercises to the saved file?
-does program page have a rest day info text?
+- program page glitching just like in react native
+- change program editor program data to atom with storage in both apps? prevent accidental discard of progress
+- prevent adding empty days (rest days) and empty exercises to the saved file?
+  - donein react native repo. needs testing
+  - does program page have a rest day info text?
+- bug duplicating training programs on save, and possibly on import as well
+- program editor not working on iOS
