@@ -153,6 +153,16 @@ const ProgramEditorPage = (props: Props) => {
         // Share.open({ url: `file://${url}` });
         setModalOpen(false);
         break;
+      case "download":
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(programData));
+        var downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", programNameForAction.name);
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+        setModalOpen(false);
+        break;
       case "delete":
         // TODO - before deleting show message "are you sure? this action cannot be undone."
         // modal button options - delete and cancel
@@ -247,6 +257,10 @@ const ProgramEditorPage = (props: Props) => {
 
               <div style={styles(activeTheme).modalItem} onClick={() => programOptionModal("share")}>
                 <span style={styles(activeTheme).modalItemText}>{selectedLocale.programEditorPage.modal.share}</span>
+              </div>
+
+              <div style={styles(activeTheme).modalItem} onClick={() => programOptionModal("download")}>
+                <span style={styles(activeTheme).modalItemText}>Download</span>
               </div>
 
               <div style={styles(activeTheme).modalItem} onClick={() => programOptionModal("copy")}>
