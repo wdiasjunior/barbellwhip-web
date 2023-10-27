@@ -1,13 +1,13 @@
 const colors = {
-  backgroundPrimary: "#121212",
-  backgroundSecondary: "#1d1c1c",
-  text: "#FFFFFF",
-  textHighlight: "#3dc2ff",
-  textFaded: "#8c8c8c",
+  backgroundPrimary: "#171923",
+  backgroundSecondary: "#1a202c",
+  text: "#ffffff",
+  textHighlight: "#81e6d9",
+  textFaded: "#ECEFF4",
   placeholderText: "#ffffff3d",
-  active: "#3dc2ff",
-  activeTransparent: "#3dc2ff21",
-  inactive: "#FFFFFF",
+  active: "#38b2ac",
+  activeTransparent: "#38b2ac21",
+  inactive: "#cbd5e0",
   statusBar: "light",
 }
 

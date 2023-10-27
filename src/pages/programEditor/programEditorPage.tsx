@@ -151,6 +151,9 @@ const ProgramEditorPage = (props: Props) => {
     }
   }
 
+  console.log(programList);
+
+
   return (
       <div style={styles(activeTheme).container}>
         <Header

@@ -93,12 +93,14 @@ const Header = (props: Props) => {
           <Icon
             name="arrow-back-sharp"
             style={styles(activeTheme).iconLeft}
+            color={activeTheme.text}
             className="Header_IconLeft"
           />
           :
           <Icon
             name="menu-sharp"
             style={styles(activeTheme).iconLeft}
+            color={activeTheme.text}
             className="Header_IconLeft"
           />
         }
@@ -149,6 +151,7 @@ const Header = (props: Props) => {
             <Icon
               name="download-outline"
               style={styles(activeTheme).iconRight}
+              color={activeTheme.text}
               className="Header_IconRight"
             />
         </div>

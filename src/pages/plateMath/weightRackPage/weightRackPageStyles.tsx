@@ -38,7 +38,7 @@ const styles = (theme) => {
       flex: 1,
       width: "100%",
       paddingVertical: 22,
-      borderColor: theme.textFaded,
+      // borderColor: theme.textFaded,
       borderBottomWidth: 1,
     },
     inputGroupTitle: {
@@ -70,7 +70,7 @@ const styles = (theme) => {
       backgroundColor: theme.backgroundSecondary,
       height: 50,
       width: 60,
-      borderColor: theme.backgroundSecondary,
+      // borderColor: theme.backgroundSecondary,
       borderWidth: 1,
       borderRadius: 15,
       padding: 10,

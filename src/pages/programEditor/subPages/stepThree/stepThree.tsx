@@ -128,19 +128,34 @@ const StepThree = () => {
     return (
       <div style={styles(activeTheme).exerciseItem}>
         <div style={{width: 32, height: 30, cursor: "pointer"}}>
-          <Icon name="reorder-three-outline" size={30} style={styles(activeTheme).exerciseItemIcon} />
+          <Icon
+            name="reorder-three-outline"
+            size={30}
+            color={activeTheme.text}
+            style={styles(activeTheme).exerciseItemIcon}
+          />
         </div>
 
         <span style={styles(activeTheme).exerciseItemText}>
           {programEditorData.trainingProgram[selectedWeek].week[selectedDay].day[index]?.exerciseName}
         </span>
 
-        <div style={{width: 32, height: 20, cursor: "pointer"}} onClick={() => editExercise(index)} >
-          <Icon name="edit" size={20} style={styles(activeTheme).exerciseItemIcon} />
+        <div style={{width: 32, height: 20, cursor: "pointer", marginRight: 16,}} onClick={() => editExercise(index)} >
+          <Icon
+            name="edit"
+            size={20}
+            color={activeTheme.text}
+            style={styles(activeTheme).exerciseItemIconEdit}
+          />
         </div>
 
         <div style={{width: 20, height: 20, cursor: "pointer"}} onClick={() => deleteExercise(index)} >
-          <Icon name="trash-outline" size={20} style={styles(activeTheme).exerciseItemIcon} />
+          <Icon
+            name="trash-outline"
+            size={20}
+            color={activeTheme.text}
+            style={styles(activeTheme).exerciseItemIcon}
+          />
         </div>
       </div>
     )
