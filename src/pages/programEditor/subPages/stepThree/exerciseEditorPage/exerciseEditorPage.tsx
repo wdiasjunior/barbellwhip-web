@@ -112,7 +112,12 @@ const ExerciseEditorPage = () => {
                       value={item.exerciseName+""}
                     />
                     <div style={styles(activeTheme).exerciseItemRemoveIconContainer} onClick={() => removeExerciseSubSet(index)}>
-                      <Icon name="trash-outline" size={25} style={styles(activeTheme).exerciseItemRemoveIcon} />
+                      <Icon
+                        name="trash-outline"
+                        size={25}
+                        color={activeTheme.text}
+                        style={styles(activeTheme).exerciseItemRemoveIcon}
+                      />
                     </div>
                   </div>
                 </div>
