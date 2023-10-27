@@ -91,8 +91,8 @@ const ExerciseEditorPage = () => {
             <input
               style={styles(activeTheme).input}
               onChange={(input) => editExerciseField("parentExerciseName", input)}
-              disabled={oneRMname !== "" ? false : true}
-              value={exerciseData?.exerciseName+""}
+              // disabled={oneRMname ? false : true}
+              value={exerciseData?.exerciseName ? exerciseData?.exerciseName+"" : ""}
             />
             {oneRMweight?.weight ? <span style={styles(activeTheme).weightText}>1RM: {oneRMweight?.weight}{programEditorData.weightUnit}</span> : null}
           </div>
@@ -109,7 +109,7 @@ const ExerciseEditorPage = () => {
                     <input
                       style={styles(activeTheme).inputExerciseVariationName}
                       onChange={(input) => editExerciseField("exerciseName", input, index)}
-                      value={item.exerciseName+""}
+                      value={item.exerciseName ? item.exerciseName+"" : ""}
                     />
                     <div style={styles(activeTheme).exerciseItemRemoveIconContainer} onClick={() => removeExerciseSubSet(index)}>
                       <Icon
@@ -129,7 +129,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("sets", input, index)}
-                        value={item.sets+""}
+                        value={item.sets ? item.sets+"" : ""}
                       />
                     </div>
 
@@ -139,7 +139,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("reps", input, index)}
-                        value={item.reps+""}
+                        value={item.reps ? item.reps+"" : ""}
                       />
                     </div>
                   </div>
@@ -151,7 +151,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("percentage", input, index)}
-                        value={item.percentage+""}
+                        value={item.percentage ? item.percentage+"" : ""}
                       />
                     </div>
                     <div style={styles(activeTheme).colWeight}>
@@ -170,7 +170,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("rpe", input, index)}
-                        value={item.rpe+""}
+                        value={item.rpe ? item.rpe+"" : ""}
                       />
                     </div>
 
@@ -180,7 +180,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("tempo", input, index)}
-                        value={item.tempo+""}
+                        value={item.tempo ? item.tempo+"" : ""}
                       />
                     </div>
                   </div>
@@ -224,7 +224,7 @@ const ExerciseEditorPage = () => {
                     <input
                       style={styles(activeTheme).inputDynamicHeight}
                       onChange={(input) => editExerciseField("description", input, index)}
-                      value={item.description+""}
+                      value={item.description ? item.description+"" : ""}
                     />
                   </div>
                 </div>
