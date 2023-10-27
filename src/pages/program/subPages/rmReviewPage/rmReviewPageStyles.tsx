@@ -2,7 +2,7 @@ const styles = (theme) => {
   return ({
     container: {
       backgroundColor: theme.backgroundPrimary,
-      height: "100vh",
+      // height: "100vh",
       height: "calc(100vh - 50px)",
     },
     list: {

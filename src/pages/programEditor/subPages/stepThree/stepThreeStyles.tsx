@@ -4,7 +4,7 @@ const styles = (theme) => {
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.backgroundPrimary,
-      height: "calc(100vh - 50px)",
+      // height: "calc(100vh - 50px)",
       width: "100vw",
     },
     wrapper: {
