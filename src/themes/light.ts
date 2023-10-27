@@ -1,4 +1,4 @@
-const colors  = {
+const theme  = {
   backgroundPrimary: "#FFFFFF",
   backgroundSecondary: "#F7FAFC",
   text: "#2D3748",
@@ -11,4 +11,4 @@ const colors  = {
   statusBar: "dark",
 }
 
-export default colors;
+export default theme;
