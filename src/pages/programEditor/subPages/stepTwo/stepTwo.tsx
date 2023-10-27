@@ -97,16 +97,33 @@ const StepTwo = () => {
         onClick={() => selectWeek(index)}
       >
         <div style={{width: 32, height: 30, cursor: "pointer"}}>
-          <Icon name="reorder-three-outline" size={30} style={styles(activeTheme).weekItemIcon} />
+          <Icon
+            name="reorder-three-outline"
+            size={30}
+            color={activeTheme.text}
+            style={styles(activeTheme).weekItemIcon}
+          />
         </div>
-        <span style={(selectedWeek == index) ? styles(activeTheme).weekSelectedItemText : styles(activeTheme).weekItemText}>{selectedLocale.programEditorPage.programEditorStep2.week} {index + 1}</span>
+        <span style={(selectedWeek == index) ? styles(activeTheme).weekSelectedItemText : styles(activeTheme).weekItemText}>
+          {selectedLocale.programEditorPage.programEditorStep2.week} {index + 1}
+        </span>
 
         <div style={styles(activeTheme).weekItemIconContainer} onClick={(e) => duplicateWeek(e, index)} >
-          <Icon name="copy-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+          <Icon
+            name="copy-outline"
+            size={20}
+            color={activeTheme.text}
+            style={styles(activeTheme).weekItemIcon}
+          />
         </div>
 
         <div style={styles(activeTheme).weekItemIconContainer}  onClick={(e) => deleteWeek(e)} >
-          <Icon name="trash-outline" size={20} style={styles(activeTheme).weekItemIcon} />
+          <Icon
+            name="trash-outline"
+            size={20}
+            color={activeTheme.text}
+            style={styles(activeTheme).weekItemIcon}
+          />
         </div>
       </div>
     )

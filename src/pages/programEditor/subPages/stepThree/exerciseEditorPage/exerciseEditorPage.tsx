@@ -187,7 +187,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("rest", input, index)}
-                        value={item.rest+""}
+                        value={item.rest ? item.rest+"" : ""}
                       />
                     </div>
                   </div>
@@ -199,7 +199,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("altExercise1", input, index)}
-                        value={item.altExercise1+""}
+                        value={item.altExercise1 ? item.altExercise1+"" : ""}
                       />
                     </div>
 
@@ -209,7 +209,7 @@ const ExerciseEditorPage = () => {
                         type="numeric"
                         style={styles(activeTheme).input}
                         onChange={(input) => editExerciseField("altExercise2", input, index)}
-                        value={item.altExercise2+""}
+                        value={item.altExercise2 ? item.altExercise2+"" : ""}
                       />
                     </div>
                   </div>

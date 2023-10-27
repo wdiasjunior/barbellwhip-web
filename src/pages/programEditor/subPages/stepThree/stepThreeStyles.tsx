@@ -42,11 +42,19 @@ const styles = (theme) => {
       color: theme.text,
       fontSize: 20,
       fontWeight: "bold",
+      marginRight: "auto",
+      marginLeft: 20,
     },
     exerciseItemIcon: {
       color: theme.text,
       fill: theme.text,
       cursor: "pointer",
+    },
+    exerciseItemIconEdit: {
+      color: theme.text,
+      fill: theme.text,
+      cursor: "pointer",
+      marginRight: 10,
     },
 
     AddExerciseButton: {

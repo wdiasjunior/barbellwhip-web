@@ -20,7 +20,7 @@ const styles = (theme) => {
     programNameTextInput: {
       backgroundColor: theme.backgroundSecondary,
       height: 30,
-      borderColor: theme.backgroundSecondary,
+      // borderColor: theme.backgroundSecondary,
       borderWidth: 1,
       borderRadius: 15,
       marginTop: 5,
@@ -36,7 +36,7 @@ const styles = (theme) => {
     oneRMTextInput: {
       backgroundColor: theme.backgroundSecondary,
       height: 30,
-      borderColor: theme.placeholderText,
+      // borderColor: theme.placeholderText,
       borderWidth: 1,
       borderRadius: 12,
       marginTop: 6,
@@ -52,7 +52,7 @@ const styles = (theme) => {
       backgroundColor: theme.backgroundSecondary,
       height: 30,
       width: "80%",
-      borderColor: theme.placeholderText,
+      // borderColor: theme.placeholderText,
       borderWidth: 1,
       borderRadius: 12,
       marginTop: 6,

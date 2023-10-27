@@ -10,6 +10,7 @@ import { programEditorDataAtom, programListAtom } from "../../helpers/jotai/prog
 import { activeThemeAtom } from "../../helpers/jotai/atomsWithStorage";
 
 import { deepClone } from "../../helpers/deepClone";
+import { trainingProgramCleanUp } from "../../helpers/trainingProgramCleanUp";
 
 interface Props {
   setIsMenuOpen(): any;
@@ -30,14 +31,22 @@ const Header = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
-  const [, setProgramList] = useAtom(programListAtom);
+  const [programList, setProgramList] = useAtom(programListAtom);
   const inputRef = useRef(null);
 
   const saveProgram = () => {
     const fileName = programEditorData.programName;
     if(fileName !== "") {
-      const programJSON = JSON.stringify(programEditorData);
-      setProgramList(prev => [...prev, { name: fileName + ".json", program: programJSON }]);
+      const programJSON = JSON.stringify(trainingProgramCleanUp(programEditorData));
+      alert("TODO - add loading overlay to react native version");
+      if(programList.some(p => p.name === fileName + ".json")) {
+        const _programList = programList
+        const _programListIndex = _programList.findIndex(p => p.name === fileName + ".json")
+        _programList[_programListIndex] = { name: fileName + ".json", program: programJSON }
+        setProgramList(_programList)
+      } else {
+        setProgramList(prev => [...prev, { name: fileName + ".json", program: programJSON }]);
+      }
       navigate(props.goBackTo);
     } else {
       alert("Please fill in the program name field.")
@@ -49,7 +58,7 @@ const Header = (props: Props) => {
   }
   const handleClickImportProgram = () => {
     inputRef.current.click();
-    console.log(inputRef.current);
+    // console.log(inputRef.current);
     importProgram(inputRef.current);
   }
 
@@ -81,17 +90,24 @@ const Header = (props: Props) => {
 
   return (
     <div className="Header" style={styles(activeTheme).header}>
-      <div className="Header_ContentLeft" style={styles(activeTheme).contentLeft} onClick={props.backButton ? backButton : handleToggleNavBar}>
+      <div
+        role="button"
+        className="Header_ContentLeft"
+        style={styles(activeTheme).contentLeft}
+        onClick={props.backButton ? backButton : handleToggleNavBar}
+      >
         {props.backButton ?
           <Icon
             name="arrow-back-sharp"
             style={styles(activeTheme).iconLeft}
+            color={activeTheme.text}
             className="Header_IconLeft"
           />
           :
           <Icon
             name="menu-sharp"
             style={styles(activeTheme).iconLeft}
+            color={activeTheme.text}
             className="Header_IconLeft"
           />
         }
@@ -101,7 +117,11 @@ const Header = (props: Props) => {
       </div>
       {/* add onClick to parent of icon since for some reason it doesn't work using it directly in the icon */}
       {props.menu &&
-        <div style={styles(activeTheme).contentRight} onClick={setMenuOpenFromHeader}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={setMenuOpenFromHeader}
+        >
             <Icon
               name="ellipsis-vertical"
               style={styles(activeTheme).iconRight}
@@ -110,7 +130,11 @@ const Header = (props: Props) => {
         </div>
       }
       {props.weightRack &&
-        <div style={styles(activeTheme).contentRight} onClick={() => navigate("/weightRackPage")}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={() => navigate("/weightRackPage")}
+        >
             <Icon
               name="settings-sharp"
               style={styles(activeTheme).iconRight}
@@ -119,7 +143,11 @@ const Header = (props: Props) => {
         </div>
       }
       {props.import &&
-        <div style={styles(activeTheme).contentRight} onClick={handleClickImportProgram}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={handleClickImportProgram}
+        >
             <input
               type="file"
               onChange={importProgram}
@@ -130,12 +158,17 @@ const Header = (props: Props) => {
             <Icon
               name="download-outline"
               style={styles(activeTheme).iconRight}
+              color={activeTheme.text}
               className="Header_IconRight"
             />
         </div>
       }
       {props.saveButton &&
-        <div style={styles(activeTheme).contentRight} onClick={saveButton}>
+        <div
+          role="button"
+          style={styles(activeTheme).contentRight}
+          onClick={saveButton}
+        >
             <Icon
               name="save"
               style={styles(activeTheme).iconRight}

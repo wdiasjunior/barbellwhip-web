@@ -28,6 +28,7 @@ import {
 
 interface Props {
   name: string;
+  color: string;
 }
 
 const Icon = (props: Props) => {
@@ -59,139 +60,139 @@ const Icon = (props: Props) => {
   switch(props.name) {
     case "barbell-sharp":
       return (
-        <BarbellSharp />
+        <BarbellSharp color={props.color} />
       );
       break;
 
     case "file-tray-full":
       return (
-        <FileTrayFull />
+        <FileTrayFull color={props.color} />
       );
       break;
 
     case "file-tray-full-outline":
       return (
-        <FileTrayFullOutline />
+        <FileTrayFullOutline color={props.color} />
       );
       break;
 
     case "bar-chart":
       return (
-        <BarChart />
+        <BarChart color={props.color} />
       );
       break;
 
     case "bar-chart-outline":
       return (
-        <BarChartOutline />
+        <BarChartOutline color={props.color} />
       );
       break;
 
     case "settings-outline":
       return (
-        <SettingsOutline />
+        <SettingsOutline color={props.color} />
       );
       break;
 
     case "settings-sharp":
       return (
-        <SettingsSharp />
+        <SettingsSharp color={props.color} />
       );
       break;
 
     case "checkmark":
       return (
-        <Checkmark />
+        <Checkmark color={props.color} />
       );
       break;
 
     case "checkmark-sharp":
       return (
-        <CheckmarkSharp />
+        <CheckmarkSharp color={props.color} />
       );
       break;
 
     case "ellipsis-vertical":
       return (
-        <EllipsisVertical />
+        <EllipsisVertical color={props.color} />
       );
       break;
 
     case "trash-outline":
       return (
-        <TrashOutline />
+        <TrashOutline color={props.color} />
       );
       break;
 
     case "reorder-three-outline":
       return (
-        <ReorderThreeOutline />
+        <ReorderThreeOutline color={props.color} />
       );
       break;
 
     case "edit":
       return (
-        <Edit />
+        <Edit color={props.color} />
       );
       break;
 
     case "copy-outline":
       return (
-        <CopyOutline />
+        <CopyOutline color={props.color} />
       );
       break;
 
     case "menu-sharp":
       return (
-        <MenuSharp />
+        <MenuSharp color={props.color} />
       );
       break;
 
     case "download-outline":
       return (
-        <DownloadOutline />
+        <DownloadOutline color={props.color} />
       );
       break;
 
     case "save":
       return (
-        <Save />
+        <Save color={props.color} />
       );
       break;
 
     case "backspace":
       return (
-        <Backspace />
+        <Backspace color={props.color} />
       );
       break;
 
     case "calculator":
       return (
-        <Calculator />
+        <Calculator color={props.color} />
       );
       break;
 
     case "calculator-outline":
       return (
-        <CalculatorOutline />
+        <CalculatorOutline color={props.color} />
       );
       break;
 
     case "arrow-back-sharp":
       return (
-        <ArrowBackSharp />
+        <ArrowBackSharp color={props.color} />
       );
       break;
 
     case "list":
       return (
-        <List />
+        <List color={props.color} />
       );
       break;
 
     case "list-outline":
       return (
-        <ListOutline />
+        <ListOutline color={props.color} />
       );
       break;
 

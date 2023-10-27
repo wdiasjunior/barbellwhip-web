@@ -62,6 +62,7 @@ const SettingsPage = (props: Props) => {
                     <Icon
                       name="checkmark-sharp"
                       size={20}
+                      color={activeTheme.textHighlight}
                       style={styles(activeTheme).themeSelectorIcon}
                     />
                   }
@@ -86,6 +87,7 @@ const SettingsPage = (props: Props) => {
                     <Icon
                       name="checkmark-sharp"
                       size={20}
+                      color={activeTheme.textHighlight}
                       style={styles(activeTheme).themeSelectorIcon}
                     />
                   }

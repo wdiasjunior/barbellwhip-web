@@ -28,7 +28,13 @@ const Switch = (props: Props) => {
           onClick={handleClick}
           value={props.value}
         />
-        <label htmlFor="MaterialSwitch" className="ActiveSwitch" />
+        <label
+          htmlFor="MaterialSwitch"
+          style={{
+            '--active-background': activeTheme.active,
+            '--inactive-background': activeTheme.inactive,
+          }}
+        />
       </div>
     </>
   );
