@@ -22,7 +22,6 @@ const styles = (theme) => {
       // paddingRight: 22,
       // paddingBottom: 100,
       paddingTop: 44,
-      overflow: "auto",
       // paddingInline: 20,
     },
     title: {

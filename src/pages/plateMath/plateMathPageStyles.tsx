@@ -21,7 +21,6 @@ const styles = (theme) => {
       paddingLeft: 60,
       paddingBottom: 100,
       paddingTop: 44,
-      overflow: "auto",
     },
     controlsContainer: {
       marginInline: 50,
