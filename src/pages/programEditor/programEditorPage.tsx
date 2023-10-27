@@ -80,12 +80,29 @@ const ProgramEditorPage = (props: Props) => {
     // console.log("importProgram", e.target.files[0]);
     const fileReader = new FileReader();
     if(e.target && e.target.files) {
-      if (e.target.files[0].name.includes(".json")) {
+      if(e.target.files[0].name.includes(".json")) {
         fileReader.readAsText(e.target.files[0], "UTF-8");
         fileReader.onload = e => {
           const program = JSON.parse(e.target.result);
           // setProgramList(prev => [...prev, { name: program.programName + ".json", program: JSON.stringify(program) }]);
-          saveProgram(program.programName, program);
+          if(programList.some(p => p.name === program.programName + ".json")) {
+            let foundProgram = false;
+            let _programVersion = 2;
+            let _programName = program.programName + " " + _programVersion;
+            while(!foundProgram) {
+              if(programList.some(p => p.name === _programName + ".json")) {
+                _programVersion++;
+                _programName = program.programName + " " + _programVersion;
+              } else {
+                _programName = program.programName + " " + _programVersion;
+                saveProgram(_programName, program);
+                foundProgram = true;
+              }
+            }
+          } else {
+            saveProgram(program.programName, program);
+            foundProgram = true;
+          }
         };
       } else {
         alert(selectedLocale.programEditorPage.importErrorMessage);
@@ -150,9 +167,6 @@ const ProgramEditorPage = (props: Props) => {
         break;
     }
   }
-
-  console.log(programList);
-
 
   return (
       <div style={styles(activeTheme).container}>

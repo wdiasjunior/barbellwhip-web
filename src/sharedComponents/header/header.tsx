@@ -31,7 +31,7 @@ const Header = (props: Props) => {
 
   const [activeTheme, ] = useAtom(activeThemeAtom);
   const [programEditorData, setProgramEditorData] = useAtom(programEditorDataAtom);
-  const [, setProgramList] = useAtom(programListAtom);
+  const [programList, setProgramList] = useAtom(programListAtom);
   const inputRef = useRef(null);
 
   const saveProgram = () => {
@@ -39,7 +39,14 @@ const Header = (props: Props) => {
     if(fileName !== "") {
       const programJSON = JSON.stringify(trainingProgramCleanUp(programEditorData));
       alert("TODO - add loading overlay to react native version");
-      setProgramList(prev => [...prev, { name: fileName + ".json", program: programJSON }]);
+      if(programList.some(p => p.name === fileName + ".json")) {
+        const _programList = programList
+        const _programListIndex = _programList.findIndex(p => p.name === fileName + ".json")
+        _programList[_programListIndex] = { name: fileName + ".json", program: programJSON }
+        setProgramList(_programList)
+      } else {
+        setProgramList(prev => [...prev, { name: fileName + ".json", program: programJSON }]);
+      }
       navigate(props.goBackTo);
     } else {
       alert("Please fill in the program name field.")
@@ -51,7 +58,7 @@ const Header = (props: Props) => {
   }
   const handleClickImportProgram = () => {
     inputRef.current.click();
-    console.log(inputRef.current);
+    // console.log(inputRef.current);
     importProgram(inputRef.current);
   }
 
