@@ -85,8 +85,8 @@ const ProgramEditorPage = (props: Props) => {
         fileReader.onload = e => {
           const program = JSON.parse(e.target.result);
           // setProgramList(prev => [...prev, { name: program.programName + ".json", program: JSON.stringify(program) }]);
+          let foundProgram = false;
           if(programList.some(p => p.name === program.programName + ".json")) {
-            let foundProgram = false;
             let _programVersion = 2;
             let _programName = program.programName + " " + _programVersion;
             while(!foundProgram) {
