@@ -18,3 +18,7 @@
   - does program page have a rest day info text?
 - bug duplicating training programs on save, and possibly on import as well
 - program editor not working on iOS
+
+---
+
+- better desktop web editor
