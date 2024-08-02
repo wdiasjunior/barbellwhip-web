@@ -4,7 +4,7 @@
 
 - [-] copy new stuff/logic/locales that gets done in the react native repo
 
-- [ ] jotai - change this `const [, setValue] = useAtom(valueAtom)` to useSetAtom to increase performance?
+- [ ] jotai - change this `const [, setValue] = useAtom(valueAtom)` to useSetAtom
   - https://jotai.org/docs/api/core#use-set-atom
 
 - [-] hide collapsed nav bar on mobile view to free up space
